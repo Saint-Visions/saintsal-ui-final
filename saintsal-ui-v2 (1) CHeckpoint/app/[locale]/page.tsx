@@ -119,16 +119,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-          {/* Institutional Messaging - After Logo */}
-          <div className="mt-8 text-center">
-            <p className="text-lg md:text-xl text-yellow-400 font-bold leading-relaxed mb-2">
-              "INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
-            </p>
-            <p className="text-lg md:text-xl text-yellow-400 font-bold leading-relaxed mb-4">
-              IT ADAPTS. IT EMPOWERS. IT BECOMES..."
-            </p>
-          </div>
         </div>
 
         {/* What's Inside These Walls - Features Preview */}
