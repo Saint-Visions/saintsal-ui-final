@@ -55,7 +55,8 @@ export default function SignUpPage({
                 Become a Saint! ✨
               </h1>
               <p className="text-gray-400 text-sm mt-2">
-                Join the elite community of AI-powered business leaders
+                Join the elite community and get your AI GOTTA GUY™ for
+                everything
               </p>
             </div>
 
