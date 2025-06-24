@@ -124,7 +124,7 @@ export default function SignUpPage({
             href="/en/login"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-black px-6 py-3 rounded-lg font-semibold transition-all"
           >
-            🏠 Welcome Back, Chef!
+            😇 Welcome Back, Saint!
           </Link>
         </div>
       </div>
