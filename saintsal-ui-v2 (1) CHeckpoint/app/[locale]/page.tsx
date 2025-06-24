@@ -13,7 +13,17 @@ export default function HomePage() {
         backgroundAttachment: "fixed"
       }}
     >
-      <div className="flex flex-col items-center w-full p-6 py-12">
+      <div className="flex flex-col items-center w-full p-6 py-8">
+        {/* Institutional Messaging - First and Prominent */}
+        <div className="bg-black/50 backdrop-blur-lg border border-yellow-500/30 rounded-xl p-6 shadow-2xl text-center mb-8 max-w-4xl">
+          <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-2">
+            "INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
+          </p>
+          <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed">
+            IT ADAPTS. IT EMPOWERS. IT BECOMES..."
+          </p>
+        </div>
+
         {/* SaintSal Branding */}
         <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl mb-8">
           <div className="flex flex-col items-center">
