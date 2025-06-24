@@ -4,17 +4,18 @@ import Image from "next/image"
 export default function HomePage() {
   return (
     <div
-      className="flex w-full min-h-screen"
+      className="w-full min-h-screen overflow-y-auto"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('https://cdn.builder.io/api/v1/image/assets%2Fd83998c6a81f466db4fb83ab90c7ba25%2F0a6aaa015be4440f85c384537eca8462?format=webp&width=800')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
       }}
     >
-      <div className="flex flex-col items-center justify-start w-full p-4 pt-48 min-h-screen">
+      <div className="flex flex-col items-center w-full p-6 py-20">
         {/* Institutional Messaging */}
-        <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl text-center mb-8 max-w-5xl mt-16">
+        <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl text-center mb-8 max-w-5xl">
           <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-4">
             "INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
           </p>
