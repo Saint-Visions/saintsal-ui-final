@@ -31,7 +31,16 @@ export default function LoginPage({
   searchParams: { message?: string }
 }) {
   return (
-    <div className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md">
+    <div
+      className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md relative"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://cdn.builder.io/api/v1/image/assets%2Fd83998c6a81f466db4fb83ab90c7ba25%2F6564abdef64249dcb9ba82e0ed0ef8af?format=webp&width=800')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh"
+      }}
+    >
       {/* Returning User Sign In */}
       <form
         className="animate-in text-foreground flex w-full flex-1 flex-col justify-center gap-2"
