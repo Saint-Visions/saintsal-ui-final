@@ -98,13 +98,13 @@ export default async function Login({
 
       {/* Status */}
       <div className="mt-8 text-center">
-        <div className="inline-flex items-center gap-2 bg-green-900/20 border border-green-500/20 rounded-lg px-4 py-2">
-          <span className="text-green-400 font-semibold">
-            ✅ Production Ready
+        <div className="inline-flex items-center gap-2 bg-blue-900/20 border border-blue-500/20 rounded-lg px-4 py-2">
+          <span className="text-blue-400 font-semibold">
+            🚀 Live Production System
           </span>
         </div>
         <p className="text-gray-400 text-sm mt-2">
-          SaintSal™ • AI-Powered Business Intelligence
+          SaintSal™ • Cookin' Knowledge
         </p>
       </div>
     </div>
