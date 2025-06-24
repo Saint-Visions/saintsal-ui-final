@@ -49,18 +49,117 @@ export default function SignUpPage({
           </p>
         </div>
 
-        {/* What They're Getting */}
-        <div className="mb-6 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/20 rounded-lg p-4">
-          <h3 className="text-yellow-400 font-semibold text-sm mb-2">
-            🚀 You're about to get:
+        {/* Saint Journey Pricing Showcase */}
+        <div className="mb-6 bg-gradient-to-br from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-lg p-6">
+          <h3 className="text-center text-xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent mb-4">
+            ✨ Your Saint Journey Awaits ✨
           </h3>
-          <ul className="text-gray-300 text-xs space-y-1">
-            <li>✨ Dual AI Assistant (Azure + OpenAI)</li>
-            <li>🔍 Smart Lead Discovery</li>
-            <li>💬 Voice & Chat Interface</li>
-            <li>📊 Business Analytics</li>
-            <li>🎯 Free Trial → $27 Unlimited</li>
-          </ul>
+
+          {/* Free Tier */}
+          <div className="mb-4 bg-gray-800/50 border border-gray-600/30 rounded-lg p-3">
+            <div className="flex justify-between items-center mb-2">
+              <h4 className="font-semibold text-green-400">🆓 Free Access</h4>
+              <span className="text-green-400 font-bold">$0/mo</span>
+            </div>
+            <ul className="text-gray-300 text-xs space-y-1">
+              <li>• Try GPT-4 Turbo (limited)</li>
+              <li>• Auto fallback to GPT-3.5</li>
+              <li>• Basic prompts, no memory</li>
+              <li>• Upgrade prompt on overuse</li>
+            </ul>
+          </div>
+
+          {/* Companion Tier - HIGHLIGHTED */}
+          <div className="mb-4 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-2 border-yellow-500/50 rounded-lg p-3 relative">
+            <div className="absolute -top-2 left-4 bg-yellow-500 text-black px-2 py-1 rounded text-xs font-bold">
+              MOST POPULAR
+            </div>
+            <div className="flex justify-between items-center mb-2">
+              <h4 className="font-semibold text-yellow-400">
+                😇 Companion Cognitive Awareness
+              </h4>
+              <span className="text-yellow-400 font-bold">$27/mo</span>
+            </div>
+            <ul className="text-gray-300 text-xs space-y-1">
+              <li>• GPT-4 Turbo (unlocked)</li>
+              <li>• Smart Search Engine access</li>
+              <li>• Personalized Daily Insights</li>
+              <li>• Action prompting + summaries</li>
+            </ul>
+          </div>
+
+          {/* Pro Tier */}
+          <div className="mb-4 bg-blue-900/30 border border-blue-500/30 rounded-lg p-3">
+            <div className="flex justify-between items-center mb-2">
+              <h4 className="font-semibold text-blue-400">
+                👑 Command Your Future (Pro)
+              </h4>
+              <span className="text-blue-400 font-bold">$97/mo</span>
+            </div>
+            <ul className="text-gray-300 text-xs space-y-1">
+              <li>• Full CRM Dashboard</li>
+              <li>• Voice Chat (Twilio-enabled)</li>
+              <li>• Client/Lead Manager</li>
+              <li>• Smart Assistant Workflows</li>
+            </ul>
+          </div>
+
+          {/* Strategic Tier */}
+          <div className="mb-4 bg-purple-900/30 border border-purple-500/30 rounded-lg p-3">
+            <div className="flex justify-between items-center mb-2">
+              <h4 className="font-semibold text-purple-400">
+                🏛️ Strategic Command Center
+              </h4>
+              <span className="text-purple-400 font-bold">$297/mo</span>
+            </div>
+            <ul className="text-gray-300 text-xs space-y-1">
+              <li>• 5 Seats Included</li>
+              <li>• Leadership Dashboard</li>
+              <li>• AI Lead Insights</li>
+              <li>• Team Collaboration Tools</li>
+            </ul>
+          </div>
+
+          {/* White Label Elite */}
+          <div className="mb-4 bg-gradient-to-r from-gold-500/20 to-amber-600/20 border border-amber-500/30 rounded-lg p-3">
+            <div className="flex justify-between items-center mb-2">
+              <h4 className="font-semibold text-amber-400">
+                🌟 White Label Elite
+              </h4>
+              <span className="text-amber-400 font-bold">$497/mo</span>
+            </div>
+            <ul className="text-gray-300 text-xs space-y-1">
+              <li>• Custom Branding</li>
+              <li>• Subaccount Control</li>
+              <li>• Up to 10 Users Included</li>
+              <li>• Private CRM + API Support</li>
+            </ul>
+          </div>
+
+          {/* Enterprise */}
+          <div className="bg-gradient-to-r from-red-900/30 to-pink-900/30 border border-red-500/30 rounded-lg p-3">
+            <div className="flex justify-between items-center mb-2">
+              <h4 className="font-semibold text-red-400">
+                🚀 Enterprise Solutions
+              </h4>
+              <span className="text-red-400 font-bold">Custom</span>
+            </div>
+            <ul className="text-gray-300 text-xs space-y-1">
+              <li>• Dedicated Infrastructure</li>
+              <li>• Onboarding + Account Exec</li>
+              <li>• Usage-Based Scaling</li>
+              <li>• Strategic AI Architecture</li>
+            </ul>
+          </div>
+
+          <div className="mt-4 text-center">
+            <p className="text-yellow-400 text-xs font-semibold">
+              ✨ Start FREE → Become a Saint at $27 → Scale to Elite ✨
+            </p>
+            <p className="text-gray-400 text-xs mt-1">
+              Annual pricing includes 2 months free!
+            </p>
+          </div>
         </div>
 
         <Label className="text-md mt-4" htmlFor="signup-email">
