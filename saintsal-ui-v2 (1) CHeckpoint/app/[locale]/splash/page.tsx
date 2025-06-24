@@ -26,27 +26,27 @@ export default function SplashPage() {
 
           {/* Main Headline */}
           <div className="mt-8 mb-8">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent mb-4">
               WELCOME TO
             </h1>
-            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent mb-6">
-              SAINTVISIONAI™
+            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent mb-2">
+              SaintVisionAI
             </h1>
-            <p className="text-xl md:text-2xl text-yellow-400/90 font-semibold tracking-wide">
-              YOUR STRATEGIC PARTNER FOR
-            </p>
-            <p className="text-xl md:text-2xl text-yellow-400/90 font-semibold tracking-wide">
-              A SMARTER, BOLDER FUTURE
+            <p className="text-lg text-yellow-400/70 font-medium">
+              Powered by SaintSal™
             </p>
           </div>
 
           {/* Core Message */}
           <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 border border-yellow-500/30 rounded-lg p-8 mb-8">
-            <p className="text-lg md:text-xl text-gray-200 font-medium leading-relaxed mb-6">
-              INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
+            <p className="text-xl md:text-2xl text-gray-200 font-bold leading-relaxed mb-2">
+              "INSIDE THESE WALLS, AI DOESN'T JUST
             </p>
-            <p className="text-lg md:text-xl text-gray-200 font-medium leading-relaxed mb-6">
-              IT ADAPTS. IT EMPOWERS. IT BECOMES YOURS.
+            <p className="text-xl md:text-2xl text-gray-200 font-bold leading-relaxed mb-6">
+              ANSWER. IT ADAPTS. IT EMPOWERS. IT
+            </p>
+            <p className="text-xl md:text-2xl text-gray-200 font-bold leading-relaxed mb-8">
+              BECOMES..."
             </p>
 
             {/* Value Props */}
