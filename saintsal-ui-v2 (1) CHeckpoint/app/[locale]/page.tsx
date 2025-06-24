@@ -19,8 +19,11 @@ export default function HomePage() {
           <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-2">
             "INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
           </p>
-          <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed">
-            IT ADAPTS. IT EMPOWERS. IT BECOMES..."
+          <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-2">
+            IT ADAPTS. IT EMPOWERS. IT BECOMES...
+          </p>
+          <p className="text-3xl md:text-4xl text-yellow-300 font-extrabold leading-relaxed drop-shadow-lg">
+            YOU."
           </p>
         </div>
 
