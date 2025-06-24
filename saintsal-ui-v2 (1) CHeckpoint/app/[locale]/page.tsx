@@ -56,7 +56,7 @@ export default function HomePage() {
               href="/en/workspace1/operations"
               className="group relative flex w-full max-w-[320px] items-center justify-center rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 px-8 py-4 font-bold text-black shadow-2xl transition-all duration-300 hover:from-yellow-400 hover:to-yellow-500 hover:scale-105 hover:-translate-y-1"
             >
-              <span className="text-lg">🔥 Start Cookin - Operations</span>
+              <span className="text-lg">🔥 Start Cooking</span>
               <svg
                 className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
