@@ -13,9 +13,9 @@ export default function HomePage() {
         backgroundAttachment: "fixed"
       }}
     >
-      <div className="flex flex-col items-center w-full p-6 pt-20">
+      <div className="flex flex-col items-center w-full p-6 pt-40">
         {/* Institutional Messaging - First and Prominent */}
-        <div className="bg-black/50 backdrop-blur-lg border border-yellow-500/30 rounded-xl p-6 shadow-2xl text-center mb-8 max-w-4xl mt-16">
+        <div className="bg-black/50 backdrop-blur-lg border border-yellow-500/30 rounded-xl p-6 shadow-2xl text-center mb-8 max-w-4xl mt-24">
           <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-2">
             "INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
           </p>
