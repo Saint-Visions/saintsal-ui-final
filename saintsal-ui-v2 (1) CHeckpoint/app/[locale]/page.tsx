@@ -44,7 +44,7 @@ export default function HomePage() {
             {/* Brand Name */}
             <div className="text-center">
               <h1 className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-5xl font-bold text-transparent drop-shadow-lg">
-                SAINTSAL™
+                SaintVisionAI™
               </h1>
             </div>
           </div>
