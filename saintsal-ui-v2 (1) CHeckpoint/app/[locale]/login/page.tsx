@@ -3,12 +3,12 @@ import { Brand } from "@/components/ui/brand"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { signIn, signUp, resetPassword } from "@/lib/actions/auth"
+import { signIn, resetPassword } from "@/lib/actions/auth"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Sign In - SaintSal™",
-  description: "Access your AI-powered business operations platform"
+  title: "Welcome Back - SaintSal™",
+  description: "Sign in to your AI-powered business operations platform"
 }
 
 function SubmitButton({
@@ -25,14 +25,14 @@ function SubmitButton({
   )
 }
 
-export default function Login({
+export default function LoginPage({
   searchParams
 }: {
   searchParams: { message?: string }
 }) {
   return (
     <div className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md">
-      {/* Sign In Form */}
+      {/* Returning User Sign In */}
       <form
         className="animate-in text-foreground flex w-full flex-1 flex-col justify-center gap-2"
         action={signIn}
@@ -40,11 +40,11 @@ export default function Login({
         <Brand />
 
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-            Welcome Back to SaintSal™
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+            Welcome Back, Chef! 👨‍🍳
           </h1>
           <p className="text-gray-400 text-sm mt-2">
-            Sign in to access your dual AI assistant
+            Ready to get back to cookin' with your dual AI?
           </p>
         </div>
 
@@ -72,8 +72,8 @@ export default function Login({
           required
         />
 
-        <SubmitButton className="mb-2 rounded-md bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2 text-black font-bold hover:from-yellow-400 hover:to-yellow-500">
-          🔥 Sign In
+        <SubmitButton className="mb-4 rounded-md bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2 text-black font-bold hover:from-yellow-400 hover:to-yellow-500">
+          🔥 Sign In & Start Cookin'
         </SubmitButton>
 
         {searchParams?.message && (
@@ -81,47 +81,6 @@ export default function Login({
             {searchParams.message}
           </p>
         )}
-      </form>
-
-      {/* Sign Up Form */}
-      <form
-        className="animate-in text-foreground flex w-full flex-col gap-2 mt-6"
-        action={signUp}
-      >
-        <div className="text-center mb-4">
-          <h2 className="text-lg font-semibold text-yellow-400">
-            New to SaintSal™?
-          </h2>
-          <p className="text-gray-400 text-sm">Start cooking with AI today</p>
-        </div>
-
-        <Label className="text-md" htmlFor="signup-email">
-          Email
-        </Label>
-        <Input
-          className="mb-3 rounded-md border bg-inherit px-4 py-2"
-          name="email"
-          id="signup-email"
-          type="email"
-          placeholder="you@example.com"
-          required
-        />
-
-        <Label className="text-md" htmlFor="signup-password">
-          Password
-        </Label>
-        <Input
-          className="mb-6 rounded-md border bg-inherit px-4 py-2"
-          name="password"
-          id="signup-password"
-          type="password"
-          placeholder="••••••••"
-          required
-        />
-
-        <SubmitButton className="mb-4 rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-500">
-          🚀 Create Account
-        </SubmitButton>
       </form>
 
       {/* Password Reset */}
@@ -147,7 +106,20 @@ export default function Login({
         </div>
       </form>
 
-      {/* Platform Info */}
+      {/* New User CTA */}
+      <div className="mt-8 text-center">
+        <div className="border-t border-gray-700 pt-6">
+          <p className="text-gray-400 text-sm mb-3">First time here?</p>
+          <Link
+            href="/en/signup"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+          >
+            🚀 Start Your SaintSal Journey
+          </Link>
+        </div>
+      </div>
+
+      {/* Platform Status */}
       <div className="mt-8 text-center">
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/20 rounded-lg px-4 py-2">
           <span className="text-yellow-400 font-semibold text-sm">
