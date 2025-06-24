@@ -32,22 +32,31 @@ export default function Login({
 }) {
   return (
     <div className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md">
+      {/* Sign In Form */}
       <form
         className="animate-in text-foreground flex w-full flex-1 flex-col justify-center gap-2"
-        onSubmit={handleLogin}
+        action={signIn}
       >
         <Brand />
+
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+            Welcome Back to SaintSal™
+          </h1>
+          <p className="text-gray-400 text-sm mt-2">
+            Sign in to access your dual AI assistant
+          </p>
+        </div>
 
         <Label className="text-md mt-4" htmlFor="email">
           Email
         </Label>
         <Input
           className="mb-3 rounded-md border bg-inherit px-4 py-2"
+          name="email"
           id="email"
           type="email"
           placeholder="you@example.com"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
           required
         />
 
@@ -56,78 +65,123 @@ export default function Login({
         </Label>
         <Input
           className="mb-6 rounded-md border bg-inherit px-4 py-2"
+          name="password"
           id="password"
           type="password"
           placeholder="••••••••"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
           required
         />
 
-        <Button
-          type="submit"
-          className="mb-2 rounded-md bg-blue-700 px-4 py-2 text-white hover:bg-blue-600"
-          disabled={loading}
-        >
-          {loading ? "Signing in..." : "Login"}
-        </Button>
-
-        <Button
-          type="button"
-          onClick={handleSignUp}
-          variant="outline"
-          className="border-foreground/20 mb-2 rounded-md border px-4 py-2"
-        >
-          Sign Up
-        </Button>
-
-        <div className="text-muted-foreground mt-1 flex justify-center text-sm">
-          <span className="mr-1">Forgot your password?</span>
-          <button
-            type="button"
-            onClick={handleResetPassword}
-            className="text-primary ml-1 underline hover:opacity-80"
-          >
-            Reset
-          </button>
-        </div>
+        <SubmitButton className="mb-2 rounded-md bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2 text-black font-bold hover:from-yellow-400 hover:to-yellow-500">
+          🔥 Sign In
+        </SubmitButton>
 
         {searchParams?.message && (
-          <p className="bg-foreground/10 text-foreground mt-4 p-4 text-center">
+          <p className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded text-center text-sm">
             {searchParams.message}
           </p>
         )}
+      </form>
 
-        {/* Demo Info */}
-        <div className="mt-6 rounded-lg bg-green-900/20 border border-green-500/20 p-4 text-center">
-          <p className="text-green-400 font-semibold text-sm mb-2">
-            ✅ Demo Mode Active
-          </p>
-          <p className="text-green-300 text-xs">
-            Enter any email/password to access the dashboard
-          </p>
+      {/* Sign Up Form */}
+      <form
+        className="animate-in text-foreground flex w-full flex-col gap-2 mt-6"
+        action={signUp}
+      >
+        <div className="text-center mb-4">
+          <h2 className="text-lg font-semibold text-yellow-400">
+            New to SaintSal™?
+          </h2>
+          <p className="text-gray-400 text-sm">Start cooking with AI today</p>
         </div>
 
-        {/* Quick Access Buttons */}
-        <div className="mt-4 space-y-2">
-          <Button
-            type="button"
-            onClick={() => router.push("/en/workspace1/operations")}
-            className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold hover:from-yellow-400 hover:to-yellow-500"
-          >
-            🔥 Quick Access - Operations Dashboard
-          </Button>
+        <Label className="text-md" htmlFor="signup-email">
+          Email
+        </Label>
+        <Input
+          className="mb-3 rounded-md border bg-inherit px-4 py-2"
+          name="email"
+          id="signup-email"
+          type="email"
+          placeholder="you@example.com"
+          required
+        />
 
-          <Button
-            type="button"
-            onClick={() => router.push("/en/workspace1/chat")}
-            variant="outline"
-            className="w-full border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
-          >
-            💬 Quick Access - AI Chat
-          </Button>
+        <Label className="text-md" htmlFor="signup-password">
+          Password
+        </Label>
+        <Input
+          className="mb-6 rounded-md border bg-inherit px-4 py-2"
+          name="password"
+          id="signup-password"
+          type="password"
+          placeholder="••••••••"
+          required
+        />
+
+        <SubmitButton className="mb-4 rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-500">
+          🚀 Create Account
+        </SubmitButton>
+      </form>
+
+      {/* Password Reset */}
+      <form action={resetPassword} className="mt-4">
+        <div className="text-center">
+          <p className="text-gray-400 text-sm">Forgot your password?</p>
+          <Label htmlFor="reset-email" className="sr-only">
+            Email for password reset
+          </Label>
+          <div className="flex gap-2 mt-2">
+            <Input
+              className="flex-1 rounded-md border bg-inherit px-3 py-2 text-sm"
+              name="email"
+              id="reset-email"
+              type="email"
+              placeholder="Enter your email"
+              required
+            />
+            <SubmitButton className="px-4 py-2 text-sm bg-gray-600 hover:bg-gray-500 rounded-md">
+              Reset
+            </SubmitButton>
+          </div>
         </div>
       </form>
+
+      {/* Platform Info */}
+      <div className="mt-8 text-center">
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/20 rounded-lg px-4 py-2">
+          <span className="text-yellow-400 font-semibold text-sm">
+            ✨ Dual AI Platform Ready
+          </span>
+        </div>
+        <p className="text-gray-400 text-xs mt-2">
+          Azure Cognitive Services + OpenAI GPT-4o
+        </p>
+      </div>
+
+      {/* Quick Links */}
+      <div className="mt-6 text-center">
+        <div className="flex justify-center gap-4 text-xs">
+          <Link
+            href="/en/pricing"
+            className="text-purple-400 hover:text-purple-300 underline"
+          >
+            💰 Pricing
+          </Link>
+          <Link
+            href="/en/help"
+            className="text-orange-400 hover:text-orange-300 underline"
+          >
+            ❓ Help
+          </Link>
+          <Link
+            href="/"
+            className="text-cyan-400 hover:text-cyan-300 underline"
+          >
+            🏠 Home
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }
