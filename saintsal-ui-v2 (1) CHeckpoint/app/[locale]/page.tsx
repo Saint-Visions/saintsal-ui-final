@@ -12,9 +12,9 @@ export default function HomePage() {
         backgroundRepeat: "no-repeat"
       }}
     >
-      <div className="flex flex-col items-center justify-start w-full p-4 pt-32 min-h-screen">
+      <div className="flex flex-col items-center justify-start w-full p-4 pt-48 min-h-screen">
         {/* Institutional Messaging */}
-        <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl text-center mb-8 max-w-5xl mt-8">
+        <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl text-center mb-8 max-w-5xl mt-16">
           <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-4">
             "INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
           </p>
