@@ -14,11 +14,11 @@ export default function HomePage() {
     >
       <div className="flex flex-col items-center justify-center w-full p-4">
         {/* Institutional Messaging */}
-        <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl text-center mb-8 max-w-4xl">
-          <p className="text-lg md:text-xl text-yellow-400 font-bold leading-relaxed mb-2">
+        <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl text-center mb-8 max-w-5xl mt-8">
+          <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-4">
             "INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
           </p>
-          <p className="text-lg md:text-xl text-yellow-400 font-bold leading-relaxed mb-6">
+          <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-4">
             IT ADAPTS. IT EMPOWERS. IT BECOMES..."
           </p>
         </div>
