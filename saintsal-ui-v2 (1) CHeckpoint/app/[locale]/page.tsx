@@ -20,10 +20,10 @@ export default function HomePage() {
             "SaintSal™ AI doesn't just answer.
           </p>
           <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-2">
-            It adapts. It empowers. It becomes...
+            It adapts. It empowers. It becomes your...
           </p>
           <p className="text-3xl md:text-4xl text-yellow-300 font-extrabold leading-relaxed drop-shadow-lg">
-            YOU!"
+            GOTTA GUY™!"
           </p>
         </div>
 
