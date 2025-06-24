@@ -7,7 +7,7 @@ import { signIn, resetPassword } from "@/lib/actions/auth"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Welcome Back - SaintSal™",
+  title: "Welcome Back - SaintVisionAI™",
   description: "Sign in to your AI-powered business operations platform"
 }
 
@@ -124,7 +124,7 @@ export default function LoginPage({
                 href="/en/signup"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all"
               >
-                🚀 Start Your SaintSal Journey
+                🚀 Start Your SaintVisionAI Journey
               </Link>
             </div>
           </div>
