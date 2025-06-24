@@ -1,171 +1,58 @@
+"use client"
+
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Brand } from "@/components/ui/brand"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { SubmitButton } from "@/components/ui/submit-button"
-import { createClient } from "@/lib/supabase/server"
-import { Database } from "@/supabase/types"
-import { createServerClient } from "@supabase/ssr"
-import { get } from "@vercel/edge-config"
+import { Button } from "@/components/ui/button"
 import { Metadata } from "next"
-import { cookies, headers } from "next/headers"
-import { redirect } from "next/navigation"
 
-export const metadata: Metadata = {
-  title: "Login"
-}
-
-export default async function Login({
+export default function Login({
   searchParams
 }: {
-  searchParams: { message: string }
+  searchParams: { message?: string }
 }) {
-  const cookieStore = cookies()
-  const supabase = createServerClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value
-        }
+  const router = useRouter()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+
+    // Simulate login process
+    setTimeout(() => {
+      console.log("🔥 Login attempt:", { email, password })
+
+      // For demo purposes - redirect to dashboard
+      if (email && password) {
+        router.push("/en/workspace1/operations")
+      } else {
+        alert("Please enter email and password")
       }
-    }
-  )
-  const session = (await supabase.auth.getSession()).data.session
-
-  if (session) {
-    const { data: homeWorkspace, error } = await supabase
-      .from("workspaces")
-      .select("*")
-      .eq("user_id", session.user.id)
-      .eq("is_home", true)
-      .single()
-
-    if (!homeWorkspace) {
-      throw new Error(error.message)
-    }
-
-    return redirect(`/${homeWorkspace.id}/chat`)
+      setLoading(false)
+    }, 1000)
   }
 
-  const signIn = async (formData: FormData) => {
-    "use server"
-
-    const email = formData.get("email") as string
-    const password = formData.get("password") as string
-    const cookieStore = cookies()
-    const supabase = createClient(cookieStore)
-
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    })
-
-    if (error) {
-      return redirect(`/login?message=${error.message}`)
-    }
-
-    const { data: homeWorkspace, error: homeWorkspaceError } = await supabase
-      .from("workspaces")
-      .select("*")
-      .eq("user_id", data.user.id)
-      .eq("is_home", true)
-      .single()
-
-    if (!homeWorkspace) {
-      throw new Error(
-        homeWorkspaceError?.message || "An unexpected error occurred"
-      )
-    }
-
-    return redirect(`/${homeWorkspace.id}/chat`)
+  const handleSignUp = () => {
+    router.push("/en/setup")
   }
 
-  const getEnvVarOrEdgeConfigValue = async (name: string) => {
-    "use server"
-    if (process.env.EDGE_CONFIG) {
-      return await get<string>(name)
+  const handleResetPassword = () => {
+    if (!email) {
+      alert("Please enter your email first")
+      return
     }
-
-    return process.env[name]
-  }
-
-  const signUp = async (formData: FormData) => {
-    "use server"
-
-    const email = formData.get("email") as string
-    const password = formData.get("password") as string
-
-    const emailDomainWhitelistPatternsString = await getEnvVarOrEdgeConfigValue(
-      "EMAIL_DOMAIN_WHITELIST"
-    )
-    const emailDomainWhitelist = emailDomainWhitelistPatternsString?.trim()
-      ? emailDomainWhitelistPatternsString?.split(",")
-      : []
-    const emailWhitelistPatternsString =
-      await getEnvVarOrEdgeConfigValue("EMAIL_WHITELIST")
-    const emailWhitelist = emailWhitelistPatternsString?.trim()
-      ? emailWhitelistPatternsString?.split(",")
-      : []
-
-    // If there are whitelist patterns, check if the email is allowed to sign up
-    if (emailDomainWhitelist.length > 0 || emailWhitelist.length > 0) {
-      const domainMatch = emailDomainWhitelist?.includes(email.split("@")[1])
-      const emailMatch = emailWhitelist?.includes(email)
-      if (!domainMatch && !emailMatch) {
-        return redirect(
-          `/login?message=Email ${email} is not allowed to sign up.`
-        )
-      }
-    }
-
-    const cookieStore = cookies()
-    const supabase = createClient(cookieStore)
-
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        // USE IF YOU WANT TO SEND EMAIL VERIFICATION, ALSO CHANGE TOML FILE
-        // emailRedirectTo: `${origin}/auth/callback`
-      }
-    })
-
-    if (error) {
-      console.error(error)
-      return redirect(`/login?message=${error.message}`)
-    }
-
-    return redirect("/setup")
-
-    // USE IF YOU WANT TO SEND EMAIL VERIFICATION, ALSO CHANGE TOML FILE
-    // return redirect("/login?message=Check email to continue sign in process")
-  }
-
-  const handleResetPassword = async (formData: FormData) => {
-    "use server"
-
-    const origin = headers().get("origin")
-    const email = formData.get("email") as string
-    const cookieStore = cookies()
-    const supabase = createClient(cookieStore)
-
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${origin}/auth/callback?next=/login/password`
-    })
-
-    if (error) {
-      return redirect(`/login?message=${error.message}`)
-    }
-
-    return redirect("/login?message=Check email to reset password")
+    alert(`Password reset link sent to ${email}`)
   }
 
   return (
     <div className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md">
       <form
         className="animate-in text-foreground flex w-full flex-1 flex-col justify-center gap-2"
-        action={signIn}
+        onSubmit={handleLogin}
       >
         <Brand />
 
@@ -174,8 +61,11 @@ export default async function Login({
         </Label>
         <Input
           className="mb-3 rounded-md border bg-inherit px-4 py-2"
-          name="email"
+          id="email"
+          type="email"
           placeholder="you@example.com"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
           required
         />
 
@@ -184,26 +74,36 @@ export default async function Login({
         </Label>
         <Input
           className="mb-6 rounded-md border bg-inherit px-4 py-2"
+          id="password"
           type="password"
-          name="password"
           placeholder="••••••••"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          required
         />
 
-        <SubmitButton className="mb-2 rounded-md bg-blue-700 px-4 py-2 text-white">
-          Login
-        </SubmitButton>
+        <Button
+          type="submit"
+          className="mb-2 rounded-md bg-blue-700 px-4 py-2 text-white hover:bg-blue-600"
+          disabled={loading}
+        >
+          {loading ? "Signing in..." : "Login"}
+        </Button>
 
-        <SubmitButton
-          formAction={signUp}
+        <Button
+          type="button"
+          onClick={handleSignUp}
+          variant="outline"
           className="border-foreground/20 mb-2 rounded-md border px-4 py-2"
         >
           Sign Up
-        </SubmitButton>
+        </Button>
 
         <div className="text-muted-foreground mt-1 flex justify-center text-sm">
           <span className="mr-1">Forgot your password?</span>
           <button
-            formAction={handleResetPassword}
+            type="button"
+            onClick={handleResetPassword}
             className="text-primary ml-1 underline hover:opacity-80"
           >
             Reset
@@ -215,6 +115,36 @@ export default async function Login({
             {searchParams.message}
           </p>
         )}
+
+        {/* Demo Info */}
+        <div className="mt-6 rounded-lg bg-green-900/20 border border-green-500/20 p-4 text-center">
+          <p className="text-green-400 font-semibold text-sm mb-2">
+            ✅ Demo Mode Active
+          </p>
+          <p className="text-green-300 text-xs">
+            Enter any email/password to access the dashboard
+          </p>
+        </div>
+
+        {/* Quick Access Buttons */}
+        <div className="mt-4 space-y-2">
+          <Button
+            type="button"
+            onClick={() => router.push("/en/workspace1/operations")}
+            className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold hover:from-yellow-400 hover:to-yellow-500"
+          >
+            🔥 Quick Access - Operations Dashboard
+          </Button>
+
+          <Button
+            type="button"
+            onClick={() => router.push("/en/workspace1/chat")}
+            variant="outline"
+            className="w-full border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
+          >
+            💬 Quick Access - AI Chat
+          </Button>
+        </div>
       </form>
     </div>
   )
