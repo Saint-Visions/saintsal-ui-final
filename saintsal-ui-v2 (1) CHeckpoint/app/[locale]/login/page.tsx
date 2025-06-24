@@ -15,11 +15,13 @@ function SubmitButton({
   children,
   className,
   ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: React.ReactNode
-}) {
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & { children: React.ReactNode }) {
   return (
-    <Button type="submit" className={className} {...props}>
+    <Button
+      type="submit"
+      className={className}
+      {...props}
+    >
       {children}
     </Button>
   )
@@ -35,26 +37,25 @@ export default function LoginPage({
       className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md relative"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://cdn.builder.io/api/v1/image/assets%2Fd83998c6a81f466db4fb83ab90c7ba25%2F6564abdef64249dcb9ba82e0ed0ef8af?format=webp&width=800')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        minHeight: "100vh"
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh'
       }}
     >
       {/* Returning User Sign In */}
-      <form
-        className="animate-in text-foreground flex w-full flex-1 flex-col justify-center gap-2"
-        action={signIn}
-      >
+      <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl">
+        <form
+          className="animate-in text-foreground flex w-full flex-1 flex-col justify-center gap-2"
+          action={signIn}
+        >
         <Brand />
 
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
             Welcome Back, Saint! 😇
           </h1>
-          <p className="text-gray-400 text-sm mt-2">
-            Your dual AI sanctuary awaits - ready to elevate your business?
-          </p>
+          <p className="text-gray-400 text-sm mt-2">Your dual AI sanctuary awaits - ready to elevate your business?</p>
         </div>
 
         <Label className="text-md mt-4" htmlFor="email">
@@ -96,9 +97,7 @@ export default function LoginPage({
       <form action={resetPassword} className="mt-4">
         <div className="text-center">
           <p className="text-gray-400 text-sm">Forgot your password?</p>
-          <Label htmlFor="reset-email" className="sr-only">
-            Email for password reset
-          </Label>
+          <Label htmlFor="reset-email" className="sr-only">Email for password reset</Label>
           <div className="flex gap-2 mt-2">
             <Input
               className="flex-1 rounded-md border bg-inherit px-3 py-2 text-sm"
@@ -131,9 +130,7 @@ export default function LoginPage({
       {/* Platform Status */}
       <div className="mt-8 text-center">
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/20 rounded-lg px-4 py-2">
-          <span className="text-yellow-400 font-semibold text-sm">
-            ✨ Dual AI Platform Ready
-          </span>
+          <span className="text-yellow-400 font-semibold text-sm">✨ Dual AI Platform Ready</span>
         </div>
         <p className="text-gray-400 text-xs mt-2">
           Azure Cognitive Services + OpenAI GPT-4o
@@ -143,22 +140,13 @@ export default function LoginPage({
       {/* Quick Links */}
       <div className="mt-6 text-center">
         <div className="flex justify-center gap-4 text-xs">
-          <Link
-            href="/en/pricing"
-            className="text-purple-400 hover:text-purple-300 underline"
-          >
+          <Link href="/en/pricing" className="text-purple-400 hover:text-purple-300 underline">
             💰 Pricing
           </Link>
-          <Link
-            href="/en/help"
-            className="text-orange-400 hover:text-orange-300 underline"
-          >
+          <Link href="/en/help" className="text-orange-400 hover:text-orange-300 underline">
             ❓ Help
           </Link>
-          <Link
-            href="/"
-            className="text-cyan-400 hover:text-cyan-300 underline"
-          >
+          <Link href="/" className="text-cyan-400 hover:text-cyan-300 underline">
             🏠 Home
           </Link>
         </div>
