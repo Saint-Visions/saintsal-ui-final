@@ -1,57 +1,17 @@
-"use client"
-
-import { IconArrowRight } from "@tabler/icons-react"
-import { useTheme } from "next-themes"
-import { useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 
 export default function HomePage() {
-  const { theme } = useTheme()
-  const router = useRouter()
-
-  const handleStartCookin = () => {
-    console.log("🔥 Start Cookin button clicked!")
-
-    try {
-      // Check if we're in Builder.io preview environment
-      const isBuilderPreview =
-        typeof window !== "undefined" &&
-        (window.location.hostname.includes("builder") ||
-          window.location.hostname.includes("fly.dev") ||
-          window.location.href.includes("projects.builder.codes"))
-
-      console.log(
-        "Environment detected:",
-        isBuilderPreview ? "Builder.io Preview" : "Local/Production"
-      )
-
-      if (isBuilderPreview) {
-        // In Builder.io preview, open in new tab to local server
-        console.log("Opening operations dashboard in new tab...")
-        window.open("http://localhost:3000/en/workspace1/operations", "_blank")
-      } else {
-        // In normal environment, use Next.js router
-        console.log("Navigating with Next.js router...")
-        router.push("/en/workspace1/operations")
-      }
-    } catch (error) {
-      console.error("Navigation error:", error)
-      // Ultimate fallback - direct navigation
-      window.location.href = "/en/workspace1/operations"
-    }
-  }
-
   return (
-    <div className="flex size-full flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 p-4">
       {/* SaintSal Logo */}
-      <div className="mb-6 flex flex-col items-center">
-        <div className="relative mb-4">
+      <div className="mb-8 flex flex-col items-center">
+        <div className="relative mb-6">
           <Image
             src="https://cdn.builder.io/api/v1/assets/d83998c6a81f466db4fb83ab90c7ba25/real_svt_logo-d03762?format=webp&width=800"
             alt="SaintSal Logo"
-            width={320}
-            height={320}
+            width={280}
+            height={280}
             className="drop-shadow-2xl"
             priority
           />
@@ -68,54 +28,81 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Enhanced CTA Button - Direct to Operations */}
-      <button
-        onClick={() => {
-          console.log("🔥 Start Cookin button clicked!")
-          // Navigate to operations dashboard
-          if (typeof window !== "undefined") {
-            window.location.href = "/en/operations"
-          }
-        }}
-        className="group relative mt-8 flex w-[280px] items-center justify-center rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 px-6 py-4 font-bold text-black shadow-2xl transition-all duration-300 hover:from-yellow-400 hover:to-yellow-500 hover:shadow-yellow-500/25 hover:scale-110 hover:-translate-y-1 cursor-pointer"
-      >
-        <span className="text-lg">🔥 Start Cookin - Operations</span>
-        <IconArrowRight
-          className="ml-2 transition-transform duration-300 group-hover:translate-x-2"
-          size={20}
-        />
-
-        {/* Glow effect */}
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl blur opacity-30 group-hover:opacity-70 transition duration-300"></div>
-      </button>
-
-      {/* Direct Backup Links */}
-      <div className="mt-4 flex flex-col items-center gap-2">
-        <a
-          href="/en/operations"
-          className="text-green-400 underline hover:text-green-300 transition-colors font-semibold"
+      {/* Navigation Buttons */}
+      <div className="flex flex-col items-center gap-4 max-w-md">
+        {/* Primary CTA - Operations Dashboard */}
+        <Link
+          href="/en/workspace1/operations"
+          className="group relative flex w-full max-w-[320px] items-center justify-center rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 px-8 py-4 font-bold text-black shadow-2xl transition-all duration-300 hover:from-yellow-400 hover:to-yellow-500 hover:scale-105 hover:-translate-y-1"
         >
-          🚀 Direct Link: Open Operations Dashboard
-        </a>
-        <p className="text-gray-500 text-sm">
-          (Click above if button doesn't work)
-        </p>
-      </div>
+          <span className="text-lg">🔥 Start Cookin - Operations</span>
+          <svg
+            className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
 
-      {/* Success Message */}
-      <div className="mt-6 max-w-md text-center">
-        <p className="text-green-400 font-semibold text-lg">
-          ✅ Operations Page is Working!
-        </p>
-        <p className="text-gray-400 text-sm mt-2">
-          Click above to access your AI-powered business features
-        </p>
+          {/* Glow effect */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl blur opacity-30 group-hover:opacity-70 transition duration-300 -z-10"></div>
+        </Link>
+
+        {/* Secondary Navigation */}
+        <div className="flex flex-col sm:flex-row gap-3 w-full">
+          <Link
+            href="/en/workspace1/chat"
+            className="flex-1 rounded-lg bg-blue-600/20 border border-blue-500/30 px-6 py-3 text-center font-semibold text-blue-400 transition-all hover:bg-blue-600/30 hover:border-blue-400/50"
+          >
+            💬 AI Chat
+          </Link>
+
+          <Link
+            href="/en/login"
+            className="flex-1 rounded-lg bg-green-600/20 border border-green-500/30 px-6 py-3 text-center font-semibold text-green-400 transition-all hover:bg-green-600/30 hover:border-green-400/50"
+          >
+            🔐 Sign In
+          </Link>
+        </div>
+
+        {/* Quick Access Links */}
+        <div className="text-center mt-4">
+          <p className="text-gray-400 text-sm mb-2">Quick Access:</p>
+          <div className="flex flex-wrap justify-center gap-2 text-xs">
+            <Link
+              href="/en/pricing"
+              className="text-purple-400 hover:text-purple-300 underline"
+            >
+              💰 Pricing
+            </Link>
+            <span className="text-gray-600">•</span>
+            <Link
+              href="/en/setup"
+              className="text-cyan-400 hover:text-cyan-300 underline"
+            >
+              ⚙️ Setup
+            </Link>
+            <span className="text-gray-600">•</span>
+            <Link
+              href="/en/help"
+              className="text-orange-400 hover:text-orange-300 underline"
+            >
+              ❓ Help
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Features Preview */}
-      <div className="mt-8 max-w-4xl mx-auto">
+      <div className="mt-12 max-w-4xl">
         <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center">
-          🚀 What's Inside Your Operations Dashboard
+          🚀 AI-Powered Business Platform
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-blue-900/20 border border-blue-500/20 rounded-lg p-4 text-center">
@@ -149,34 +136,16 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Enhanced Intro Text */}
-      <div className="mt-8 text-center max-w-2xl px-6">
-        <p className="text-lg text-gray-300 leading-relaxed mb-4">
-          Welcome to the future of{" "}
-          <span className="text-yellow-400 font-semibold">
-            intelligent conversations
-          </span>
-        </p>
-        <p className="text-gray-400 leading-relaxed">
-          SaintSal's premium AI assistant combines cutting-edge technology with
-          intuitive design, delivering{" "}
-          <span className="text-yellow-400">real-time insights</span> and{" "}
-          <span className="text-yellow-400">dynamic support</span>
-          for Saint Vision Technologies and partners.
-        </p>
-
-        {/* Feature highlights */}
-        <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm">
-          <span className="bg-gray-800/50 text-yellow-400 px-3 py-1 rounded-full border border-yellow-400/20">
-            ⚡ Intelligent Ops
-          </span>
-          <span className="bg-gray-800/50 text-yellow-400 px-3 py-1 rounded-full border border-yellow-400/20">
-            🧠 Real-time AI
-          </span>
-          <span className="bg-gray-800/50 text-yellow-400 px-3 py-1 rounded-full border border-yellow-400/20">
-            🔒 Enterprise Ready
+      {/* Status Message */}
+      <div className="mt-8 text-center">
+        <div className="inline-flex items-center gap-2 bg-green-900/20 border border-green-500/20 rounded-lg px-4 py-2">
+          <span className="text-green-400 font-semibold">
+            ✅ All Systems Online
           </span>
         </div>
+        <p className="text-gray-400 text-sm mt-2">
+          SaintSal™ Platform • Ready for Business
+        </p>
       </div>
     </div>
   )
