@@ -7,7 +7,7 @@ import { signUp } from "@/lib/actions/auth"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Join SaintSal™ - Start Cookin'",
+  title: "Join SaintVisionAI™ - Start Cookin'",
   description:
     "Create your account and access dual AI-powered business operations"
 }
@@ -97,7 +97,7 @@ export default function SignUpPage({
             />
 
             <SubmitButton className="mb-4 rounded-md bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 text-white font-bold hover:from-blue-500 hover:to-blue-600">
-              🔥 Create Account & Start Free Trial
+              🔥 Become a Saint & Get Your GOTTA GUY™
             </SubmitButton>
 
             {searchParams?.message && (
