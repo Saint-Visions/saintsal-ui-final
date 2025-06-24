@@ -17,13 +17,13 @@ export default function HomePage() {
         {/* Institutional Messaging - First and Prominent */}
         <div className="bg-black/50 backdrop-blur-lg border border-yellow-500/30 rounded-xl p-6 shadow-2xl text-center mb-8 max-w-4xl mt-24">
           <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-2">
-            "INSIDE THESE WALLS, AI DOESN'T JUST ANSWER.
+            "SaintSal™ AI doesn't just answer.
           </p>
           <p className="text-xl md:text-2xl text-yellow-400 font-bold leading-relaxed mb-2">
-            IT ADAPTS. IT EMPOWERS. IT BECOMES...
+            It adapts. It empowers. It becomes...
           </p>
           <p className="text-3xl md:text-4xl text-yellow-300 font-extrabold leading-relaxed drop-shadow-lg">
-            YOU."
+            Yours!"
           </p>
         </div>
 
