@@ -42,10 +42,10 @@ export default function SignUpPage({
 
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-            Welcome to SaintSal™! 🎉
+            Become a Saint! ✨
           </h1>
           <p className="text-gray-400 text-sm mt-2">
-            Let's get you cookin' with dual AI power
+            Join the elite community of AI-powered business leaders
           </p>
         </div>
 
