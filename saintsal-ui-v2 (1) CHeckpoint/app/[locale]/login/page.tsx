@@ -1,53 +1,35 @@
-"use client"
-
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 import { Brand } from "@/components/ui/brand"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import { signIn, signUp, resetPassword } from "@/lib/actions/auth"
 import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Sign In - SaintSal™",
+  description: "Access your AI-powered business operations platform"
+}
+
+function SubmitButton({
+  children,
+  className,
+  ...props
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: React.ReactNode
+}) {
+  return (
+    <Button type="submit" className={className} {...props}>
+      {children}
+    </Button>
+  )
+}
 
 export default function Login({
   searchParams
 }: {
   searchParams: { message?: string }
 }) {
-  const router = useRouter()
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [loading, setLoading] = useState(false)
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-
-    // Simulate login process
-    setTimeout(() => {
-      console.log("🔥 Login attempt:", { email, password })
-
-      // For demo purposes - redirect to dashboard
-      if (email && password) {
-        router.push("/en/workspace1/operations")
-      } else {
-        alert("Please enter email and password")
-      }
-      setLoading(false)
-    }, 1000)
-  }
-
-  const handleSignUp = () => {
-    router.push("/en/setup")
-  }
-
-  const handleResetPassword = () => {
-    if (!email) {
-      alert("Please enter your email first")
-      return
-    }
-    alert(`Password reset link sent to ${email}`)
-  }
-
   return (
     <div className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md">
       <form
