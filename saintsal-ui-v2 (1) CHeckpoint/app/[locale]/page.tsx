@@ -46,9 +46,6 @@ export default function HomePage() {
               <h1 className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-5xl font-bold text-transparent drop-shadow-lg">
                 SAINTSAL™
               </h1>
-              <p className="mt-2 text-xl font-medium text-yellow-400/80">
-                Cookin' Knowledge.
-              </p>
             </div>
           </div>
 
