@@ -1,0 +1,65 @@
+{
+  "name": "SaintSal™ - Cookin' Knowledge",
+  "short_name": "SaintSal™",
+  "description": "AI-powered business intelligence and automation platform",
+  "start_url": "/en",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "https://cdn.builder.io/api/v1/assets/d83998c6a81f466db4fb83ab90c7ba25/real_svt_logo-d03762?format=webp&width=1080",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow"
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://cdn.builder.io/api/v1/assets/d83998c6a81f466db4fb83ab90c7ba25/favicon-192x192-5218fa?format=webp&width=192",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn.builder.io/api/v1/assets/d83998c6a81f466db4fb83ab90c7ba25/favicon-512x512-0722ac?format=webp&width=512",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "AI Chat",
+      "short_name": "Chat",
+      "description": "Open AI Assistant",
+      "url": "/en/workspace1/chat",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Operations",
+      "short_name": "Ops",
+      "description": "Business Dashboard",
+      "url": "/en/workspace1/operations",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "CRM",
+      "short_name": "CRM",
+      "description": "Customer Management",
+      "url": "/en/crm",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://saintvisionai.com"
+    }
+  ],
+  "prefer_related_applications": false
+}
