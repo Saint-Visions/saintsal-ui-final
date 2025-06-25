@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { SaintVisionWorkspace } from "@/components/workspace/saintvision-workspace"
+import { SaintVisionWorkspaceSimple } from "@/components/workspace/saintvision-workspace-simple"
 
 export const metadata: Metadata = {
   title: "SaintVisionAI™ Workspace",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function OperationsPage() {
-  return <SaintVisionWorkspace />
+  return <SaintVisionWorkspaceSimple />
 }
