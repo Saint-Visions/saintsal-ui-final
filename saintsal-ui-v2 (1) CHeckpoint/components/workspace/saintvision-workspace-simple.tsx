@@ -47,6 +47,8 @@ export function SaintVisionWorkspaceSimple() {
   const router = useRouter()
 
   const handleSidebarClick = (itemId: string) => {
+    console.log("Sidebar clicked:", itemId)
+
     if (itemId === "logout") {
       router.push("/en/login")
       return
@@ -69,9 +71,9 @@ export function SaintVisionWorkspaceSimple() {
       return
     }
 
+    console.log("Setting active section to:", itemId)
     setActiveSection(itemId)
   }
-
   const renderMainContent = () => {
     switch (activeSection) {
       case "dashboard":
