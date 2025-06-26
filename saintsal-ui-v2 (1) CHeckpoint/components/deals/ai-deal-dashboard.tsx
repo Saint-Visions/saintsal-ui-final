@@ -217,7 +217,7 @@ export function AIDealDashboard() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-yellow-400">
-            🧠 SaintSal™ AI Deal Dashboard
+            🧠 SaintVisionAI™ AI Deal Dashboard
           </h2>
           <p className="text-gray-400">
             AI-powered opportunity analysis and CRM integration

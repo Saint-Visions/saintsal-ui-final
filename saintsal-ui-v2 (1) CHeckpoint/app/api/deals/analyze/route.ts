@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
         avg_score: portfolioInsights.average_score,
         high_priority_count: analyzedDeals.filter(d => d.score >= 80).length
       },
-      message: "🧠 Deals analyzed by SaintSal™ AI"
+      message: "🧠 Deals analyzed by SaintVisionAI™ AI"
     })
   } catch (error) {
     console.error("Deal analysis error:", error)

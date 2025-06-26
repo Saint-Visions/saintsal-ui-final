@@ -111,7 +111,8 @@ export async function POST(req: NextRequest) {
               companyData = {
                 name: query,
                 domain: query,
-                description: "Company information enriched by SaintSal™ AI",
+                description:
+                  "Company information enriched by SaintVisionAI™ AI",
                 score: 75
               }
             }
