@@ -203,7 +203,7 @@ export function SaintVisionWorkspaceSimple() {
         </div>
 
         {/* Navigation */}
-        <div className="flex-1 overflow-y-auto p-3 space-y-2">
+        <div className="flex-1 overflow-y-auto p-4 space-y-3">
           {sidebarItems.map(item => (
             <button
               key={item.id}
