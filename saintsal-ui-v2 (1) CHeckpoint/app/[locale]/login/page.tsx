@@ -89,9 +89,9 @@ export default async function LoginPage({
               🔥 Sign In & Start Cookin'
             </SubmitButton>
 
-            {searchParams?.message && (
+            {resolvedSearchParams?.message && (
               <p className="rounded border border-red-400 bg-red-100 px-4 py-3 text-center text-sm text-red-700">
-                {searchParams.message}
+                {resolvedSearchParams.message}
               </p>
             )}
           </form>
