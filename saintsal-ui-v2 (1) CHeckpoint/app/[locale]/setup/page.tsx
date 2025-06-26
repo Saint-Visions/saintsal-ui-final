@@ -7,12 +7,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Welcome Saint! - Setup Your AI Sanctuary",
-  description: "Complete your SaintSal setup and meet your dual AI assistants"
-}
 
 export default function SetupPage() {
   const router = useRouter()
