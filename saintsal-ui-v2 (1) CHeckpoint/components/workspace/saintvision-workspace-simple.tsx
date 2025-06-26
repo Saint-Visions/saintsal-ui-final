@@ -27,24 +27,19 @@ import {
 
 const sidebarItems = [
   { id: "dashboard", label: "Main Dashboard", icon: Home, active: true },
-  { id: "companion", label: "My Companion 🧠", icon: Brain, locked: true },
-  { id: "business", label: "My Business 📁", icon: FileText, locked: true },
-  { id: "notes", label: "Sticky Notes ✍️", icon: FileText, locked: true },
-  { id: "tools", label: "Ai Tools 🛠️🌃", icon: Wrench, locked: true },
-  { id: "generator", label: "Image Generator 🤖", icon: Mic, locked: true },
-  { id: "launchpad", label: "SVG Launchpad 🚀", icon: Users, locked: true },
-  { id: "help", label: "Feedback & Help 🗣️", icon: Settings, locked: true },
-  { id: "crm", label: "PartnerTech.ai CRM", icon: CreditCard, locked: true },
-  { id: "portal", label: "Client Portal 🏟️", icon: Clock, locked: true },
-  {
-    id: "institute",
-    label: "SVT Institute of AI (R + D) 🏛️",
-    icon: Lock,
-    locked: true
-  },
+  { id: "companion", label: "My Companion 🧠", icon: Brain, locked: false },
+  { id: "search", label: "Smart Search 🔍", icon: FileText, locked: true },
+  { id: "leads", label: "Lead Discovery 💎", icon: Users, locked: true },
+  { id: "deals", label: "Deal Analysis 📈", icon: CreditCard, locked: true },
+  { id: "referrals", label: "Referral Network 🤝", icon: Users, locked: true },
+  { id: "crm", label: "GHL CRM Integration", icon: Settings, locked: true },
+  { id: "tools", label: "AI Model Selector 🤖", icon: Wrench, locked: true },
+  { id: "files", label: "File Manager 📁", icon: FileText, locked: true },
+  { id: "voice", label: "Voice Chat 🎤", icon: Mic, locked: true },
+  { id: "mobile", label: "Mobile Export 📱", icon: Settings, locked: true },
+  { id: "account", label: "My Account ⚙️", icon: Settings, locked: true },
   { id: "upgrade", label: "Upgrade Tier ⚡️", icon: Lock, locked: true },
-  { id: "account", label: "My Account 💫", icon: Lock, locked: true },
-  { id: "logout", label: "Logout 👀", icon: LogOut, locked: true }
+  { id: "logout", label: "Logout", icon: LogOut, locked: true }
 ]
 
 export function SaintVisionWorkspaceSimple() {
