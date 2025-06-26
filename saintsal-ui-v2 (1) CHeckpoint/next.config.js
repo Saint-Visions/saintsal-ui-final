@@ -48,10 +48,11 @@ module.exports = withBundleAnalyzer(
       imageSizes: [16, 32, 48, 64, 96, 128, 256, 384]
     },
     experimental: {
-      serverComponentsExternalPackages: ["sharp", "onnxruntime-node"],
       optimizeCss: true,
       optimizePackageImports: ["@tabler/icons-react", "lucide-react"]
     },
+    // Move serverComponentsExternalPackages out of experimental for Next.js 15
+    serverComponentsExternalPackages: ["sharp", "onnxruntime-node"],
     // Enable compression
     compress: true,
     // Optimize bundle
