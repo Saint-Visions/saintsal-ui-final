@@ -13,9 +13,9 @@ import { ReactNode } from "react"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
-const APP_NAME = "SaintSal™"
-const APP_DEFAULT_TITLE = "SaintSal™ — Cookin' Knowledge"
-const APP_TITLE_TEMPLATE = "%s - SaintSal™"
+const APP_NAME = "SaintVisionAI™"
+const APP_DEFAULT_TITLE = "SaintVisionAI™ — Your GOTTA GUY™"
+const APP_TITLE_TEMPLATE = "%s - SaintVisionAI™"
 const APP_DESCRIPTION =
   "The embedded AI system for dynamic support, intelligent ops, and real-time insights — built for Saint Vision Technologies and partners."
 
