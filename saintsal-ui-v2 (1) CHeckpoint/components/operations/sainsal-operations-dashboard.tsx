@@ -49,22 +49,22 @@ export function SaintSalOperationsDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+      <div className="mx-auto max-w-7xl space-y-6">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+        <div className="mb-8 text-center">
+          <h1 className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-4xl font-bold text-transparent">
             🔥 SaintSal™ Operations Dashboard
           </h1>
-          <p className="text-gray-400 mt-2">
+          <p className="mt-2 text-gray-400">
             AI-powered business intelligence and automation platform
           </p>
         </div>
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-          <Card className="bg-gradient-to-br from-blue-900/50 to-blue-800/30 border-blue-500/20">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-6">
+          <Card className="border-blue-500/20 bg-gradient-to-br from-blue-900/50 to-blue-800/30">
             <CardContent className="p-4 text-center">
-              <Search className="h-6 w-6 text-blue-400 mx-auto mb-2" />
+              <Search className="mx-auto mb-2 size-6 text-blue-400" />
               <div className="text-2xl font-bold text-blue-400">
                 {stats.leads_discovered}
               </div>
@@ -72,9 +72,9 @@ export function SaintSalOperationsDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-green-900/50 to-green-800/30 border-green-500/20">
+          <Card className="border-green-500/20 bg-gradient-to-br from-green-900/50 to-green-800/30">
             <CardContent className="p-4 text-center">
-              <Users className="h-6 w-6 text-green-400 mx-auto mb-2" />
+              <Users className="mx-auto mb-2 size-6 text-green-400" />
               <div className="text-2xl font-bold text-green-400">
                 {stats.active_referrals}
               </div>
@@ -82,9 +82,9 @@ export function SaintSalOperationsDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 border-purple-500/20">
+          <Card className="border-purple-500/20 bg-gradient-to-br from-purple-900/50 to-purple-800/30">
             <CardContent className="p-4 text-center">
-              <Brain className="h-6 w-6 text-purple-400 mx-auto mb-2" />
+              <Brain className="mx-auto mb-2 size-6 text-purple-400" />
               <div className="text-2xl font-bold text-purple-400">
                 {stats.deals_analyzed}
               </div>
@@ -92,9 +92,9 @@ export function SaintSalOperationsDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-pink-900/50 to-pink-800/30 border-pink-500/20">
+          <Card className="border-pink-500/20 bg-gradient-to-br from-pink-900/50 to-pink-800/30">
             <CardContent className="p-4 text-center">
-              <Smartphone className="h-6 w-6 text-pink-400 mx-auto mb-2" />
+              <Smartphone className="mx-auto mb-2 size-6 text-pink-400" />
               <div className="text-2xl font-bold text-pink-400">
                 {stats.mobile_users}
               </div>
@@ -102,9 +102,9 @@ export function SaintSalOperationsDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-yellow-900/50 to-yellow-800/30 border-yellow-500/20">
+          <Card className="border-yellow-500/20 bg-gradient-to-br from-yellow-900/50 to-yellow-800/30">
             <CardContent className="p-4 text-center">
-              <TrendingUp className="h-6 w-6 text-yellow-400 mx-auto mb-2" />
+              <TrendingUp className="mx-auto mb-2 size-6 text-yellow-400" />
               <div className="text-2xl font-bold text-yellow-400">
                 ${(stats.total_revenue / 1000000).toFixed(1)}M
               </div>
@@ -112,9 +112,9 @@ export function SaintSalOperationsDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-orange-900/50 to-orange-800/30 border-orange-500/20">
+          <Card className="border-orange-500/20 bg-gradient-to-br from-orange-900/50 to-orange-800/30">
             <CardContent className="p-4 text-center">
-              <Zap className="h-6 w-6 text-orange-400 mx-auto mb-2" />
+              <Zap className="mx-auto mb-2 size-6 text-orange-400" />
               <div className="text-2xl font-bold text-orange-400">
                 {stats.ai_insights}
               </div>
@@ -130,42 +130,42 @@ export function SaintSalOperationsDashboard() {
               value="overview"
               className="data-[state=active]:bg-yellow-500/20"
             >
-              <Settings className="h-4 w-4 mr-2" />
+              <Settings className="mr-2 size-4" />
               Overview
             </TabsTrigger>
             <TabsTrigger
               value="leads"
               className="data-[state=active]:bg-blue-500/20"
             >
-              <Search className="h-4 w-4 mr-2" />
+              <Search className="mr-2 size-4" />
               Lead Discovery
             </TabsTrigger>
             <TabsTrigger
               value="referrals"
               className="data-[state=active]:bg-green-500/20"
             >
-              <Users className="h-4 w-4 mr-2" />
+              <Users className="mr-2 size-4" />
               Referral Network
             </TabsTrigger>
             <TabsTrigger
               value="deals"
               className="data-[state=active]:bg-purple-500/20"
             >
-              <Brain className="h-4 w-4 mr-2" />
+              <Brain className="mr-2 size-4" />
               AI Deal Analysis
             </TabsTrigger>
             <TabsTrigger
               value="mobile"
               className="data-[state=active]:bg-pink-500/20"
             >
-              <Smartphone className="h-4 w-4 mr-2" />
+              <Smartphone className="mr-2 size-4" />
               Mobile Export
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="overview" className="space-y-6 mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-gradient-to-br from-gray-900 to-black border-yellow-500/20">
+          <TabsContent value="overview" className="mt-6 space-y-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <Card className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black">
                 <CardHeader>
                   <CardTitle className="text-yellow-400">
                     🚀 System Status
@@ -173,7 +173,7 @@ export function SaintSalOperationsDashboard() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <span className="text-gray-300">
                         Lead Discovery Engine
                       </span>
@@ -181,25 +181,25 @@ export function SaintSalOperationsDashboard() {
                         ✅ Active
                       </Badge>
                     </div>
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <span className="text-gray-300">Referral Tracking</span>
                       <Badge className="bg-green-500 text-white">
                         ✅ Active
                       </Badge>
                     </div>
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <span className="text-gray-300">AI Deal Analysis</span>
                       <Badge className="bg-green-500 text-white">
                         ✅ Active
                       </Badge>
                     </div>
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <span className="text-gray-300">GHL Integration</span>
                       <Badge className="bg-green-500 text-white">
                         ✅ Connected
                       </Badge>
                     </div>
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <span className="text-gray-300">Mobile App</span>
                       <Badge className="bg-yellow-500 text-black">
                         📱 Ready to Deploy
@@ -209,7 +209,7 @@ export function SaintSalOperationsDashboard() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-gray-900 to-black border-green-500/20">
+              <Card className="border-green-500/20 bg-gradient-to-br from-gray-900 to-black">
                 <CardHeader>
                   <CardTitle className="text-green-400">
                     📈 Performance Metrics
@@ -221,7 +221,7 @@ export function SaintSalOperationsDashboard() {
                       <span className="text-gray-300">
                         Lead Conversion Rate
                       </span>
-                      <span className="text-green-400 font-semibold">
+                      <span className="font-semibold text-green-400">
                         18.4%
                       </span>
                     </div>
@@ -229,25 +229,25 @@ export function SaintSalOperationsDashboard() {
                       <span className="text-gray-300">
                         Referral Success Rate
                       </span>
-                      <span className="text-green-400 font-semibold">
+                      <span className="font-semibold text-green-400">
                         31.2%
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-300">AI Accuracy Score</span>
-                      <span className="text-green-400 font-semibold">
+                      <span className="font-semibold text-green-400">
                         94.7%
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-300">Mobile App Rating</span>
-                      <span className="text-green-400 font-semibold">
+                      <span className="font-semibold text-green-400">
                         4.9 ⭐
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-300">User Satisfaction</span>
-                      <span className="text-green-400 font-semibold">
+                      <span className="font-semibold text-green-400">
                         96.8%
                       </span>
                     </div>
@@ -256,7 +256,7 @@ export function SaintSalOperationsDashboard() {
               </Card>
             </div>
 
-            <Card className="bg-gradient-to-br from-gray-900 to-black border-purple-500/20">
+            <Card className="border-purple-500/20 bg-gradient-to-br from-gray-900 to-black">
               <CardHeader>
                 <CardTitle className="text-purple-400">
                   🧠 Recent AI Insights
@@ -264,29 +264,29 @@ export function SaintSalOperationsDashboard() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <div className="p-3 bg-purple-900/20 rounded-lg">
-                    <div className="text-purple-300 font-medium">
+                  <div className="rounded-lg bg-purple-900/20 p-3">
+                    <div className="font-medium text-purple-300">
                       High-Value Lead Detected
                     </div>
-                    <div className="text-gray-400 text-sm">
+                    <div className="text-sm text-gray-400">
                       Enterprise client in fintech sector, 85% conversion
                       probability
                     </div>
                   </div>
-                  <div className="p-3 bg-green-900/20 rounded-lg">
-                    <div className="text-green-300 font-medium">
+                  <div className="rounded-lg bg-green-900/20 p-3">
+                    <div className="font-medium text-green-300">
                       Referral Network Optimization
                     </div>
-                    <div className="text-gray-400 text-sm">
+                    <div className="text-sm text-gray-400">
                       Partner "SAINTTECH2024" showing 43% above average
                       performance
                     </div>
                   </div>
-                  <div className="p-3 bg-blue-900/20 rounded-lg">
-                    <div className="text-blue-300 font-medium">
+                  <div className="rounded-lg bg-blue-900/20 p-3">
+                    <div className="font-medium text-blue-300">
                       Deal Portfolio Analysis
                     </div>
-                    <div className="text-gray-400 text-sm">
+                    <div className="text-sm text-gray-400">
                       3 deals identified as "closing soon" - focus recommended
                     </div>
                   </div>
@@ -314,7 +314,7 @@ export function SaintSalOperationsDashboard() {
 
           <TabsContent value="mobile" className="mt-6">
             <div className="space-y-6">
-              <Card className="bg-gradient-to-br from-gray-900 to-black border-pink-500/20">
+              <Card className="border-pink-500/20 bg-gradient-to-br from-gray-900 to-black">
                 <CardHeader>
                   <CardTitle className="text-pink-400">
                     📱 SaintSal™ Mobile App Export
@@ -327,12 +327,12 @@ export function SaintSalOperationsDashboard() {
                       and Android apps.
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="p-4 bg-blue-900/20 rounded-lg">
-                        <h4 className="text-blue-400 font-semibold mb-2">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                      <div className="rounded-lg bg-blue-900/20 p-4">
+                        <h4 className="mb-2 font-semibold text-blue-400">
                           🤖 Android App
                         </h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
+                        <ul className="space-y-1 text-sm text-gray-300">
                           <li>• Native Android performance</li>
                           <li>• Google Play Store ready</li>
                           <li>• Push notifications</li>
@@ -340,11 +340,11 @@ export function SaintSalOperationsDashboard() {
                         </ul>
                       </div>
 
-                      <div className="p-4 bg-gray-700/20 rounded-lg">
-                        <h4 className="text-gray-400 font-semibold mb-2">
+                      <div className="rounded-lg bg-gray-700/20 p-4">
+                        <h4 className="mb-2 font-semibold text-gray-400">
                           🍎 iOS App
                         </h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
+                        <ul className="space-y-1 text-sm text-gray-300">
                           <li>• Native iOS performance</li>
                           <li>• App Store distribution</li>
                           <li>• iOS-specific features</li>
@@ -354,10 +354,10 @@ export function SaintSalOperationsDashboard() {
                     </div>
 
                     <div className="space-y-3">
-                      <h4 className="text-yellow-400 font-semibold">
+                      <h4 className="font-semibold text-yellow-400">
                         Mobile Build Process:
                       </h4>
-                      <div className="bg-black p-4 rounded-lg font-mono text-sm text-green-400">
+                      <div className="rounded-lg bg-black p-4 font-mono text-sm text-green-400">
                         <div># 1. Run the mobile build script</div>
                         <div>node scripts/mobile-build.js</div>
                         <div className="mt-2"># 2. Open native IDEs</div>
@@ -374,7 +374,7 @@ export function SaintSalOperationsDashboard() {
                         onClick={handleMobileExport}
                         className="bg-gradient-to-r from-pink-500 to-pink-700 text-white"
                       >
-                        <Download className="mr-2 h-4 w-4" />
+                        <Download className="mr-2 size-4" />
                         Start Mobile Build
                       </Button>
                       <Button
@@ -387,11 +387,11 @@ export function SaintSalOperationsDashboard() {
                       </Button>
                     </div>
 
-                    <div className="p-4 bg-yellow-900/20 rounded-lg border border-yellow-500/20">
-                      <div className="text-yellow-400 font-semibold mb-2">
+                    <div className="rounded-lg border border-yellow-500/20 bg-yellow-900/20 p-4">
+                      <div className="mb-2 font-semibold text-yellow-400">
                         🔥 Ready for App Stores!
                       </div>
-                      <p className="text-gray-300 text-sm">
+                      <p className="text-sm text-gray-300">
                         Your SaintSal™ mobile apps include all premium
                         features: lead discovery, referral tracking, AI deal
                         analysis, and full CRM integration - all optimized for

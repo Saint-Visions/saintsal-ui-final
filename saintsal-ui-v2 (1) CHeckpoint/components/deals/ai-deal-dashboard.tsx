@@ -232,12 +232,12 @@ export function AIDealDashboard() {
           >
             {analyzing ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader2 className="mr-2 size-4 animate-spin" />
                 Analyzing...
               </>
             ) : (
               <>
-                <Brain className="mr-2 h-4 w-4" />
+                <Brain className="mr-2 size-4" />
                 AI Analyze
               </>
             )}
@@ -250,12 +250,12 @@ export function AIDealDashboard() {
           >
             {loading ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader2 className="mr-2 size-4 animate-spin" />
                 Pushing...
               </>
             ) : (
               <>
-                <Send className="mr-2 h-4 w-4" />
+                <Send className="mr-2 size-4" />
                 Push to GHL
               </>
             )}
@@ -265,8 +265,8 @@ export function AIDealDashboard() {
 
       {/* Portfolio Overview */}
       {portfolioInsights && (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <Card className="bg-gradient-to-br from-gray-900 to-black border-green-500/20">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+          <Card className="border-green-500/20 bg-gradient-to-br from-gray-900 to-black">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -275,12 +275,12 @@ export function AIDealDashboard() {
                     ${portfolioInsights.total_value.toLocaleString()}
                   </p>
                 </div>
-                <DollarSign className="h-8 w-8 text-green-400" />
+                <DollarSign className="size-8 text-green-400" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-gray-900 to-black border-yellow-500/20">
+          <Card className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -289,12 +289,12 @@ export function AIDealDashboard() {
                     {portfolioInsights.average_score}%
                   </p>
                 </div>
-                <Star className="h-8 w-8 text-yellow-400" />
+                <Star className="size-8 text-yellow-400" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-gray-900 to-black border-blue-500/20">
+          <Card className="border-blue-500/20 bg-gradient-to-br from-gray-900 to-black">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -303,12 +303,12 @@ export function AIDealDashboard() {
                     {portfolioInsights.high_priority_deals}
                   </p>
                 </div>
-                <TrendingUp className="h-8 w-8 text-blue-400" />
+                <TrendingUp className="size-8 text-blue-400" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-gray-900 to-black border-red-500/20">
+          <Card className="border-red-500/20 bg-gradient-to-br from-gray-900 to-black">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -317,7 +317,7 @@ export function AIDealDashboard() {
                     {portfolioInsights.at_risk_deals}
                   </p>
                 </div>
-                <AlertTriangle className="h-8 w-8 text-red-400" />
+                <AlertTriangle className="size-8 text-red-400" />
               </div>
             </CardContent>
           </Card>
@@ -336,7 +336,7 @@ export function AIDealDashboard() {
           {deals.map(deal => (
             <Card
               key={deal.id}
-              className="bg-gradient-to-br from-gray-900 to-black border-yellow-500/20"
+              className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black"
             >
               <CardHeader>
                 <div className="flex items-center justify-between">
@@ -373,17 +373,17 @@ export function AIDealDashboard() {
                           )
                         }
                       }}
-                      className="w-4 h-4"
+                      className="size-4"
                     />
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Value:</span>
-                      <span className="text-green-400 font-semibold">
+                      <span className="font-semibold text-green-400">
                         ${deal.value.toLocaleString()}
                       </span>
                     </div>
@@ -408,7 +408,7 @@ export function AIDealDashboard() {
                       <h4 className="text-sm font-semibold text-purple-400">
                         AI Insights:
                       </h4>
-                      <ul className="text-xs text-gray-300 space-y-1">
+                      <ul className="space-y-1 text-xs text-gray-300">
                         {deal.ai_insights.slice(0, 3).map((insight, i) => (
                           <li key={i}>• {insight}</li>
                         ))}
@@ -419,7 +419,7 @@ export function AIDealDashboard() {
 
                 {deal.score && (
                   <div className="mt-4">
-                    <div className="flex justify-between text-sm mb-1">
+                    <div className="mb-1 flex justify-between text-sm">
                       <span className="text-gray-400">AI Score</span>
                       <span className="text-white">{deal.score}%</span>
                     </div>
@@ -428,17 +428,17 @@ export function AIDealDashboard() {
                 )}
 
                 {deal.recommended_actions && (
-                  <div className="mt-4 pt-4 border-t border-gray-700">
-                    <h4 className="text-sm font-semibold text-green-400 mb-2">
+                  <div className="mt-4 border-t border-gray-700 pt-4">
+                    <h4 className="mb-2 text-sm font-semibold text-green-400">
                       Recommended Actions:
                     </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                       {deal.recommended_actions.slice(0, 4).map((action, i) => (
                         <Button
                           key={i}
                           variant="outline"
                           size="sm"
-                          className="text-xs justify-start"
+                          className="justify-start text-xs"
                         >
                           {action}
                         </Button>
@@ -452,11 +452,11 @@ export function AIDealDashboard() {
         </TabsContent>
 
         <TabsContent value="analytics" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="bg-gradient-to-br from-gray-900 to-black border-yellow-500/20">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <Card className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-yellow-400">
-                  <BarChart3 className="h-5 w-5" />
+                  <BarChart3 className="size-5" />
                   Deal Stages
                 </CardTitle>
               </CardHeader>
@@ -478,10 +478,10 @@ export function AIDealDashboard() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-gray-900 to-black border-green-500/20">
+            <Card className="border-green-500/20 bg-gradient-to-br from-gray-900 to-black">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-green-400">
-                  <PieChartIcon className="h-5 w-5" />
+                  <PieChartIcon className="size-5" />
                   Score Distribution
                 </CardTitle>
               </CardHeader>
@@ -515,7 +515,7 @@ export function AIDealDashboard() {
 
         <TabsContent value="insights" className="space-y-4">
           {portfolioInsights && (
-            <Card className="bg-gradient-to-br from-gray-900 to-black border-purple-500/20">
+            <Card className="border-purple-500/20 bg-gradient-to-br from-gray-900 to-black">
               <CardHeader>
                 <CardTitle className="text-purple-400">
                   Portfolio Recommendations
@@ -525,7 +525,7 @@ export function AIDealDashboard() {
                 <div className="space-y-2">
                   {portfolioInsights.recommendations.map((rec, i) => (
                     <div key={i} className="flex items-start gap-2">
-                      <Brain className="h-4 w-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                      <Brain className="mt-0.5 size-4 shrink-0 text-purple-400" />
                       <span className="text-gray-300">{rec}</span>
                     </div>
                   ))}

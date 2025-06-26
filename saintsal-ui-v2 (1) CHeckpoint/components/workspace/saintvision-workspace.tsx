@@ -88,15 +88,15 @@ export function SaintVisionWorkspace() {
         return <SaintSalOperationsDashboard />
       case "companion":
         return (
-          <div className="h-full flex flex-col">
+          <div className="flex h-full flex-col">
             {chatMessages.length === 0 ? (
               <div className="relative flex h-full flex-col items-center justify-center">
                 <div className="top-50% left-50% -translate-x-50% -translate-y-50% absolute mb-20 flex flex-col items-center">
                   <div className="text-center">
-                    <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                    <h2 className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-3xl font-bold text-transparent">
                       Your GOTTA GUY™ Companion
                     </h2>
-                    <p className="mt-2 text-lg text-yellow-400/80 font-medium">
+                    <p className="mt-2 text-lg font-medium text-yellow-400/80">
                       Azure Cognitive + OpenAI GPT-4o
                     </p>
                   </div>
@@ -123,9 +123,9 @@ export function SaintVisionWorkspace() {
         return <AIDealDashboard />
       default:
         return (
-          <div className="flex items-center justify-center h-full">
+          <div className="flex h-full items-center justify-center">
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+              <h3 className="mb-4 text-2xl font-bold text-yellow-400">
                 Coming Soon
               </h3>
               <p className="text-gray-400">
@@ -149,19 +149,19 @@ export function SaintVisionWorkspace() {
       }}
     >
       {/* Sidebar */}
-      <div className="w-80 bg-black/50 backdrop-blur-lg border-r border-yellow-500/20 flex flex-col">
+      <div className="flex w-80 flex-col border-r border-yellow-500/20 bg-black/50 backdrop-blur-lg">
         {/* Header */}
-        <div className="p-4 border-b border-yellow-500/20">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center">
-              <span className="text-black font-bold text-xl">SV</span>
+        <div className="border-b border-yellow-500/20 p-4">
+          <div className="mb-4 flex items-center gap-3">
+            <div className="flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600">
+              <span className="text-xl font-bold text-black">SV</span>
             </div>
             <div>
               <h1 className="text-xl font-bold text-yellow-400">
                 SaintVisionAI™
               </h1>
               <div className="flex items-center gap-2">
-                <span className="text-xs bg-yellow-400/20 text-yellow-400 px-2 py-1 rounded-full font-bold">
+                <span className="rounded-full bg-yellow-400/20 px-2 py-1 text-xs font-bold text-yellow-400">
                   FREE🔥
                 </span>
               </div>
@@ -170,70 +170,70 @@ export function SaintVisionWorkspace() {
         </div>
 
         {/* Navigation */}
-        <div className="flex-1 overflow-y-auto p-3 space-y-2">
+        <div className="flex-1 space-y-2 overflow-y-auto p-3">
           {sidebarItems.map(item => (
             <button
               key={item.id}
               onClick={() => handleSidebarClick(item.id)}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-200 ${
+              className={`flex w-full items-center gap-3 rounded-2xl px-4 py-3 transition-all duration-200 ${
                 item.active || activeSection === item.id
-                  ? "bg-gray-500/50 text-yellow-400 border border-yellow-500/30"
+                  ? "border border-yellow-500/30 bg-gray-500/50 text-yellow-400"
                   : item.locked
-                    ? "bg-gray-800/30 text-gray-400 opacity-30 border border-yellow-500/10"
-                    : "bg-gray-800/30 text-yellow-400/70 border border-yellow-500/10 hover:bg-gray-700/40 hover:text-yellow-400"
+                    ? "border border-yellow-500/10 bg-gray-800/30 text-gray-400 opacity-30"
+                    : "border border-yellow-500/10 bg-gray-800/30 text-yellow-400/70 hover:bg-gray-700/40 hover:text-yellow-400"
               }`}
               disabled={item.locked && item.id !== "upgrade"}
             >
-              <item.icon className="w-4 h-4 flex-shrink-0" />
-              <span className="text-sm font-medium truncate">{item.label}</span>
+              <item.icon className="size-4 shrink-0" />
+              <span className="truncate text-sm font-medium">{item.label}</span>
               {item.locked && (
-                <Lock className="w-3 h-3 ml-auto flex-shrink-0" />
+                <Lock className="ml-auto size-3 shrink-0" />
               )}
             </button>
           ))}
         </div>
 
         {/* Upgrade Section */}
-        <div className="p-4 border-t border-yellow-500/20">
-          <div className="text-center mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl mx-auto mb-3 flex items-center justify-center">
-              <span className="text-black font-bold text-lg">SV</span>
+        <div className="border-t border-yellow-500/20 p-4">
+          <div className="mb-4 text-center">
+            <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600">
+              <span className="text-lg font-bold text-black">SV</span>
             </div>
-            <h3 className="text-lg font-bold text-yellow-400 mb-1">
+            <h3 className="mb-1 text-lg font-bold text-yellow-400">
               Upgrade to Unlimited
             </h3>
-            <p className="text-sm text-gray-400 mb-3">
+            <p className="mb-3 text-sm text-gray-400">
               Generate Premium Content by upgrading to an unlimited plan!
             </p>
-            <Button className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-2xl py-3">
+            <Button className="w-full rounded-2xl bg-gradient-to-r from-yellow-500 to-yellow-600 py-3 font-bold text-black">
               Get started with PRO
             </Button>
-            <p className="text-sm text-gray-400 mt-2">Join 80,000+ users now</p>
+            <p className="mt-2 text-sm text-gray-400">Join 80,000+ users now</p>
           </div>
         </div>
 
         {/* User Profile */}
-        <div className="p-4 border-t border-yellow-500/20">
+        <div className="border-t border-yellow-500/20 p-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center">
-              <span className="text-yellow-400 font-bold text-sm">AP</span>
+            <div className="flex size-10 items-center justify-center rounded-full bg-gray-500">
+              <span className="text-sm font-bold text-yellow-400">AP</span>
             </div>
             <div className="flex-1">
               <div className="text-sm font-bold text-yellow-400">
                 Saint Gottaguy
               </div>
             </div>
-            <div className="w-10 h-10 border border-yellow-500/30 rounded-full flex items-center justify-center">
-              <ChevronRight className="w-4 h-4 text-yellow-400" />
+            <div className="flex size-10 items-center justify-center rounded-full border border-yellow-500/30">
+              <ChevronRight className="size-4 text-yellow-400" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden">
         {/* Top Bar */}
-        <div className="h-16 bg-black/30 backdrop-blur-sm border-b border-yellow-500/20 flex items-center justify-between px-6">
+        <div className="flex h-16 items-center justify-between border-b border-yellow-500/20 bg-black/30 px-6 backdrop-blur-sm">
           <div className="flex items-center gap-4">
             <h2 className="text-xl font-bold text-yellow-400">
               {sidebarItems.find(item => item.id === activeSection)?.label ||

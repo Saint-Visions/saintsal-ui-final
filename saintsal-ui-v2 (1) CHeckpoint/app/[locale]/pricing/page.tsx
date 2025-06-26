@@ -16,14 +16,14 @@ export default function PricingPage() {
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-purple-500/10"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent mb-6">
+        <div className="relative mx-auto max-w-7xl px-6 py-24 text-center">
+          <h1 className="mb-6 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-5xl font-bold text-transparent md:text-6xl">
             Plans for Every Operator
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="mx-auto mb-8 max-w-3xl text-xl text-gray-300 md:text-2xl">
             Whether you're starting or scaling — SaintSal™ grows with you.
           </p>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400">
             Transform your business with AI-powered lead discovery, intelligent
             deal analysis, and automated referral networks. Choose the plan that
             matches your ambition.
@@ -32,20 +32,20 @@ export default function PricingPage() {
       </div>
 
       {/* Pricing Cards Section */}
-      <div className="max-w-7xl mx-auto px-6 pb-16">
+      <div className="mx-auto max-w-7xl px-6 pb-16">
         <PricingCards />
       </div>
 
       {/* Features Comparison */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        <h2 className="mb-12 text-center text-3xl font-bold text-white">
           Why Choose SaintSal™?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-gradient-to-br from-blue-900/50 to-blue-800/30 border border-blue-500/20">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <Card className="border border-blue-500/20 bg-gradient-to-br from-blue-900/50 to-blue-800/30">
             <CardContent className="p-6 text-center">
-              <Users className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-blue-400 mb-3">
+              <Users className="mx-auto mb-4 size-12 text-blue-400" />
+              <h3 className="mb-3 text-xl font-semibold text-blue-400">
                 AI-Powered Lead Discovery
               </h3>
               <p className="text-gray-300">
@@ -55,10 +55,10 @@ export default function PricingPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 border border-purple-500/20">
+          <Card className="border border-purple-500/20 bg-gradient-to-br from-purple-900/50 to-purple-800/30">
             <CardContent className="p-6 text-center">
-              <Zap className="h-12 w-12 text-purple-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-purple-400 mb-3">
+              <Zap className="mx-auto mb-4 size-12 text-purple-400" />
+              <h3 className="mb-3 text-xl font-semibold text-purple-400">
                 Intelligent Deal Analysis
               </h3>
               <p className="text-gray-300">
@@ -68,10 +68,10 @@ export default function PricingPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-green-900/50 to-green-800/30 border border-green-500/20">
+          <Card className="border border-green-500/20 bg-gradient-to-br from-green-900/50 to-green-800/30">
             <CardContent className="p-6 text-center">
-              <Shield className="h-12 w-12 text-green-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-green-400 mb-3">
+              <Shield className="mx-auto mb-4 size-12 text-green-400" />
+              <h3 className="mb-3 text-xl font-semibold text-green-400">
                 Enterprise Security
               </h3>
               <p className="text-gray-300">
@@ -84,25 +84,25 @@ export default function PricingPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-yellow-900/50 to-yellow-800/30 border-t border-yellow-500/20">
-        <div className="max-w-4xl mx-auto px-6 py-16 text-center">
-          <h2 className="text-4xl font-bold text-yellow-400 mb-6">
+      <div className="border-t border-yellow-500/20 bg-gradient-to-r from-yellow-900/50 to-yellow-800/30">
+        <div className="mx-auto max-w-4xl px-6 py-16 text-center">
+          <h2 className="mb-6 text-4xl font-bold text-yellow-400">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-300">
             Join thousands of businesses already using SaintSal™ to accelerate
             their growth with AI-powered automation.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold px-8 py-4 hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-yellow-500 to-yellow-600 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:from-yellow-400 hover:to-yellow-500"
             >
               <a href="/en/setup">
                 Get Started Now
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 size-5" />
               </a>
             </Button>
 
@@ -110,71 +110,71 @@ export default function PricingPage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-4"
+              className="border-gray-600 px-8 py-4 text-gray-300 hover:bg-gray-800"
             >
               <a href="/en/setup">Contact Sales</a>
             </Button>
           </div>
 
-          <p className="text-gray-400 mt-6 text-sm">
+          <p className="mt-6 text-sm text-gray-400">
             No setup fees • Cancel anytime • 30-day money-back guarantee
           </p>
         </div>
       </div>
 
       {/* Social Proof */}
-      <div className="bg-gradient-to-r from-gray-900 to-black border-t border-gray-700">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="text-center text-gray-400 mb-2 text-lg">
+      <div className="border-t border-gray-700 bg-gradient-to-r from-gray-900 to-black">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <p className="mb-2 text-center text-lg text-gray-400">
             Trusted by innovative businesses worldwide
           </p>
-          <p className="text-center text-gray-500 mb-12 text-sm">
+          <p className="mb-12 text-center text-sm text-gray-500">
             Join 80,000+ operators already scaling with SaintVisionAI™
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+          <div className="grid grid-cols-2 place-items-center gap-12 md:grid-cols-4">
+            <div className="text-3xl font-bold text-gray-400 transition-colors hover:text-gray-300">
               Microsoft
             </div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+            <div className="text-3xl font-bold text-gray-400 transition-colors hover:text-gray-300">
               Tesla
             </div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+            <div className="text-3xl font-bold text-gray-400 transition-colors hover:text-gray-300">
               SpaceX
             </div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+            <div className="text-3xl font-bold text-gray-400 transition-colors hover:text-gray-300">
               Goldman Sachs
             </div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+            <div className="text-3xl font-bold text-gray-400 transition-colors hover:text-gray-300">
               Apple
             </div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+            <div className="text-3xl font-bold text-gray-400 transition-colors hover:text-gray-300">
               OpenAI
             </div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+            <div className="text-3xl font-bold text-gray-400 transition-colors hover:text-gray-300">
               NVIDIA
             </div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+            <div className="text-3xl font-bold text-gray-400 transition-colors hover:text-gray-300">
               Amazon
             </div>
           </div>
 
           {/* Enhanced Trust Elements */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="bg-gradient-to-br from-green-900/20 to-green-800/10 border border-green-500/20 rounded-lg p-6">
-              <div className="text-green-400 text-2xl font-bold mb-2">
+          <div className="mt-16 grid grid-cols-1 gap-8 text-center md:grid-cols-3">
+            <div className="rounded-lg border border-green-500/20 bg-gradient-to-br from-green-900/20 to-green-800/10 p-6">
+              <div className="mb-2 text-2xl font-bold text-green-400">
                 99.9%
               </div>
-              <div className="text-gray-400 text-sm">Uptime Guarantee</div>
+              <div className="text-sm text-gray-400">Uptime Guarantee</div>
             </div>
-            <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/10 border border-blue-500/20 rounded-lg p-6">
-              <div className="text-blue-400 text-2xl font-bold mb-2">SOC 2</div>
-              <div className="text-gray-400 text-sm">Enterprise Security</div>
+            <div className="rounded-lg border border-blue-500/20 bg-gradient-to-br from-blue-900/20 to-blue-800/10 p-6">
+              <div className="mb-2 text-2xl font-bold text-blue-400">SOC 2</div>
+              <div className="text-sm text-gray-400">Enterprise Security</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/10 border border-purple-500/20 rounded-lg p-6">
-              <div className="text-purple-400 text-2xl font-bold mb-2">
+            <div className="rounded-lg border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-purple-800/10 p-6">
+              <div className="mb-2 text-2xl font-bold text-purple-400">
                 24/7
               </div>
-              <div className="text-gray-400 text-sm">AI-Powered Support</div>
+              <div className="text-sm text-gray-400">AI-Powered Support</div>
             </div>
           </div>
         </div>

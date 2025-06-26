@@ -31,10 +31,10 @@ export default function ChatPage() {
           <div className="top-50% left-50% -translate-x-50% -translate-y-50% absolute mb-20 flex flex-col items-center">
             <Brand theme={theme === "dark" ? "dark" : "light"} compact />
             <div className="mt-4 text-center">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+              <h2 className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-3xl font-bold text-transparent">
                 SaintSal Assistant
               </h2>
-              <p className="mt-2 text-lg text-yellow-400/80 font-medium">
+              <p className="mt-2 text-lg font-medium text-yellow-400/80">
                 Cookin' Knowledge
               </p>
             </div>

@@ -44,15 +44,15 @@ export default function SetupPage() {
         return (
           <div className="space-y-6">
             <div className="text-center">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+              <h2 className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-2xl font-bold text-transparent">
                 Welcome to the Saints, {formData.firstName || "Champion"}! 😇
               </h2>
-              <p className="text-gray-400 text-sm mt-2">
+              <p className="mt-2 text-sm text-gray-400">
                 Let's get your AI sanctuary configured
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <Label htmlFor="firstName" className="text-sm font-medium">
                   First Name
@@ -92,7 +92,7 @@ export default function SetupPage() {
                 }
                 className="mt-1"
               />
-              <p className="text-gray-500 text-xs mt-1">
+              <p className="mt-1 text-xs text-gray-500">
                 Your AI assistants will use this to address you personally
               </p>
             </div>
@@ -129,10 +129,10 @@ export default function SetupPage() {
         return (
           <div className="space-y-6">
             <div className="text-center">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-2xl font-bold text-transparent">
                 Tell Us About Your Goals 🎯
               </h2>
-              <p className="text-gray-400 text-sm mt-2">
+              <p className="mt-2 text-sm text-gray-400">
                 This helps us personalize your AI experience
               </p>
             </div>
@@ -178,24 +178,24 @@ export default function SetupPage() {
             </div>
 
             {/* AI Features Preview */}
-            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/20 rounded-lg p-4">
-              <h3 className="text-blue-400 font-semibold text-sm mb-3">
+            <div className="rounded-lg border border-blue-500/20 bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-4">
+              <h3 className="mb-3 text-sm font-semibold text-blue-400">
                 🔥 Your Dual AI Arsenal:
               </h3>
-              <div className="grid md:grid-cols-2 gap-3">
-                <div className="bg-blue-800/30 rounded p-3">
-                  <h4 className="text-blue-300 font-medium text-sm">
+              <div className="grid gap-3 md:grid-cols-2">
+                <div className="rounded bg-blue-800/30 p-3">
+                  <h4 className="text-sm font-medium text-blue-300">
                     🧠 Azure Cognitive
                   </h4>
-                  <p className="text-gray-400 text-xs">
+                  <p className="text-xs text-gray-400">
                     Advanced reasoning, analysis, complex problem-solving
                   </p>
                 </div>
-                <div className="bg-green-800/30 rounded p-3">
-                  <h4 className="text-green-300 font-medium text-sm">
+                <div className="rounded bg-green-800/30 p-3">
+                  <h4 className="text-sm font-medium text-green-300">
                     ⚡ OpenAI GPT-4o
                   </h4>
-                  <p className="text-gray-400 text-xs">
+                  <p className="text-xs text-gray-400">
                     Creative writing, conversations, quick responses
                   </p>
                 </div>
@@ -208,17 +208,17 @@ export default function SetupPage() {
         return (
           <div className="space-y-6">
             <div className="text-center">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-yellow-600 bg-clip-text text-transparent">
+              <h2 className="bg-gradient-to-r from-green-400 to-yellow-600 bg-clip-text text-2xl font-bold text-transparent">
                 🎉 You're All Set, Saint {formData.firstName}!
               </h2>
-              <p className="text-gray-400 text-sm mt-2">
+              <p className="mt-2 text-sm text-gray-400">
                 Your AI sanctuary is ready - let's start cooking!
               </p>
             </div>
 
             {/* Setup Summary */}
-            <div className="bg-gradient-to-r from-green-900/20 to-yellow-900/20 border border-green-500/20 rounded-lg p-4">
-              <h3 className="text-green-400 font-semibold text-sm mb-3">
+            <div className="rounded-lg border border-green-500/20 bg-gradient-to-r from-green-900/20 to-yellow-900/20 p-4">
+              <h3 className="mb-3 text-sm font-semibold text-green-400">
                 ✅ Your Saint Profile:
               </h3>
               <div className="space-y-2 text-sm">
@@ -258,11 +258,11 @@ export default function SetupPage() {
             </div>
 
             {/* What's Next */}
-            <div className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 border border-purple-500/20 rounded-lg p-4">
-              <h3 className="text-purple-400 font-semibold text-sm mb-3">
+            <div className="rounded-lg border border-purple-500/20 bg-gradient-to-r from-purple-900/20 to-pink-900/20 p-4">
+              <h3 className="mb-3 text-sm font-semibold text-purple-400">
                 🚀 What happens now:
               </h3>
-              <ul className="text-gray-300 text-sm space-y-2">
+              <ul className="space-y-2 text-sm text-gray-300">
                 <li>
                   • Start with{" "}
                   <span className="text-green-400">FREE dual AI access</span>
@@ -285,10 +285,10 @@ export default function SetupPage() {
             </div>
 
             {/* Quick Start Options */}
-            <div className="grid md:grid-cols-2 gap-3">
+            <div className="grid gap-3 md:grid-cols-2">
               <Button
                 onClick={() => router.push("/en/workspace1/chat")}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 font-semibold text-white hover:from-blue-500 hover:to-purple-500"
               >
                 💬 Start Chatting with AI
               </Button>
@@ -315,11 +315,11 @@ export default function SetupPage() {
 
         {/* Progress Indicator */}
         <div className="mb-8">
-          <div className="flex justify-center items-center space-x-4">
+          <div className="flex items-center justify-center space-x-4">
             {[1, 2, 3].map(step => (
               <div key={step} className="flex items-center">
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                  className={`flex size-8 items-center justify-center rounded-full text-sm font-bold ${
                     step <= currentStep
                       ? "bg-gradient-to-r from-yellow-500 to-yellow-600 text-black"
                       : "bg-gray-700 text-gray-400"
@@ -329,7 +329,7 @@ export default function SetupPage() {
                 </div>
                 {step < 3 && (
                   <div
-                    className={`w-12 h-1 mx-2 ${
+                    className={`mx-2 h-1 w-12 ${
                       step < currentStep ? "bg-yellow-500" : "bg-gray-700"
                     }`}
                   />
@@ -337,8 +337,8 @@ export default function SetupPage() {
               </div>
             ))}
           </div>
-          <div className="text-center mt-2">
-            <span className="text-gray-400 text-sm">
+          <div className="mt-2 text-center">
+            <span className="text-sm text-gray-400">
               Step {currentStep} of 3
             </span>
           </div>
@@ -348,7 +348,7 @@ export default function SetupPage() {
         {renderStep()}
 
         {/* Navigation */}
-        <div className="flex justify-between items-center mt-8">
+        <div className="mt-8 flex items-center justify-between">
           <Button
             variant="ghost"
             onClick={handleSkip}
@@ -369,7 +369,7 @@ export default function SetupPage() {
             )}
             <Button
               onClick={handleNext}
-              className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold hover:from-yellow-400 hover:to-yellow-500"
+              className="bg-gradient-to-r from-yellow-500 to-yellow-600 font-bold text-black hover:from-yellow-400 hover:to-yellow-500"
             >
               {currentStep === 3 ? "🚀 Enter Your AI Sanctuary" : "Continue"}
             </Button>
@@ -378,12 +378,12 @@ export default function SetupPage() {
 
         {/* Saint Status */}
         <div className="mt-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/20 rounded-lg px-4 py-2">
-            <span className="text-yellow-400 font-semibold text-sm">
+          <div className="inline-flex items-center gap-2 rounded-lg border border-yellow-500/20 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 px-4 py-2">
+            <span className="text-sm font-semibold text-yellow-400">
               ✨ Saint Status: Initializing
             </span>
           </div>
-          <p className="text-gray-400 text-xs mt-2">
+          <p className="mt-2 text-xs text-gray-400">
             Dual AI Platform • Free Tier Active
           </p>
         </div>

@@ -33,7 +33,7 @@ export default function SignUpPage({
 }) {
   return (
     <div
-      className="flex w-full min-h-screen"
+      className="flex min-h-screen w-full"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('https://cdn.builder.io/api/v1/image/assets%2Fd83998c6a81f466db4fb83ab90c7ba25%2F6564abdef64249dcb9ba82e0ed0ef8af?format=webp&width=800')`,
         backgroundSize: "cover",
@@ -41,31 +41,31 @@ export default function SignUpPage({
         backgroundRepeat: "no-repeat"
       }}
     >
-      <div className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md mx-auto">
+      <div className="mx-auto flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md">
         {/* Welcome & Signup Form */}
-        <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-8 shadow-2xl">
+        <div className="rounded-xl border border-yellow-500/20 bg-black/40 p-8 shadow-2xl backdrop-blur-lg">
           <form
             className="animate-in text-foreground flex w-full flex-1 flex-col justify-center gap-2"
             action={signUp}
           >
             <Brand />
 
-            <div className="text-center mb-6">
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+            <div className="mb-6 text-center">
+              <h1 className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-3xl font-bold text-transparent">
                 Become a Saint! ✨
               </h1>
-              <p className="text-gray-400 text-sm mt-2">
+              <p className="mt-2 text-sm text-gray-400">
                 Join the elite community and get your AI GOTTA GUY™ for
                 everything
               </p>
             </div>
 
             {/* Simple Getting Started Info */}
-            <div className="mb-6 bg-gradient-to-r from-green-500/10 to-blue-600/10 border border-green-500/20 rounded-lg p-4">
-              <h3 className="text-green-400 font-semibold text-sm mb-2">
+            <div className="mb-6 rounded-lg border border-green-500/20 bg-gradient-to-r from-green-500/10 to-blue-600/10 p-4">
+              <h3 className="mb-2 text-sm font-semibold text-green-400">
                 🚀 Get started instantly:
               </h3>
-              <ul className="text-gray-300 text-xs space-y-1">
+              <ul className="space-y-1 text-xs text-gray-300">
                 <li>✨ Free access to dual AI (GPT-4 + Azure)</li>
                 <li>🔍 Smart search capabilities</li>
                 <li>💬 Chat with your AI companion</li>
@@ -97,18 +97,18 @@ export default function SignUpPage({
               required
             />
 
-            <SubmitButton className="mb-4 rounded-md bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 text-white font-bold hover:from-blue-500 hover:to-blue-600">
+            <SubmitButton className="mb-4 rounded-md bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 font-bold text-white hover:from-blue-500 hover:to-blue-600">
               🔥 Become a Saint & Get Your GOTTA GUY™
             </SubmitButton>
 
             {searchParams?.message && (
-              <p className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded text-center text-sm">
+              <p className="rounded border border-red-400 bg-red-100 px-4 py-3 text-center text-sm text-red-700">
                 {searchParams.message}
               </p>
             )}
 
             {/* Terms & Privacy */}
-            <p className="text-gray-400 text-xs text-center mt-4">
+            <p className="mt-4 text-center text-xs text-gray-400">
               By creating an account, you agree to our{" "}
               <Link
                 href="/terms"
@@ -129,12 +129,12 @@ export default function SignUpPage({
           {/* Returning User CTA */}
           <div className="mt-8 text-center">
             <div className="border-t border-gray-700 pt-6">
-              <p className="text-gray-400 text-sm mb-3">
+              <p className="mb-3 text-sm text-gray-400">
                 Already have an account?
               </p>
               <Link
                 href="/en/login"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-black px-6 py-3 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600 px-6 py-3 font-semibold text-black transition-all hover:from-yellow-400 hover:to-yellow-500"
               >
                 😇 Welcome Back, Saint!
               </Link>
@@ -142,11 +142,11 @@ export default function SignUpPage({
           </div>
 
           {/* What Happens Next */}
-          <div className="mt-6 bg-blue-900/20 border border-blue-500/20 rounded-lg p-4">
-            <h3 className="text-blue-400 font-semibold text-sm mb-2">
+          <div className="mt-6 rounded-lg border border-blue-500/20 bg-blue-900/20 p-4">
+            <h3 className="mb-2 text-sm font-semibold text-blue-400">
               🎯 What happens next?
             </h3>
-            <ol className="text-gray-300 text-xs space-y-1 list-decimal list-inside">
+            <ol className="list-inside list-decimal space-y-1 text-xs text-gray-300">
               <li>Verify your email (check your inbox)</li>
               <li>Complete quick setup (2 minutes)</li>
               <li>Meet your dual AI assistants</li>
@@ -157,12 +157,12 @@ export default function SignUpPage({
 
           {/* Platform Status */}
           <div className="mt-6 text-center">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-green-600/10 border border-green-500/20 rounded-lg px-4 py-2">
-              <span className="text-green-400 font-semibold text-sm">
+            <div className="inline-flex items-center gap-2 rounded-lg border border-green-500/20 bg-gradient-to-r from-green-500/10 to-green-600/10 px-4 py-2">
+              <span className="text-sm font-semibold text-green-400">
                 ✅ All Systems Ready
               </span>
             </div>
-            <p className="text-gray-400 text-xs mt-2">
+            <p className="mt-2 text-xs text-gray-400">
               Azure Cognitive Services + OpenAI GPT-4o
             </p>
           </div>
@@ -172,19 +172,19 @@ export default function SignUpPage({
             <div className="flex justify-center gap-4 text-xs">
               <Link
                 href="/en/pricing"
-                className="text-purple-400 hover:text-purple-300 underline"
+                className="text-purple-400 underline hover:text-purple-300"
               >
                 💰 Pricing
               </Link>
               <Link
                 href="/en/help"
-                className="text-orange-400 hover:text-orange-300 underline"
+                className="text-orange-400 underline hover:text-orange-300"
               >
                 ❓ Help
               </Link>
               <Link
                 href="/"
-                className="text-cyan-400 hover:text-cyan-300 underline"
+                className="text-cyan-400 underline hover:text-cyan-300"
               >
                 🏠 Home
               </Link>

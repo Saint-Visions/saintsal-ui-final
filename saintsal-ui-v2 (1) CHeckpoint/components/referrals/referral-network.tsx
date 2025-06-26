@@ -168,12 +168,12 @@ export function ReferralNetwork() {
 
         <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold">
-              <Plus className="mr-2 h-4 w-4" />
+            <Button className="bg-gradient-to-r from-yellow-400 to-yellow-600 font-semibold text-black">
+              <Plus className="mr-2 size-4" />
               Add Partner
             </Button>
           </DialogTrigger>
-          <DialogContent className="bg-gray-900 border-yellow-500/20">
+          <DialogContent className="border-yellow-500/20 bg-gray-900">
             <DialogHeader>
               <DialogTitle className="text-yellow-400">
                 Create Referral Partner
@@ -193,7 +193,7 @@ export function ReferralNetwork() {
                       partner_name: e.target.value
                     })
                   }
-                  className="bg-black border-yellow-500/50"
+                  className="border-yellow-500/50 bg-black"
                 />
               </div>
               <div>
@@ -210,7 +210,7 @@ export function ReferralNetwork() {
                       partner_email: e.target.value
                     })
                   }
-                  className="bg-black border-yellow-500/50"
+                  className="border-yellow-500/50 bg-black"
                 />
               </div>
               <div>
@@ -226,7 +226,7 @@ export function ReferralNetwork() {
                       commission_rate: parseInt(e.target.value) || 10
                     })
                   }
-                  className="bg-black border-yellow-500/50"
+                  className="border-yellow-500/50 bg-black"
                 />
               </div>
               <Button
@@ -242,8 +242,8 @@ export function ReferralNetwork() {
       </div>
 
       {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card className="bg-gradient-to-br from-gray-900 to-black border-yellow-500/20">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+        <Card className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
@@ -252,12 +252,12 @@ export function ReferralNetwork() {
                   {partners.filter(p => p.status === "active").length}
                 </p>
               </div>
-              <Users className="h-8 w-8 text-yellow-400" />
+              <Users className="size-8 text-yellow-400" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-gray-900 to-black border-green-500/20">
+        <Card className="border-green-500/20 bg-gradient-to-br from-gray-900 to-black">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
@@ -266,12 +266,12 @@ export function ReferralNetwork() {
                   {totalReferrals}
                 </p>
               </div>
-              <TrendingUp className="h-8 w-8 text-green-400" />
+              <TrendingUp className="size-8 text-green-400" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-gray-900 to-black border-purple-500/20">
+        <Card className="border-purple-500/20 bg-gradient-to-br from-gray-900 to-black">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
@@ -280,12 +280,12 @@ export function ReferralNetwork() {
                   {conversionRate.toFixed(1)}%
                 </p>
               </div>
-              <Gift className="h-8 w-8 text-purple-400" />
+              <Gift className="size-8 text-purple-400" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-gray-900 to-black border-blue-500/20">
+        <Card className="border-blue-500/20 bg-gradient-to-br from-gray-900 to-black">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
@@ -300,7 +300,7 @@ export function ReferralNetwork() {
                   ).toFixed(0)}
                 </p>
               </div>
-              <DollarSign className="h-8 w-8 text-blue-400" />
+              <DollarSign className="size-8 text-blue-400" />
             </div>
           </CardContent>
         </Card>
@@ -317,7 +317,7 @@ export function ReferralNetwork() {
           {partners.map(partner => (
             <Card
               key={partner.id}
-              className="bg-gradient-to-br from-gray-900 to-black border-yellow-500/20"
+              className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black"
             >
               <CardHeader>
                 <div className="flex items-center justify-between">
@@ -336,7 +336,7 @@ export function ReferralNetwork() {
                   <div className="flex items-center justify-between">
                     <span className="text-gray-400">Referral Code:</span>
                     <div className="flex items-center gap-2">
-                      <code className="bg-black px-2 py-1 rounded text-yellow-400">
+                      <code className="rounded bg-black px-2 py-1 text-yellow-400">
                         {partner.referral_code}
                       </code>
                       <Button
@@ -349,21 +349,21 @@ export function ReferralNetwork() {
                           )
                         }
                       >
-                        <Copy className="h-4 w-4" />
+                        <Copy className="size-4" />
                       </Button>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <span className="text-gray-400">Commission Rate:</span>
-                    <span className="text-green-400 font-semibold">
+                    <span className="font-semibold text-green-400">
                       {partner.commission_rate}%
                     </span>
                   </div>
 
                   <div className="space-y-2">
                     <span className="text-gray-400">Referral Links:</span>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                    <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
                       {["landing", "signup", "demo"].map(type => (
                         <Button
                           key={type}
@@ -377,7 +377,7 @@ export function ReferralNetwork() {
                           }
                           className="text-xs"
                         >
-                          <ExternalLink className="mr-1 h-3 w-3" />
+                          <ExternalLink className="mr-1 size-3" />
                           {type}
                         </Button>
                       ))}
@@ -393,7 +393,7 @@ export function ReferralNetwork() {
           {referrals.map(referral => (
             <Card
               key={referral.id}
-              className="bg-gradient-to-br from-gray-900 to-black border-green-500/20"
+              className="border-green-500/20 bg-gradient-to-br from-gray-900 to-black"
             >
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
@@ -414,7 +414,7 @@ export function ReferralNetwork() {
                     >
                       {referral.status}
                     </Badge>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="mt-1 text-xs text-gray-500">
                       {new Date(referral.created_at).toLocaleDateString()}
                     </p>
                   </div>

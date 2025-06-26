@@ -105,7 +105,7 @@ export function LeadDiscovery({ onLeadFound }: LeadDiscoveryProps) {
       <Card className="border-2 border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-yellow-400">
-            <Search className="h-5 w-5" />
+            <Search className="size-5" />
             🔥 SaintSal™ Lead Discovery Engine
           </CardTitle>
         </CardHeader>
@@ -116,21 +116,21 @@ export function LeadDiscovery({ onLeadFound }: LeadDiscoveryProps) {
               value={query}
               onChange={e => setQuery(e.target.value)}
               onKeyPress={handleKeyPress}
-              className="bg-black border-yellow-500/50 text-white placeholder:text-gray-400"
+              className="border-yellow-500/50 bg-black text-white placeholder:text-gray-400"
             />
             <Button
               onClick={discoverLead}
               disabled={loading}
-              className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 min-w-[140px]"
+              className="min-w-[140px] bg-gradient-to-r from-yellow-400 to-yellow-600 font-semibold text-black hover:from-yellow-500 hover:to-yellow-700"
             >
               {loading ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="mr-2 size-4 animate-spin" />
                   Discovering...
                 </>
               ) : (
                 <>
-                  <Search className="mr-2 h-4 w-4" />
+                  <Search className="mr-2 size-4" />
                   Discover Lead
                 </>
               )}
@@ -145,27 +145,27 @@ export function LeadDiscovery({ onLeadFound }: LeadDiscoveryProps) {
           <CardHeader>
             <div className="flex items-center justify-between">
               <CardTitle className="flex items-center gap-2 text-green-400">
-                <Building2 className="h-5 w-5" />
+                <Building2 className="size-5" />
                 {result.name}
               </CardTitle>
               <div className="flex items-center gap-2">
                 <Badge className={`${getScoreColor(result.score)} text-white`}>
-                  <Star className="mr-1 h-3 w-3" />
+                  <Star className="mr-1 size-3" />
                   {result.score}% - {getScoreLabel(result.score)}
                 </Badge>
               </div>
             </div>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {/* Company Info */}
               <div className="space-y-3">
                 {result.description && (
                   <div>
-                    <h4 className="text-sm font-semibold text-yellow-400 mb-1">
+                    <h4 className="mb-1 text-sm font-semibold text-yellow-400">
                       Description
                     </h4>
-                    <p className="text-gray-300 text-sm">
+                    <p className="text-sm text-gray-300">
                       {result.description}
                     </p>
                   </div>
@@ -173,14 +173,14 @@ export function LeadDiscovery({ onLeadFound }: LeadDiscoveryProps) {
 
                 {result.industry && (
                   <div className="flex items-center gap-2">
-                    <Building2 className="h-4 w-4 text-yellow-400" />
+                    <Building2 className="size-4 text-yellow-400" />
                     <span className="text-gray-300">{result.industry}</span>
                   </div>
                 )}
 
                 {result.employees && (
                   <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-yellow-400" />
+                    <Users className="size-4 text-yellow-400" />
                     <span className="text-gray-300">
                       {result.employees} employees
                     </span>
@@ -189,14 +189,14 @@ export function LeadDiscovery({ onLeadFound }: LeadDiscoveryProps) {
 
                 {result.headquarters && (
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-yellow-400" />
+                    <MapPin className="size-4 text-yellow-400" />
                     <span className="text-gray-300">{result.headquarters}</span>
                   </div>
                 )}
 
                 {result.founded && (
                   <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-yellow-400" />
+                    <Calendar className="size-4 text-yellow-400" />
                     <span className="text-gray-300">
                       Founded {result.founded}
                     </span>
@@ -208,12 +208,12 @@ export function LeadDiscovery({ onLeadFound }: LeadDiscoveryProps) {
               <div className="space-y-3">
                 {result.website && (
                   <div className="flex items-center gap-2">
-                    <Globe className="h-4 w-4 text-yellow-400" />
+                    <Globe className="size-4 text-yellow-400" />
                     <a
                       href={`https://${result.website}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 text-sm"
+                      className="text-sm text-blue-400 hover:text-blue-300"
                     >
                       {result.website}
                     </a>
@@ -222,19 +222,19 @@ export function LeadDiscovery({ onLeadFound }: LeadDiscoveryProps) {
 
                 {result.linkedin && (
                   <div className="flex items-center gap-2">
-                    <Linkedin className="h-4 w-4 text-yellow-400" />
+                    <Linkedin className="size-4 text-yellow-400" />
                     <a
                       href={`https://linkedin.com/company/${result.linkedin}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 text-sm"
+                      className="text-sm text-blue-400 hover:text-blue-300"
                     >
                       LinkedIn Profile
                     </a>
                   </div>
                 )}
 
-                <div className="pt-2 border-t border-gray-700">
+                <div className="border-t border-gray-700 pt-2">
                   <div className="text-xs text-gray-500">
                     <div>Source: {result.source}</div>
                     {result.timestamp && (

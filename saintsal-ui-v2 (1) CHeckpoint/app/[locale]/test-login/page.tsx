@@ -47,7 +47,7 @@ export default function TestLogin() {
             />
           </div>
 
-          <button className="w-full rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2 text-black font-bold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300">
+          <button className="w-full rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2 font-bold text-black transition-all duration-300 hover:from-yellow-400 hover:to-yellow-500">
             🔥 Start Cookin
           </button>
         </div>

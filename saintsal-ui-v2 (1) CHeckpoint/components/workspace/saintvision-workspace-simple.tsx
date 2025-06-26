@@ -81,7 +81,7 @@ export function SaintVisionWorkspaceSimple() {
       case "companion":
         return (
           <div
-            className="h-full flex flex-col"
+            className="flex h-full flex-col"
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://cdn.builder.io/api/v1/image/assets%2Fd83998c6a81f466db4fb83ab90c7ba25%2F17fbf771b01940e59f3e060900a7a7b3?format=webp&width=800')`,
               backgroundSize: "cover",
@@ -90,58 +90,58 @@ export function SaintVisionWorkspaceSimple() {
             }}
           >
             {/* Header */}
-            <div className="flex-shrink-0 p-6 border-b border-yellow-500/20">
+            <div className="shrink-0 border-b border-yellow-500/20 p-6">
               <div className="text-center">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent mb-2">
+                <h2 className="mb-2 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-3xl font-bold text-transparent">
                   Your GOTTA GUY™ Companion
                 </h2>
-                <p className="text-yellow-400/80 font-medium">
+                <p className="font-medium text-yellow-400/80">
                   SaintVisionAI™ • Azure Cognitive + OpenAI GPT-4o
                 </p>
               </div>
             </div>
 
             {/* Chat Area */}
-            <div className="flex-1 flex flex-col items-center justify-center p-6">
+            <div className="flex flex-1 flex-col items-center justify-center p-6">
               <div className="w-full max-w-4xl">
                 {/* Welcome Message */}
-                <div className="bg-black/40 backdrop-blur-lg border border-yellow-500/20 rounded-xl p-6 mb-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
-                      <Brain className="w-6 h-6 text-black" />
+                <div className="mb-6 rounded-xl border border-yellow-500/20 bg-black/40 p-6 backdrop-blur-lg">
+                  <div className="mb-4 flex items-center gap-4">
+                    <div className="flex size-12 items-center justify-center rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600">
+                      <Brain className="size-6 text-black" />
                     </div>
                     <div>
-                      <h3 className="text-yellow-400 font-bold">
+                      <h3 className="font-bold text-yellow-400">
                         Your GOTTA GUY™ is ready!
                       </h3>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-sm text-gray-400">
                         Connected to the global AI network
                       </p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-blue-900/30 border border-blue-500/20 rounded-lg p-4">
-                      <h4 className="text-blue-400 font-semibold mb-2 flex items-center gap-2">
-                        <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                  <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div className="rounded-lg border border-blue-500/20 bg-blue-900/30 p-4">
+                      <h4 className="mb-2 flex items-center gap-2 font-semibold text-blue-400">
+                        <span className="size-2 rounded-full bg-blue-400"></span>
                         Azure Cognitive
                       </h4>
-                      <p className="text-gray-300 text-sm">
+                      <p className="text-sm text-gray-300">
                         Enterprise-grade AI services
                       </p>
                     </div>
-                    <div className="bg-green-900/30 border border-green-500/20 rounded-lg p-4">
-                      <h4 className="text-green-400 font-semibold mb-2 flex items-center gap-2">
-                        <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                    <div className="rounded-lg border border-green-500/20 bg-green-900/30 p-4">
+                      <h4 className="mb-2 flex items-center gap-2 font-semibold text-green-400">
+                        <span className="size-2 rounded-full bg-green-400"></span>
                         OpenAI GPT-4o
                       </h4>
-                      <p className="text-gray-300 text-sm">
+                      <p className="text-sm text-gray-300">
                         Latest AI language model
                       </p>
                     </div>
                   </div>
 
-                  <p className="text-gray-300 text-center">
+                  <p className="text-center text-gray-300">
                     Ask me anything about business strategy, lead generation,
                     deal analysis, or get personalized insights. I'm your GOTTA
                     GUY™ for everything!
@@ -149,52 +149,52 @@ export function SaintVisionWorkspaceSimple() {
                 </div>
 
                 {/* Chat Input */}
-                <div className="bg-black/50 backdrop-blur-lg border border-yellow-500/30 rounded-xl p-4">
+                <div className="rounded-xl border border-yellow-500/30 bg-black/50 p-4 backdrop-blur-lg">
                   <div className="flex items-center gap-4">
                     <input
                       type="text"
                       placeholder="Ask your GOTTA GUY™ anything... 'Generate 10 leads in fintech' or 'Analyze my sales pipeline'"
-                      className="flex-1 bg-gray-800/50 border border-yellow-500/30 rounded-lg px-4 py-3 text-gray-300 placeholder-gray-500 focus:border-yellow-400 focus:outline-none"
+                      className="flex-1 rounded-lg border border-yellow-500/30 bg-gray-800/50 px-4 py-3 text-gray-300 placeholder:text-gray-500 focus:border-yellow-400 focus:outline-none"
                     />
-                    <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold px-6 py-3 hover:from-yellow-400 hover:to-yellow-500">
-                      <MessageSquare className="w-4 h-4 mr-2" />
+                    <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 px-6 py-3 font-bold text-black hover:from-yellow-400 hover:to-yellow-500">
+                      <MessageSquare className="mr-2 size-4" />
                       Send
                     </Button>
                   </div>
 
-                  <div className="flex items-center justify-between mt-3 text-sm">
+                  <div className="mt-3 flex items-center justify-between text-sm">
                     <p className="text-gray-400">
-                      <span className="text-yellow-400 font-semibold">
+                      <span className="font-semibold text-yellow-400">
                         FREE TIER:
                       </span>{" "}
                       10 messages/day • Upgrade for unlimited
                     </p>
                     <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                      <span className="text-green-400 text-xs">Connected</span>
+                      <span className="size-2 rounded-full bg-green-400"></span>
+                      <span className="text-xs text-green-400">Connected</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Quick Actions */}
-                <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
-                  <button className="bg-purple-900/30 border border-purple-500/20 rounded-lg p-3 text-center hover:bg-purple-900/50 transition-colors">
-                    <span className="text-sm text-purple-400 font-medium">
+                <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+                  <button className="rounded-lg border border-purple-500/20 bg-purple-900/30 p-3 text-center transition-colors hover:bg-purple-900/50">
+                    <span className="text-sm font-medium text-purple-400">
                       💎 Find Leads
                     </span>
                   </button>
-                  <button className="bg-blue-900/30 border border-blue-500/20 rounded-lg p-3 text-center hover:bg-blue-900/50 transition-colors">
-                    <span className="text-sm text-blue-400 font-medium">
+                  <button className="rounded-lg border border-blue-500/20 bg-blue-900/30 p-3 text-center transition-colors hover:bg-blue-900/50">
+                    <span className="text-sm font-medium text-blue-400">
                       📈 Analyze Deal
                     </span>
                   </button>
-                  <button className="bg-green-900/30 border border-green-500/20 rounded-lg p-3 text-center hover:bg-green-900/50 transition-colors">
-                    <span className="text-sm text-green-400 font-medium">
+                  <button className="rounded-lg border border-green-500/20 bg-green-900/30 p-3 text-center transition-colors hover:bg-green-900/50">
+                    <span className="text-sm font-medium text-green-400">
                       🤝 Track Referrals
                     </span>
                   </button>
-                  <button className="bg-orange-900/30 border border-orange-500/20 rounded-lg p-3 text-center hover:bg-orange-900/50 transition-colors">
-                    <span className="text-sm text-orange-400 font-medium">
+                  <button className="rounded-lg border border-orange-500/20 bg-orange-900/30 p-3 text-center transition-colors hover:bg-orange-900/50">
+                    <span className="text-sm font-medium text-orange-400">
                       ⚡ Automate
                     </span>
                   </button>
@@ -215,16 +215,16 @@ export function SaintVisionWorkspaceSimple() {
         return <AIDealDashboard />
       default:
         return (
-          <div className="flex items-center justify-center h-full">
+          <div className="flex h-full items-center justify-center">
             <div className="text-center">
-              <Lock className="w-16 h-16 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+              <Lock className="mx-auto mb-4 size-16 text-yellow-400" />
+              <h3 className="mb-4 text-2xl font-bold text-yellow-400">
                 Feature Locked
               </h3>
-              <p className="text-gray-400 mb-6">
+              <p className="mb-6 text-gray-400">
                 Upgrade to PRO to unlock this feature
               </p>
-              <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold">
+              <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 font-bold text-black">
                 🔥 Upgrade to PRO
               </Button>
             </div>
@@ -245,19 +245,19 @@ export function SaintVisionWorkspaceSimple() {
       }}
     >
       {/* Sidebar */}
-      <div className="w-80 bg-black/50 backdrop-blur-lg border-r border-yellow-500/20 flex flex-col">
+      <div className="flex w-80 flex-col border-r border-yellow-500/20 bg-black/50 backdrop-blur-lg">
         {/* Header */}
-        <div className="p-4 border-b border-yellow-500/20">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center">
-              <span className="text-black font-bold text-xl">SV</span>
+        <div className="border-b border-yellow-500/20 p-4">
+          <div className="mb-4 flex items-center gap-3">
+            <div className="flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600">
+              <span className="text-xl font-bold text-black">SV</span>
             </div>
             <div>
               <h1 className="text-xl font-bold text-yellow-400">
                 SaintVisionAI™
               </h1>
               <div className="flex items-center gap-2">
-                <span className="text-xs bg-yellow-400/20 text-yellow-400 px-2 py-1 rounded-full font-bold">
+                <span className="rounded-full bg-yellow-400/20 px-2 py-1 text-xs font-bold text-yellow-400">
                   FREE🔥
                 </span>
               </div>
@@ -266,42 +266,42 @@ export function SaintVisionWorkspaceSimple() {
         </div>
 
         {/* Navigation */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-3">
+        <div className="flex-1 space-y-3 overflow-y-auto p-4">
           {sidebarItems.map(item => (
             <button
               key={item.id}
               onClick={() => handleSidebarClick(item.id)}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-200 ${
+              className={`flex w-full items-center gap-3 rounded-2xl px-4 py-3 transition-all duration-200 ${
                 item.active || activeSection === item.id
-                  ? "bg-gray-500/50 text-yellow-400 border border-yellow-500/30"
+                  ? "border border-yellow-500/30 bg-gray-500/50 text-yellow-400"
                   : item.locked
-                    ? "bg-gray-800/30 text-gray-400 opacity-30 border border-yellow-500/10 hover:opacity-60"
-                    : "bg-gray-800/30 text-yellow-400/70 border border-yellow-500/10 hover:bg-gray-700/40 hover:text-yellow-400"
+                    ? "border border-yellow-500/10 bg-gray-800/30 text-gray-400 opacity-30 hover:opacity-60"
+                    : "border border-yellow-500/10 bg-gray-800/30 text-yellow-400/70 hover:bg-gray-700/40 hover:text-yellow-400"
               }`}
             >
-              <item.icon className="w-4 h-4 flex-shrink-0" />
-              <span className="text-sm font-medium truncate">{item.label}</span>
+              <item.icon className="size-4 shrink-0" />
+              <span className="truncate text-sm font-medium">{item.label}</span>
               {item.locked && (
-                <Lock className="w-3 h-3 ml-auto flex-shrink-0" />
+                <Lock className="ml-auto size-3 shrink-0" />
               )}
             </button>
           ))}
         </div>
 
         {/* Upgrade Section */}
-        <div className="p-4 border-t border-yellow-500/20">
-          <div className="text-center mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl mx-auto mb-3 flex items-center justify-center">
-              <span className="text-black font-bold text-lg">SV</span>
+        <div className="border-t border-yellow-500/20 p-4">
+          <div className="mb-4 text-center">
+            <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600">
+              <span className="text-lg font-bold text-black">SV</span>
             </div>
-            <h3 className="text-lg font-bold text-yellow-400 mb-1">
+            <h3 className="mb-1 text-lg font-bold text-yellow-400">
               Upgrade to Unlimited
             </h3>
-            <p className="text-sm text-gray-400 mb-3">
+            <p className="mb-3 text-sm text-gray-400">
               Generate Premium Content by upgrading to an unlimited plan!
             </p>
             <Button
-              className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-2xl py-3"
+              className="w-full rounded-2xl bg-gradient-to-r from-yellow-500 to-yellow-600 py-3 font-bold text-black"
               onClick={() =>
                 alert(
                   "🔥 Upgrade to PRO for $27/month!\n\nUnlock:\n• Unlimited AI Companion\n• All Premium Features\n• Priority Support"
@@ -310,32 +310,32 @@ export function SaintVisionWorkspaceSimple() {
             >
               Get started with PRO
             </Button>
-            <p className="text-sm text-gray-400 mt-2">Join 80,000+ users now</p>
+            <p className="mt-2 text-sm text-gray-400">Join 80,000+ users now</p>
           </div>
         </div>
 
         {/* User Profile */}
-        <div className="p-4 border-t border-yellow-500/20">
+        <div className="border-t border-yellow-500/20 p-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center">
-              <span className="text-yellow-400 font-bold text-sm">AP</span>
+            <div className="flex size-10 items-center justify-center rounded-full bg-gray-500">
+              <span className="text-sm font-bold text-yellow-400">AP</span>
             </div>
             <div className="flex-1">
               <div className="text-sm font-bold text-yellow-400">
                 Saint Gottaguy
               </div>
             </div>
-            <div className="w-10 h-10 border border-yellow-500/30 rounded-full flex items-center justify-center">
-              <ChevronRight className="w-4 h-4 text-yellow-400" />
+            <div className="flex size-10 items-center justify-center rounded-full border border-yellow-500/30">
+              <ChevronRight className="size-4 text-yellow-400" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden">
         {/* Top Bar */}
-        <div className="h-16 bg-black/30 backdrop-blur-sm border-b border-yellow-500/20 flex items-center justify-between px-6">
+        <div className="flex h-16 items-center justify-between border-b border-yellow-500/20 bg-black/30 px-6 backdrop-blur-sm">
           <div className="flex items-center gap-4">
             <h2 className="text-xl font-bold text-yellow-400">
               {sidebarItems.find(item => item.id === activeSection)?.label ||
@@ -345,7 +345,7 @@ export function SaintVisionWorkspaceSimple() {
           <div className="flex items-center gap-4">
             <Link
               href="/"
-              className="text-yellow-400 hover:text-yellow-300 text-sm"
+              className="text-sm text-yellow-400 hover:text-yellow-300"
             >
               🏠 Home
             </Link>
