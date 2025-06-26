@@ -25,14 +25,8 @@ function SubmitButton({
   )
 }
 
-export default async function LoginPage({
-  params,
-  searchParams
-}: {
-  params: Promise<{ locale: string }>
-  searchParams: Promise<{ message?: string }>
-}) {
-  const resolvedSearchParams = await searchParams
+export default async function LoginPage(props: any) {
+  const searchParams = await props.searchParams
 
   return (
     <div
@@ -90,9 +84,9 @@ export default async function LoginPage({
               🔥 Sign In & Start Cookin'
             </SubmitButton>
 
-            {resolvedSearchParams?.message && (
+            {searchParams?.message && (
               <p className="rounded border border-red-400 bg-red-100 px-4 py-3 text-center text-sm text-red-700">
-                {resolvedSearchParams.message}
+                {searchParams.message}
               </p>
             )}
           </form>
