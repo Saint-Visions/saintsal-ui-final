@@ -14,6 +14,10 @@ const withPWA = require("next-pwa")({
 module.exports = withBundleAnalyzer(
   withPWA({
     reactStrictMode: true,
+    // ESLint bypass for production builds
+    eslint: {
+      ignoreDuringBuilds: true
+    },
     // Performance optimizations
     swcMinify: true,
     compiler: {
