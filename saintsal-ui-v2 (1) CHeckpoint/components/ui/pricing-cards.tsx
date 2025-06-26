@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Check, Zap, Crown, Rocket } from "lucide-react"
+import { Check, Zap, Crown, Rocket, Brain, Bot } from "lucide-react"
 
 interface PricingPlan {
   name: string
@@ -21,73 +21,135 @@ interface PricingPlan {
 
 const plans: PricingPlan[] = [
   {
-    name: "Starter",
-    price: "$297",
+    name: "Free Access",
+    price: "$0",
     period: "/month",
-    description:
-      "Perfect for getting started with AI-powered business automation",
+    description: "Try your GOTTA GUY™ with limited AI access",
     icon: <Zap className="h-6 w-6" />,
     features: [
-      "50 AI-powered lead discoveries per month",
-      "Basic referral tracking system",
-      "Standard deal analysis with GPT-4",
-      "Email support",
-      "Basic mobile app access",
-      "Standard integrations"
+      "GPT-4 Turbo (limited daily usage)",
+      "Auto fallback to GPT-3.5",
+      "Basic prompts & responses",
+      "No memory or personalization",
+      "Upgrade prompts on overuse",
+      "Basic search capabilities"
     ],
-    cta: "Start Your Journey",
+    cta: "Start Free",
     ctaLink: "/en/setup",
-    gradient: "from-blue-500 to-blue-700",
-    borderColor: "border-blue-500/20"
+    gradient: "from-gray-500 to-gray-700",
+    borderColor: "border-gray-500/20"
   },
   {
-    name: "Pro",
-    price: "$597",
+    name: "Companion Cognitive Awareness",
+    price: "$27",
     period: "/month",
-    description: "Command Your Future - Most popular for scaling businesses",
-    icon: <Crown className="h-6 w-6" />,
+    description: "Unlock your full GOTTA GUY™ AI companion",
+    icon: <Brain className="h-6 w-6" />,
     popular: true,
     features: [
-      "Unlimited AI lead discoveries",
-      "Advanced referral network management",
-      "Premium GPT-4o deal analysis",
-      "Priority support & dedicated success manager",
-      "Full mobile app suite with custom branding",
-      "Advanced CRM integrations (GoHighLevel, HubSpot)",
-      "Custom AI training on your business data",
-      "White-label partner portal access"
+      "GPT-4 Turbo (unlimited access)",
+      "Azure Cognitive Services integration",
+      "Smart Search Engine access",
+      "Personalized Daily Insights",
+      "Action prompting + summaries",
+      "Memory & learning capabilities",
+      "Dual AI assistant technology",
+      "Basic automation workflows"
     ],
-    cta: "Command Your Future",
+    cta: "Get Your GOTTA GUY™",
     ctaLink: "/en/setup",
     gradient: "from-yellow-500 to-yellow-700",
     borderColor: "border-yellow-500/20"
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "pricing",
-    description: "Fully customized solutions for enterprise-level operations",
+    name: "Command Your Future (Pro)",
+    price: "$97",
+    period: "/month",
+    description: "Full business command center with voice & CRM",
+    icon: <Crown className="h-6 w-6" />,
+    features: [
+      "Everything in Companion tier",
+      "Full CRM Dashboard",
+      "Voice Chat (Twilio-enabled)",
+      "Client/Lead Manager",
+      "Smart Assistant Workflows",
+      "Advanced AI automations",
+      "Mobile app export capabilities",
+      "Priority email support"
+    ],
+    cta: "Command Your Future",
+    ctaLink: "/en/setup",
+    gradient: "from-blue-500 to-blue-700",
+    borderColor: "border-blue-500/20"
+  },
+  {
+    name: "Strategic Command Center",
+    price: "$297",
+    period: "/month",
+    description: "Team leadership with AI insights (5 seats included)",
     icon: <Rocket className="h-6 w-6" />,
     features: [
-      "Everything in Pro plan",
-      "Custom AI model training & deployment",
-      "Dedicated infrastructure & security",
-      "24/7 white-glove support",
-      "Custom integrations & API access",
-      "Multi-workspace management",
-      "Advanced analytics & reporting",
+      "Everything in Pro tier",
+      "5 Seats Included",
+      "Leadership Dashboard",
+      "AI Lead Insights",
+      "Team Collaboration Tools",
+      "Advanced reporting & analytics",
+      "Priority support",
+      "Custom integrations"
+    ],
+    cta: "Lead Your Team",
+    ctaLink: "/en/setup",
+    gradient: "from-purple-500 to-purple-700",
+    borderColor: "border-purple-500/20"
+  },
+  {
+    name: "White Label Elite",
+    price: "$497",
+    period: "/month",
+    description: "Your brand, our GOTTA GUY™ technology (10 users)",
+    icon: <Bot className="h-6 w-6" />,
+    features: [
+      "Everything in Strategic tier",
+      "Custom Branding & White-label",
+      "Subaccount Control",
+      "Up to 10 Users Included",
+      "Private CRM + API Support",
+      "White-label mobile apps",
+      "Dedicated account manager",
+      "Custom domain support"
+    ],
+    cta: "Go White Label",
+    ctaLink: "/en/setup",
+    gradient: "from-green-500 to-green-700",
+    borderColor: "border-green-500/20"
+  },
+  {
+    name: "Enterprise Solutions",
+    price: "Custom",
+    period: "pricing",
+    description: "Dedicated infrastructure & strategic AI architecture",
+    icon: <Rocket className="h-6 w-6" />,
+    features: [
+      "Dedicated Infrastructure",
+      "Onboarding + Account Executive",
+      "Usage-Based Scaling",
+      "Strategic AI Architecture",
+      "Custom integrations & APIs",
+      "Enterprise security & compliance",
+      "24/7 dedicated support",
       "On-premise deployment options"
     ],
     cta: "Contact Sales",
     ctaLink: "/en/setup",
-    gradient: "from-purple-500 to-purple-700",
-    borderColor: "border-purple-500/20"
+    gradient: "from-red-500 to-red-700",
+    borderColor: "border-red-500/20"
   }
 ]
 
 export function PricingCards() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
       {plans.map((plan, index) => (
         <Card
           key={plan.name}
