@@ -12,7 +12,7 @@ echo "Building the future of AI-powered business automation"
 RESOURCE_GROUP="SaintVisionAI-Production"
 APP_NAME="saintvisionai-prod"
 LOCATION="East US"
-SUBSCRIPTION_ID="330cb29e-1fe0-4873-b1e5-f1dcee8903a7"
+SUBSCRIPTION_ID="6a36d83c-db31-4d2f-9f3b-a3beb5459e77"
 
 # Colors for output
 RED='\033[0;31m'
