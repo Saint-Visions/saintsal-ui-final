@@ -25,11 +25,14 @@ function SubmitButton({
   )
 }
 
-export default function LoginPage({
+export default async function LoginPage({
+  params,
   searchParams
 }: {
-  searchParams: { message?: string }
+  params: Promise<{ locale: string }>
+  searchParams: Promise<{ message?: string }>
 }) {
+  const resolvedSearchParams = await searchParams
   return (
     <div
       className="flex min-h-screen w-full"
