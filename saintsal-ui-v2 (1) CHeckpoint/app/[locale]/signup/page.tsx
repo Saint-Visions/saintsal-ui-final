@@ -26,14 +26,9 @@ function SubmitButton({
   )
 }
 
-export default async function SignUpPage({
-  params,
-  searchParams
-}: {
-  params: Promise<{ locale: string }>
-  searchParams: Promise<{ message?: string }>
-}) {
-  const resolvedSearchParams = await searchParams
+export default async function SignUpPage(props: any) {
+  const searchParams = await props.searchParams
+
   return (
     <div
       className="flex min-h-screen w-full"
@@ -45,7 +40,7 @@ export default async function SignUpPage({
       }}
     >
       <div className="mx-auto flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md">
-        {/* Welcome & Signup Form */}
+        {/* Sign Up Form */}
         <div className="rounded-xl border border-yellow-500/20 bg-black/40 p-8 shadow-2xl backdrop-blur-lg">
           <form
             className="animate-in text-foreground flex w-full flex-1 flex-col justify-center gap-2"
@@ -58,50 +53,36 @@ export default async function SignUpPage({
                 Become a Saint! ✨
               </h1>
               <p className="mt-2 text-sm text-gray-400">
-                Join the elite community and get your AI GOTTA GUY™ for
-                everything
+                Join the elite who harness dual AI power for business mastery
               </p>
             </div>
 
-            {/* Simple Getting Started Info */}
-            <div className="mb-6 rounded-lg border border-green-500/20 bg-gradient-to-r from-green-500/10 to-blue-600/10 p-4">
-              <h3 className="mb-2 text-sm font-semibold text-green-400">
-                🚀 Get started instantly:
-              </h3>
-              <ul className="space-y-1 text-xs text-gray-300">
-                <li>✨ Free access to dual AI (GPT-4 + Azure)</li>
-                <li>🔍 Smart search capabilities</li>
-                <li>💬 Chat with your AI companion</li>
-                <li>🎯 Upgrade when you're ready for unlimited</li>
-              </ul>
-            </div>
-
-            <Label className="text-md mt-4" htmlFor="signup-email">
-              Email Address
+            <Label className="text-md mt-4" htmlFor="email">
+              Email
             </Label>
             <Input
               className="mb-3 rounded-md border bg-inherit px-4 py-2"
               name="email"
-              id="signup-email"
+              id="email"
               type="email"
-              placeholder="chef@yourbusiness.com"
+              placeholder="you@example.com"
               required
             />
 
-            <Label className="text-md" htmlFor="signup-password">
-              Create Password
+            <Label className="text-md" htmlFor="password">
+              Password
             </Label>
             <Input
               className="mb-6 rounded-md border bg-inherit px-4 py-2"
               name="password"
-              id="signup-password"
+              id="password"
               type="password"
-              placeholder="Make it strong! 💪"
+              placeholder="Create a strong password"
               required
             />
 
-            <SubmitButton className="mb-4 rounded-md bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 font-bold text-white hover:from-blue-500 hover:to-blue-600">
-              🔥 Become a Saint & Get Your GOTTA GUY™
+            <SubmitButton className="mb-4 rounded-md bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2 font-bold text-black hover:from-yellow-400 hover:to-yellow-500">
+              🚀 Get Your GOTTA GUY™
             </SubmitButton>
 
             {searchParams?.message && (
@@ -109,64 +90,30 @@ export default async function SignUpPage({
                 {searchParams.message}
               </p>
             )}
-
-            {/* Terms & Privacy */}
-            <p className="mt-4 text-center text-xs text-gray-400">
-              By creating an account, you agree to our{" "}
-              <Link
-                href="/terms"
-                className="text-yellow-400 underline hover:text-yellow-300"
-              >
-                Terms of Service
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/privacy"
-                className="text-yellow-400 underline hover:text-yellow-300"
-              >
-                Privacy Policy
-              </Link>
-            </p>
           </form>
 
-          {/* Returning User CTA */}
+          {/* Existing User */}
           <div className="mt-8 text-center">
             <div className="border-t border-gray-700 pt-6">
-              <p className="mb-3 text-sm text-gray-400">
-                Already have an account?
-              </p>
+              <p className="mb-3 text-sm text-gray-400">Already a Saint?</p>
               <Link
                 href="/en/login"
-                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600 px-6 py-3 font-semibold text-black transition-all hover:from-yellow-400 hover:to-yellow-500"
+                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 font-semibold text-white transition-all hover:from-blue-500 hover:to-blue-600"
               >
-                😇 Welcome Back, Saint!
+                😇 Welcome Back, Saint
               </Link>
             </div>
-          </div>
-
-          {/* What Happens Next */}
-          <div className="mt-6 rounded-lg border border-blue-500/20 bg-blue-900/20 p-4">
-            <h3 className="mb-2 text-sm font-semibold text-blue-400">
-              🎯 What happens next?
-            </h3>
-            <ol className="list-inside list-decimal space-y-1 text-xs text-gray-300">
-              <li>Verify your email (check your inbox)</li>
-              <li>Complete quick setup (2 minutes)</li>
-              <li>Meet your dual AI assistants</li>
-              <li>Start with free search & chat</li>
-              <li>Upgrade when ready ($27/month)</li>
-            </ol>
           </div>
 
           {/* Platform Status */}
-          <div className="mt-6 text-center">
-            <div className="inline-flex items-center gap-2 rounded-lg border border-green-500/20 bg-gradient-to-r from-green-500/10 to-green-600/10 px-4 py-2">
-              <span className="text-sm font-semibold text-green-400">
-                ✅ All Systems Ready
+          <div className="mt-8 text-center">
+            <div className="inline-flex items-center gap-2 rounded-lg border border-yellow-500/20 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 px-4 py-2">
+              <span className="text-sm font-semibold text-yellow-400">
+                ✨ Join the AI Elite
               </span>
             </div>
             <p className="mt-2 text-xs text-gray-400">
-              Azure Cognitive Services + OpenAI GPT-4o
+              Azure Cognitive Services + OpenAI GPT-4o Ready
             </p>
           </div>
 
