@@ -7,8 +7,7 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Pricing - SaintVisionAI™ | Plans for Every GOTTA GUY™",
   description:
-Choose the perfect SaintVisionAI™ plan for your business. From startup to enterprise, we have AI-powered GOTTA GUY™ solutions that grow with you.
-    "Choose the perfect SaintSal™ plan for your business. From startup to enterprise, we have AI-powered solutions that grow with you."
+    "Choose the perfect SaintVisionAI™ plan for your business. From startup to enterprise, we have AI-powered GOTTA GUY™ solutions that grow with you."
 }
 
 export default function PricingPage() {
@@ -133,20 +132,38 @@ export default function PricingPage() {
             Join 80,000+ operators already scaling with SaintVisionAI™
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">Microsoft</div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">Tesla</div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">SpaceX</div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">Goldman Sachs</div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">Apple</div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">OpenAI</div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">NVIDIA</div>
-            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">Amazon</div>
+            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+              Microsoft
+            </div>
+            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+              Tesla
+            </div>
+            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+              SpaceX
+            </div>
+            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+              Goldman Sachs
+            </div>
+            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+              Apple
+            </div>
+            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+              OpenAI
+            </div>
+            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+              NVIDIA
+            </div>
+            <div className="text-3xl font-bold text-gray-400 hover:text-gray-300 transition-colors">
+              Amazon
+            </div>
           </div>
 
           {/* Enhanced Trust Elements */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="bg-gradient-to-br from-green-900/20 to-green-800/10 border border-green-500/20 rounded-lg p-6">
-              <div className="text-green-400 text-2xl font-bold mb-2">99.9%</div>
+              <div className="text-green-400 text-2xl font-bold mb-2">
+                99.9%
+              </div>
               <div className="text-gray-400 text-sm">Uptime Guarantee</div>
             </div>
             <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/10 border border-blue-500/20 rounded-lg p-6">
@@ -154,7 +171,9 @@ export default function PricingPage() {
               <div className="text-gray-400 text-sm">Enterprise Security</div>
             </div>
             <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/10 border border-purple-500/20 rounded-lg p-6">
-              <div className="text-purple-400 text-2xl font-bold mb-2">24/7</div>
+              <div className="text-purple-400 text-2xl font-bold mb-2">
+                24/7
+              </div>
               <div className="text-gray-400 text-sm">AI-Powered Support</div>
             </div>
           </div>

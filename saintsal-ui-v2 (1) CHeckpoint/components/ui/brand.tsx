@@ -20,13 +20,13 @@ export const Brand: FC<BrandProps> = ({ theme = "dark", compact = false }) => {
         <div className="flex items-center space-x-3">
           <Image
             src="https://cdn.builder.io/api/v1/assets/d83998c6a81f466db4fb83ab90c7ba25/favicon-512x512-0722ac?format=webp&width=64"
-            alt="SaintSal Logo"
+            alt="SaintVisionAI Logo"
             width={48}
             height={48}
             className="drop-shadow-lg"
           />
           <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-xl font-bold text-transparent">
-            SaintSal™
+            SaintVisionAI™
           </div>
         </div>
       ) : (
@@ -34,7 +34,7 @@ export const Brand: FC<BrandProps> = ({ theme = "dark", compact = false }) => {
         <div className="flex flex-col items-center">
           <Image
             src="https://cdn.builder.io/api/v1/assets/d83998c6a81f466db4fb83ab90c7ba25/sv.-cooking-knowledge-side-by-side-7f5577?format=webp&width=400"
-            alt="SaintSal - Cookin' Knowledge"
+            alt="SaintVisionAI - Your GOTTA GUY™"
             width={280}
             height={140}
             className="drop-shadow-xl"
