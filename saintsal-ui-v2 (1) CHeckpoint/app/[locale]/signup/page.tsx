@@ -26,13 +26,12 @@ function SubmitButton({
   )
 }
 
-export default async function SignUpPage({
-  params,
-  searchParams
-}: {
+interface PageProps {
   params: Promise<{ locale: string }>
   searchParams: Promise<{ message?: string }>
-}) {
+}
+
+export default async function SignUpPage({ params, searchParams }: PageProps) {
   const resolvedSearchParams = await searchParams
   return (
     <div
