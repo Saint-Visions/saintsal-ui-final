@@ -25,12 +25,15 @@ function SubmitButton({
   )
 }
 
-interface PageProps {
+interface LoginPageProps {
   params: Promise<{ locale: string }>
   searchParams: Promise<{ message?: string }>
 }
 
-export default async function LoginPage({ params, searchParams }: PageProps) {
+export default async function LoginPage({
+  params,
+  searchParams
+}: LoginPageProps) {
   const resolvedSearchParams = await searchParams
 
   return (
