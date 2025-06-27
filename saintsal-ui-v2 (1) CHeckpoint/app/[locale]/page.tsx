@@ -17,7 +17,7 @@ export default function HomePage() {
         {/* Institutional Messaging - First and Prominent */}
         <div className="mb-8 mt-24 max-w-4xl rounded-xl border border-yellow-500/30 bg-black/50 p-6 text-center shadow-2xl backdrop-blur-lg">
           <p className="mb-2 text-xl font-bold leading-relaxed text-yellow-400 md:text-2xl">
-            "SaintVisionAI™ AI doesn't just answer.
+            "SaintSal™ AI doesn't just answer.
           </p>
           <p className="mb-2 text-xl font-bold leading-relaxed text-yellow-400 md:text-2xl">
             It adapts. It empowers. It becomes your...
