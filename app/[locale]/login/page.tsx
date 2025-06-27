@@ -11,13 +11,11 @@ export const metadata: Metadata = {
   title: "Sign In - SaintSal™",
 };
 
-interface LoginPageProps {
-  params: Promise<{ locale: string }>;
-  searchParams?: Promise<{ message?: string }>;
-}
-
-export default async function Login({ searchParams }: LoginPageProps) {
-  const resolvedSearchParams = searchParams ? await searchParams : {};
+export default async function Login({
+  searchParams,
+}: {
+  searchParams?: { message?: string };
+}) {
   // Check if user is already logged in
   const supabase = createClient();
   const {
