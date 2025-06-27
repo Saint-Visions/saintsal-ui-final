@@ -91,9 +91,9 @@ export default async function Login({ searchParams }: LoginPageProps) {
           </SubmitButton>
         </div>
 
-        {searchParams?.message && (
+        {resolvedSearchParams?.message && (
           <div className="mt-4 p-4 text-center rounded-lg bg-red-900/20 border border-red-500/20">
-            <p className="text-red-400">{searchParams.message}</p>
+            <p className="text-red-400">{resolvedSearchParams.message}</p>
           </div>
         )}
       </form>
