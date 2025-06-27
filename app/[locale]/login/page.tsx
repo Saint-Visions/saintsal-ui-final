@@ -89,9 +89,9 @@ export default async function Login({
           </SubmitButton>
         </div>
 
-        {resolvedSearchParams?.message && (
+        {searchParams?.message && (
           <div className="mt-4 p-4 text-center rounded-lg bg-red-900/20 border border-red-500/20">
-            <p className="text-red-400">{resolvedSearchParams.message}</p>
+            <p className="text-red-400">{searchParams.message}</p>
           </div>
         )}
       </form>
