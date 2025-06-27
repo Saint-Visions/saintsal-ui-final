@@ -1,0 +1,50 @@
+{
+  "name": "saintvisionai",
+  "version": "1.0.0",
+  "description": "SaintVisionAI™ - AI doesn't just answer. It adapts. It empowers. It becomes your GOTTA GUY™!",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "deploy:azure": "./scripts/deploy-production.sh",
+    "deploy:staging": "./scripts/deploy-staging.sh",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "next": "^15.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@supabase/supabase-js": "^2.45.4",
+    "@supabase/ssr": "^0.5.1",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.3.4",
+    "tailwindcss": "^3.4.13",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": [
+    "saintvisionai",
+    "saintsal",
+    "gotta-guy",
+    "ai",
+    "next.js",
+    "typescript",
+    "azure"
+  ],
+  "author": "SaintSal Core Production Team",
+  "license": "PROPRIETARY"
+}
