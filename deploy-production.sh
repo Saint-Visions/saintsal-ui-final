@@ -37,11 +37,19 @@ echo "📦 Creating resource group..."
 az group create --name "$RESOURCE_GROUP" --location "$LOCATION" --output table
 
 # Deploy infrastructure
-echo "🏗️  Deploying Azure infrastructure..."
-az deployment group create \
+echo "🏗️  Creating App Service Plan..."
+az appservice plan create \
+    --name "saintvisionai-plan" \
     --resource-group "$RESOURCE_GROUP" \
-    --template-file azure-deploy.json \
-    --parameters siteName="$APP_NAME"
+    --sku "P1V3" \
+    --is-linux || echo "App Service Plan already exists"
+
+echo "🌐 Creating Web App..."
+az webapp create \
+    --name "$APP_NAME" \
+    --resource-group "$RESOURCE_GROUP" \
+    --plan "saintvisionai-plan" \
+    --runtime "NODE|18-lts" || echo "Web App already exists"
 
 echo "✅ Infrastructure deployed successfully!"
 
