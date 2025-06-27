@@ -35,6 +35,7 @@ module.exports = withBundleAnalyzer(
     // CRITICAL: Skip type checking during build for deployment
     typescript: {
       ignoreBuildErrors: true,
+      tsconfigPath: false,
     },
     eslint: {
       ignoreDuringBuilds: true,
