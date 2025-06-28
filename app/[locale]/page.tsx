@@ -83,9 +83,9 @@ export default function HomePage() {
             <p className="text-xl font-medium text-yellow-400/80">
               Powered by SAINTSAL™
             </p>
-            <Badge className="bg-green-500/20 text-green-400 text-xs">
+            <span className="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full">
               LIVE
-            </Badge>
+            </span>
           </div>
 
           {/* Value Proposition */}
