@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "PartnerTech AI Companion",
+  "name": "PartnerTech.ai - Sticky Companion",
   "version": "1.0.0",
-  "description": "Intent-powered prospecting, scheduling, and deal-flow automation right in your browser. Patent #10,290,222 protected technology.",
+  "description": "Real-time AI that works alongside your prospecting tools to engage, schedule, and follow up — automatically.",
   "author": "Saint Vision Technologies",
   "homepage_url": "https://partnertech.ai",
 
@@ -14,16 +14,10 @@
     "contextMenus",
     "notifications",
     "webNavigation",
-    "tabs",
-    "unlimitedStorage"
+    "tabs"
   ],
 
-  "host_permissions": [
-    "https://*/*",
-    "http://*/*",
-    "https://api.partnertech.ai/*",
-    "https://app.partnertech.ai/*"
-  ],
+  "host_permissions": ["https://*/*", "http://*/*"],
 
   "background": {
     "service_worker": "background.js",
@@ -41,7 +35,7 @@
 
   "action": {
     "default_popup": "popup.html",
-    "default_title": "PartnerTech AI Companion - Click to discover leads",
+    "default_title": "PartnerTech.ai - Click to discover leads",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
@@ -55,31 +49,5 @@
     "32": "icons/icon32.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  },
-
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "sidebar.html",
-        "companion.html",
-        "icons/*.png",
-        "assets/*"
-      ],
-      "matches": ["<all_urls>"]
-    }
-  ],
-
-  "externally_connectable": {
-    "matches": [
-      "https://partnertech.ai/*",
-      "https://*.partnertech.ai/*",
-      "https://app.partnertech.ai/*"
-    ]
-  },
-
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
-  },
-
-  "minimum_chrome_version": "88"
+  }
 }
