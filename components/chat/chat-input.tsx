@@ -264,7 +264,7 @@ export const ChatInput: FC<ChatInputProps> = ({}) => {
             // Special "Start Cookin'" button for first message
             <button
               className={cn(
-                "bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-lg px-3 py-2 font-bold text-sm transition-all duration-300 hover:from-yellow-400 hover:to-yellow-500 hover:scale-105 shadow-lg",
+                "rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600 px-3 py-2 text-sm font-bold text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-yellow-400 hover:to-yellow-500",
                 !userInput && "cursor-not-allowed opacity-50"
               )}
               onClick={() => {
@@ -278,7 +278,7 @@ export const ChatInput: FC<ChatInputProps> = ({}) => {
           ) : (
             <IconSend
               className={cn(
-                "bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded p-1 hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300",
+                "rounded bg-gradient-to-r from-yellow-500 to-yellow-600 p-1 text-black transition-all duration-300 hover:from-yellow-400 hover:to-yellow-500",
                 !userInput && "cursor-not-allowed opacity-50"
               )}
               onClick={() => {

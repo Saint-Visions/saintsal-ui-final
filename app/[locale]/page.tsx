@@ -77,7 +77,7 @@ export default function HomePage() {
             window.location.href = "/en/operations"
           }
         }}
-        className="group relative mt-8 flex w-[280px] items-center justify-center rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 px-6 py-4 font-bold text-black shadow-2xl transition-all duration-300 hover:from-yellow-400 hover:to-yellow-500 hover:shadow-yellow-500/25 hover:scale-110 hover:-translate-y-1 cursor-pointer"
+        className="group relative mt-8 flex w-[280px] cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 px-6 py-4 font-bold text-black shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:from-yellow-400 hover:to-yellow-500 hover:shadow-yellow-500/25"
       >
         <span className="text-lg">🔥 Start Cookin - Operations</span>
         <IconArrowRight
@@ -86,78 +86,78 @@ export default function HomePage() {
         />
 
         {/* Glow effect */}
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl blur opacity-30 group-hover:opacity-70 transition duration-300"></div>
+        <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-600 opacity-30 blur transition duration-300 group-hover:opacity-70"></div>
       </button>
 
       {/* Direct Backup Links */}
       <div className="mt-4 flex flex-col items-center gap-2">
         <a
           href="/en/operations"
-          className="text-green-400 underline hover:text-green-300 transition-colors font-semibold"
+          className="font-semibold text-green-400 underline transition-colors hover:text-green-300"
         >
           🚀 Direct Link: Open Operations Dashboard
         </a>
-        <p className="text-gray-500 text-sm">
+        <p className="text-sm text-gray-500">
           (Click above if button doesn't work)
         </p>
       </div>
 
       {/* Success Message */}
       <div className="mt-6 max-w-md text-center">
-        <p className="text-green-400 font-semibold text-lg">
+        <p className="text-lg font-semibold text-green-400">
           ✅ Operations Page is Working!
         </p>
-        <p className="text-gray-400 text-sm mt-2">
+        <p className="mt-2 text-sm text-gray-400">
           Click above to access your AI-powered business features
         </p>
       </div>
 
       {/* Features Preview */}
-      <div className="mt-8 max-w-4xl mx-auto">
-        <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center">
+      <div className="mx-auto mt-8 max-w-4xl">
+        <h3 className="mb-6 text-center text-2xl font-bold text-yellow-400">
           🚀 What's Inside Your Operations Dashboard
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-blue-900/20 border border-blue-500/20 rounded-lg p-4 text-center">
-            <div className="text-3xl mb-2">🔍</div>
-            <div className="text-blue-400 font-semibold text-sm">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="rounded-lg border border-blue-500/20 bg-blue-900/20 p-4 text-center">
+            <div className="mb-2 text-3xl">🔍</div>
+            <div className="text-sm font-semibold text-blue-400">
               Lead Discovery
             </div>
-            <div className="text-gray-400 text-xs">AI-powered lookup</div>
+            <div className="text-xs text-gray-400">AI-powered lookup</div>
           </div>
-          <div className="bg-green-900/20 border border-green-500/20 rounded-lg p-4 text-center">
-            <div className="text-3xl mb-2">🤝</div>
-            <div className="text-green-400 font-semibold text-sm">
+          <div className="rounded-lg border border-green-500/20 bg-green-900/20 p-4 text-center">
+            <div className="mb-2 text-3xl">🤝</div>
+            <div className="text-sm font-semibold text-green-400">
               Referral Network
             </div>
-            <div className="text-gray-400 text-xs">Partner tracking</div>
+            <div className="text-xs text-gray-400">Partner tracking</div>
           </div>
-          <div className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-4 text-center">
-            <div className="text-3xl mb-2">📈</div>
-            <div className="text-purple-400 font-semibold text-sm">
+          <div className="rounded-lg border border-purple-500/20 bg-purple-900/20 p-4 text-center">
+            <div className="mb-2 text-3xl">📈</div>
+            <div className="text-sm font-semibold text-purple-400">
               AI Deal Analysis
             </div>
-            <div className="text-gray-400 text-xs">GPT-4 insights</div>
+            <div className="text-xs text-gray-400">GPT-4 insights</div>
           </div>
-          <div className="bg-pink-900/20 border border-pink-500/20 rounded-lg p-4 text-center">
-            <div className="text-3xl mb-2">📱</div>
-            <div className="text-pink-400 font-semibold text-sm">
+          <div className="rounded-lg border border-pink-500/20 bg-pink-900/20 p-4 text-center">
+            <div className="mb-2 text-3xl">📱</div>
+            <div className="text-sm font-semibold text-pink-400">
               Mobile Export
             </div>
-            <div className="text-gray-400 text-xs">iOS/Android apps</div>
+            <div className="text-xs text-gray-400">iOS/Android apps</div>
           </div>
         </div>
       </div>
 
       {/* Enhanced Intro Text */}
-      <div className="mt-8 text-center max-w-2xl px-6">
-        <p className="text-lg text-gray-300 leading-relaxed mb-4">
+      <div className="mt-8 max-w-2xl px-6 text-center">
+        <p className="mb-4 text-lg leading-relaxed text-gray-300">
           Welcome to the future of{" "}
-          <span className="text-yellow-400 font-semibold">
+          <span className="font-semibold text-yellow-400">
             intelligent conversations
           </span>
         </p>
-        <p className="text-gray-400 leading-relaxed">
+        <p className="leading-relaxed text-gray-400">
           SaintSal's premium AI assistant combines cutting-edge technology with
           intuitive design, delivering{" "}
           <span className="text-yellow-400">real-time insights</span> and{" "}
@@ -166,14 +166,14 @@ export default function HomePage() {
         </p>
 
         {/* Feature highlights */}
-        <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm">
-          <span className="bg-gray-800/50 text-yellow-400 px-3 py-1 rounded-full border border-yellow-400/20">
+        <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+          <span className="rounded-full border border-yellow-400/20 bg-gray-800/50 px-3 py-1 text-yellow-400">
             ⚡ Intelligent Ops
           </span>
-          <span className="bg-gray-800/50 text-yellow-400 px-3 py-1 rounded-full border border-yellow-400/20">
+          <span className="rounded-full border border-yellow-400/20 bg-gray-800/50 px-3 py-1 text-yellow-400">
             🧠 Real-time AI
           </span>
-          <span className="bg-gray-800/50 text-yellow-400 px-3 py-1 rounded-full border border-yellow-400/20">
+          <span className="rounded-full border border-yellow-400/20 bg-gray-800/50 px-3 py-1 text-yellow-400">
             🔒 Enterprise Ready
           </span>
         </div>

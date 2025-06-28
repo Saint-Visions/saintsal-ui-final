@@ -26,7 +26,7 @@ const plans: PricingPlan[] = [
     period: "/month",
     description:
       "Perfect for getting started with AI-powered business automation",
-    icon: <Zap className="h-6 w-6" />,
+    icon: <Zap className="size-6" />,
     features: [
       "50 AI-powered lead discoveries per month",
       "Basic referral tracking system",
@@ -45,7 +45,7 @@ const plans: PricingPlan[] = [
     price: "$597",
     period: "/month",
     description: "Command Your Future - Most popular for scaling businesses",
-    icon: <Crown className="h-6 w-6" />,
+    icon: <Crown className="size-6" />,
     popular: true,
     features: [
       "Unlimited AI lead discoveries",
@@ -67,7 +67,7 @@ const plans: PricingPlan[] = [
     price: "Custom",
     period: "pricing",
     description: "Fully customized solutions for enterprise-level operations",
-    icon: <Rocket className="h-6 w-6" />,
+    icon: <Rocket className="size-6" />,
     features: [
       "Everything in Pro plan",
       "Custom AI model training & deployment",
@@ -87,51 +87,51 @@ const plans: PricingPlan[] = [
 
 export function PricingCards() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
       {plans.map((plan, index) => (
         <Card
           key={plan.name}
-          className={`relative bg-gradient-to-br from-gray-900/50 to-gray-800/30 border ${plan.borderColor} transition-all duration-300 hover:scale-105 hover:shadow-2xl ${plan.popular ? "ring-2 ring-yellow-500/50 shadow-yellow-500/25" : ""}`}
+          className={`relative border bg-gradient-to-br from-gray-900/50 to-gray-800/30 ${plan.borderColor} transition-all duration-300 hover:scale-105 hover:shadow-2xl ${plan.popular ? "shadow-yellow-500/25 ring-2 ring-yellow-500/50" : ""}`}
         >
           {plan.popular && (
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <Badge className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold px-4 py-1">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+              <Badge className="bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-1 font-semibold text-black">
                 🔥 MOST POPULAR
               </Badge>
             </div>
           )}
 
-          <CardHeader className="text-center pb-4">
+          <CardHeader className="pb-4 text-center">
             <div
-              className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${plan.gradient} text-white mx-auto mb-4`}
+              className={`inline-flex size-12 items-center justify-center rounded-full bg-gradient-to-r ${plan.gradient} mx-auto mb-4 text-white`}
             >
               {plan.icon}
             </div>
-            <CardTitle className="text-2xl font-bold text-white mb-2">
+            <CardTitle className="mb-2 text-2xl font-bold text-white">
               {plan.name}
             </CardTitle>
-            <div className="flex items-baseline justify-center mb-4">
+            <div className="mb-4 flex items-baseline justify-center">
               <span className="text-4xl font-bold text-white">
                 {plan.price}
               </span>
-              <span className="text-gray-400 ml-2">{plan.period}</span>
+              <span className="ml-2 text-gray-400">{plan.period}</span>
             </div>
-            <p className="text-gray-300 text-sm">{plan.description}</p>
+            <p className="text-sm text-gray-300">{plan.description}</p>
           </CardHeader>
 
           <CardContent className="space-y-6">
             <ul className="space-y-3">
               {plan.features.map((feature, featureIndex) => (
                 <li key={featureIndex} className="flex items-start">
-                  <Check className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300 text-sm">{feature}</span>
+                  <Check className="mr-3 mt-0.5 size-5 shrink-0 text-green-400" />
+                  <span className="text-sm text-gray-300">{feature}</span>
                 </li>
               ))}
             </ul>
 
             <Button
               asChild
-              className={`w-full bg-gradient-to-r ${plan.gradient} text-white font-semibold py-3 hover:shadow-lg transition-all duration-300 ${plan.popular ? "shadow-yellow-500/25" : ""}`}
+              className={`w-full bg-gradient-to-r ${plan.gradient} py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg ${plan.popular ? "shadow-yellow-500/25" : ""}`}
             >
               <a href={plan.ctaLink}>{plan.cta}</a>
             </Button>

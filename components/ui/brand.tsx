@@ -25,7 +25,7 @@ export const Brand: FC<BrandProps> = ({ theme = "dark", compact = false }) => {
             height={48}
             className="drop-shadow-lg"
           />
-          <div className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+          <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-xl font-bold text-transparent">
             SaintSal™
           </div>
         </div>

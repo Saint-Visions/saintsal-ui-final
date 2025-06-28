@@ -1,13 +1,13 @@
 export default function TestOperationsPage() {
   return (
-    <div className="min-h-screen bg-black text-white p-8">
-      <h1 className="text-4xl font-bold text-yellow-400 mb-8">
+    <div className="min-h-screen bg-black p-8 text-white">
+      <h1 className="mb-8 text-4xl font-bold text-yellow-400">
         🔥 SaintSal™ Test Operations Dashboard
       </h1>
 
       <div className="space-y-6">
-        <div className="bg-gray-800 p-6 rounded-lg">
-          <h2 className="text-2xl text-green-400 mb-4">
+        <div className="rounded-lg bg-gray-800 p-6">
+          <h2 className="mb-4 text-2xl text-green-400">
             ✅ Success! You made it!
           </h2>
           <p className="text-gray-300">
@@ -16,8 +16,8 @@ export default function TestOperationsPage() {
           </p>
         </div>
 
-        <div className="bg-blue-900/20 p-6 rounded-lg border border-blue-500/20">
-          <h3 className="text-xl text-blue-400 mb-3">
+        <div className="rounded-lg border border-blue-500/20 bg-blue-900/20 p-6">
+          <h3 className="mb-3 text-xl text-blue-400">
             Your SaintSal™ platform is fully operational! Here&apos;s how to
             access
           </h3>
@@ -39,8 +39,8 @@ export default function TestOperationsPage() {
           </ul>
         </div>
 
-        <div className="bg-yellow-900/20 p-6 rounded-lg border border-yellow-500/20">
-          <h3 className="text-xl text-yellow-400 mb-3">Next Steps:</h3>
+        <div className="rounded-lg border border-yellow-500/20 bg-yellow-900/20 p-6">
+          <h3 className="mb-3 text-xl text-yellow-400">Next Steps:</h3>
           <p className="text-gray-300">
             Once this test page loads, we'll fix the main operations dashboard.
             The issue is likely a component compilation error that we can
