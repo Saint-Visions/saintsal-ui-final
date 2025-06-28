@@ -9,41 +9,34 @@ import {
 } from "@tabler/icons-react"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { SmartLeadRouter } from "@/components/intake/smart-lead-router"
+import { Button } from "@/components/ui/button"
 
 export default function HomePage() {
   const { theme } = useTheme()
   const router = useRouter()
+  const [showLeadRouter, setShowLeadRouter] = useState(false)
 
   const handleStartCookin = () => {
     console.log("🔥 Start Cookin button clicked!")
 
     try {
-      // Check if we're in Builder.io preview environment
       const isBuilderPreview =
         typeof window !== "undefined" &&
         (window.location.hostname.includes("builder") ||
           window.location.hostname.includes("fly.dev") ||
           window.location.href.includes("projects.builder.codes"))
 
-      console.log(
-        "Environment detected:",
-        isBuilderPreview ? "Builder.io Preview" : "Local/Production"
-      )
-
       if (isBuilderPreview) {
-        // In Builder.io preview, open in new tab to local server
-        console.log("Opening operations dashboard in new tab...")
         window.open("http://localhost:3000/en/workspace1/operations", "_blank")
       } else {
-        // In normal environment, use Next.js router
-        console.log("Navigating with Next.js router...")
         router.push("/en/workspace1/operations")
       }
     } catch (error) {
       console.error("Navigation error:", error)
-      // Ultimate fallback - direct navigation
       window.location.href = "/en/workspace1/operations"
     }
   }
@@ -56,6 +49,30 @@ export default function HomePage() {
       console.error("Navigation error:", error)
       window.location.href = "/en/onboarding"
     }
+  }
+
+  const handleGetExtension = () => {
+    window.open(
+      "https://chrome.google.com/webstore/detail/partnertech-ai",
+      "_blank"
+    )
+  }
+
+  if (showLeadRouter) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 py-12 px-6">
+        <div className="mb-8 text-center">
+          <Button
+            variant="ghost"
+            onClick={() => setShowLeadRouter(false)}
+            className="text-gray-400 hover:text-white"
+          >
+            ← Back to Homepage
+          </Button>
+        </div>
+        <SmartLeadRouter />
+      </div>
+    )
   }
 
   return (
@@ -122,8 +139,21 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Dual CTA Buttons */}
+      {/* Triple CTA Buttons */}
       <div className="mt-8 flex flex-col md:flex-row gap-4 items-center">
+        {/* Chrome Extension CTA */}
+        <button
+          onClick={handleGetExtension}
+          className="group relative flex w-[280px] cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-4 font-bold text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:from-green-400 hover:to-emerald-500 hover:shadow-green-500/25"
+        >
+          <span className="text-lg">🧩 Get Chrome Extension</span>
+          <IconArrowRight
+            className="ml-2 transition-transform duration-300 group-hover:translate-x-2"
+            size={20}
+          />
+          <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 opacity-30 blur transition duration-300 group-hover:opacity-70"></div>
+        </button>
+
         {/* Operations Dashboard CTA */}
         <button
           onClick={handleStartCookin}
@@ -151,6 +181,20 @@ export default function HomePage() {
         </button>
       </div>
 
+      {/* Smart Lead Router CTA */}
+      <div className="mt-6">
+        <button
+          onClick={() => setShowLeadRouter(true)}
+          className="group relative flex cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-purple-500 to-pink-600 px-8 py-3 font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:from-purple-400 hover:to-pink-500"
+        >
+          <span className="text-base">🎯 Smart Lead Intake</span>
+          <IconBrain className="ml-2 size-4" />
+        </button>
+        <p className="mt-2 text-center text-sm text-gray-400">
+          AI-powered routing • Get qualified in 60 seconds
+        </p>
+      </div>
+
       {/* Platform Advantages */}
       <div className="mx-auto mt-12 max-w-6xl px-6">
         <h3 className="mb-8 text-center text-3xl font-bold text-white">
@@ -170,9 +214,9 @@ export default function HomePage() {
             <p className="text-sm text-gray-300 mb-3">
               Track hiring, funding, expansion, tech changes in real-time
             </p>
-            <Badge className="bg-blue-500/20 text-blue-400 text-xs">
+            <span className="bg-blue-500/20 text-blue-400 text-xs px-2 py-1 rounded-full">
               vs Seamless: Static data
-            </Badge>
+            </span>
           </div>
 
           {/* AI Companion */}
@@ -186,9 +230,9 @@ export default function HomePage() {
             <p className="text-sm text-gray-300 mb-3">
               Always-on assistant with context memory across apps
             </p>
-            <Badge className="bg-purple-500/20 text-purple-400 text-xs">
+            <span className="bg-purple-500/20 text-purple-400 text-xs px-2 py-1 rounded-full">
               Patent Protected
-            </Badge>
+            </span>
           </div>
 
           {/* Automation Engine */}
@@ -202,9 +246,9 @@ export default function HomePage() {
             <p className="text-sm text-gray-300 mb-3">
               Auto-email, SMS, calls, LinkedIn outreach with AI routing
             </p>
-            <Badge className="bg-green-500/20 text-green-400 text-xs">
+            <span className="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full">
               vs Seamless: Manual only
-            </Badge>
+            </span>
           </div>
 
           {/* Multi-Tenant SaaS */}
@@ -218,9 +262,46 @@ export default function HomePage() {
             <p className="text-sm text-gray-300 mb-3">
               Multi-tenant, custom domains, Stripe billing, team roles
             </p>
-            <Badge className="bg-yellow-500/20 text-yellow-400 text-xs">
+            <span className="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-1 rounded-full">
               Production Ready
-            </Badge>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Chrome Extension Benefits */}
+      <div className="mx-auto mt-12 max-w-4xl px-6">
+        <h3 className="mb-6 text-center text-2xl font-bold text-white">
+          🧩 Chrome Extension: Your Secret Weapon
+        </h3>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="rounded-lg border border-green-500/20 bg-green-900/20 p-4 text-center">
+            <div className="mb-2 text-3xl">⚡</div>
+            <div className="text-sm font-semibold text-green-400">
+              Instant Install
+            </div>
+            <div className="text-xs text-gray-400">Ready in 15 seconds</div>
+          </div>
+          <div className="rounded-lg border border-blue-500/20 bg-blue-900/20 p-4 text-center">
+            <div className="mb-2 text-3xl">🎯</div>
+            <div className="text-sm font-semibold text-blue-400">
+              Real-Time Signals
+            </div>
+            <div className="text-xs text-gray-400">On any website</div>
+          </div>
+          <div className="rounded-lg border border-purple-500/20 bg-purple-900/20 p-4 text-center">
+            <div className="mb-2 text-3xl">🤖</div>
+            <div className="text-sm font-semibold text-purple-400">
+              AI Companion
+            </div>
+            <div className="text-xs text-gray-400">Floating assistant</div>
+          </div>
+          <div className="rounded-lg border border-yellow-500/20 bg-yellow-900/20 p-4 text-center">
+            <div className="mb-2 text-3xl">🚀</div>
+            <div className="text-sm font-semibold text-yellow-400">
+              One-Click Actions
+            </div>
+            <div className="text-xs text-gray-400">Instant automation</div>
           </div>
         </div>
       </div>
@@ -247,75 +328,10 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Enhanced Feature Grid */}
-      <div className="mx-auto mt-12 max-w-4xl px-6">
-        <h3 className="mb-6 text-center text-2xl font-bold text-white">
-          🔧 Complete SaaS Platform Features
-        </h3>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <div className="rounded-lg border border-blue-500/20 bg-blue-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">🎯</div>
-            <div className="text-sm font-semibold text-blue-400">
-              Intent Discovery
-            </div>
-            <div className="text-xs text-gray-400">Real-time signals</div>
-          </div>
-          <div className="rounded-lg border border-green-500/20 bg-green-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">🤖</div>
-            <div className="text-sm font-semibold text-green-400">
-              Dual AI Assistants
-            </div>
-            <div className="text-xs text-gray-400">Saint/Sal/Dual modes</div>
-          </div>
-          <div className="rounded-lg border border-purple-500/20 bg-purple-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">⚡</div>
-            <div className="text-sm font-semibold text-purple-400">
-              Action Automation
-            </div>
-            <div className="text-xs text-gray-400">Email/SMS/Calls</div>
-          </div>
-          <div className="rounded-lg border border-yellow-500/20 bg-yellow-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">💳</div>
-            <div className="text-sm font-semibold text-yellow-400">
-              Stripe Billing
-            </div>
-            <div className="text-xs text-gray-400">3-tier SaaS</div>
-          </div>
-          <div className="rounded-lg border border-pink-500/20 bg-pink-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">🏢</div>
-            <div className="text-sm font-semibold text-pink-400">
-              Multi-Tenant
-            </div>
-            <div className="text-xs text-gray-400">Custom domains</div>
-          </div>
-          <div className="rounded-lg border border-indigo-500/20 bg-indigo-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">📊</div>
-            <div className="text-sm font-semibold text-indigo-400">
-              Analytics
-            </div>
-            <div className="text-xs text-gray-400">MRR/ARR tracking</div>
-          </div>
-          <div className="rounded-lg border border-cyan-500/20 bg-cyan-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">🎨</div>
-            <div className="text-sm font-semibold text-cyan-400">
-              Custom Branding
-            </div>
-            <div className="text-xs text-gray-400">White-label ready</div>
-          </div>
-          <div className="rounded-lg border border-orange-500/20 bg-orange-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">🔗</div>
-            <div className="text-sm font-semibold text-orange-400">
-              API Integrations
-            </div>
-            <div className="text-xs text-gray-400">Webhooks ready</div>
-          </div>
-        </div>
-      </div>
-
       {/* Call to Action Section */}
       <div className="mt-16 text-center max-w-3xl px-6">
         <h2 className="text-3xl font-bold text-white mb-4">
-          Ready to Build Your SaaS Empire?
+          Ready to Transform Your Lead Generation?
         </h2>
         <p className="text-gray-300 text-lg mb-8">
           Join the patent-protected platform that goes beyond data collection to
@@ -326,17 +342,34 @@ export default function HomePage() {
           .
         </p>
 
-        {/* Final CTA */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+        {/* Final CTA Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <button
+            onClick={handleGetExtension}
+            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-4 rounded-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl"
+          >
+            🧩 Get Extension
+            <div className="text-xs mt-1 opacity-80">Instant access</div>
+          </button>
+          <button
+            onClick={() => setShowLeadRouter(true)}
+            className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-4 rounded-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl"
+          >
+            🎯 Get Qualified
+            <div className="text-xs mt-1 opacity-80">60-second intake</div>
+          </button>
           <button
             onClick={handleSaaSOnboarding}
-            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-2xl"
+            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-4 rounded-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl"
           >
-            🚀 Start Your SaaS Journey
+            🚀 Full Platform
+            <div className="text-xs mt-1 opacity-80">Multi-tenant SaaS</div>
           </button>
-          <div className="text-sm text-gray-400">
-            14-day free trial • No credit card required
-          </div>
+        </div>
+
+        <div className="mt-4 text-sm text-gray-400">
+          14-day free trial • No credit card required • Chrome Web Store
+          approved
         </div>
       </div>
 
