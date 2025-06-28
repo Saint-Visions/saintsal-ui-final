@@ -30,31 +30,31 @@ const NAVIGATION_ITEMS = [
   {
     label: "Chat",
     href: "/chat",
-    icon: <MessageSquare className="h-4 w-4" />,
+    icon: <MessageSquare className="size-4" />,
     description: "AI Assistant Conversations"
   },
   {
     label: "Operations",
     href: "/operations",
-    icon: <Activity className="h-4 w-4" />,
+    icon: <Activity className="size-4" />,
     description: "Business Intelligence Dashboard"
   },
   {
     label: "Analytics",
     href: "/analytics",
-    icon: <BarChart3 className="h-4 w-4" />,
+    icon: <BarChart3 className="size-4" />,
     description: "Advanced SaaS Metrics"
   },
   {
     label: "Onboarding",
     href: "/onboarding",
-    icon: <Building2 className="h-4 w-4" />,
+    icon: <Building2 className="size-4" />,
     description: "Multi-Tenant Setup"
   },
   {
     label: "Admin",
     href: "/admin",
-    icon: <Crown className="h-4 w-4" />,
+    icon: <Crown className="size-4" />,
     description: "SaaS Management",
     adminOnly: true
   }
@@ -64,19 +64,19 @@ const ASSISTANT_MODES = [
   {
     id: "saint",
     name: "Saint",
-    icon: <Crown className="h-4 w-4" />,
+    icon: <Crown className="size-4" />,
     color: "text-yellow-400"
   },
   {
     id: "sal",
     name: "Sal",
-    icon: <Zap className="h-4 w-4" />,
+    icon: <Zap className="size-4" />,
     color: "text-blue-400"
   },
   {
     id: "dual",
     name: "Dual",
-    icon: <Brain className="h-4 w-4" />,
+    icon: <Brain className="size-4" />,
     color: "text-purple-400"
   }
 ]
@@ -121,15 +121,15 @@ export function MasterNavigation({
 
   return (
     <div className="border-b border-gray-800 bg-gray-900/50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
-              <Activity className="h-5 w-5 text-black" />
+            <div className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600">
+              <Activity className="size-5 text-black" />
             </div>
             <div>
-              <h1 className="text-lg font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+              <h1 className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-lg font-bold text-transparent">
                 SaintSal™
               </h1>
               {currentTenant && (
@@ -139,7 +139,7 @@ export function MasterNavigation({
           </Link>
 
           {/* Main Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden items-center space-x-6 md:flex">
             {NAVIGATION_ITEMS.map(item => {
               if (item.adminOnly && !currentUser?.isAdmin) return null
 
@@ -147,16 +147,16 @@ export function MasterNavigation({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`flex items-center space-x-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActiveRoute(item.href)
                       ? "bg-yellow-500/20 text-yellow-400"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800"
+                      : "text-gray-300 hover:bg-gray-800 hover:text-white"
                   }`}
                 >
                   {item.icon}
                   <span>{item.label}</span>
                   {isActiveRoute(item.href) && (
-                    <Badge className="bg-yellow-500 text-black text-xs">
+                    <Badge className="bg-yellow-500 text-xs text-black">
                       Active
                     </Badge>
                   )}
@@ -185,7 +185,7 @@ export function MasterNavigation({
                         ?.name
                     }
                   </span>
-                  <ChevronDown className="h-3 w-3 ml-1" />
+                  <ChevronDown className="ml-1 size-3" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
@@ -204,7 +204,7 @@ export function MasterNavigation({
                     <div className={mode.color}>{mode.icon}</div>
                     <span>{mode.name} Mode</span>
                     {assistantMode === mode.id && (
-                      <Badge className="bg-green-500 text-white text-xs ml-auto">
+                      <Badge className="ml-auto bg-green-500 text-xs text-white">
                         Active
                       </Badge>
                     )}
@@ -222,13 +222,13 @@ export function MasterNavigation({
                     size="sm"
                     className="text-gray-300 hover:bg-gray-800"
                   >
-                    <Users className="h-4 w-4 mr-2" />
+                    <Users className="mr-2 size-4" />
                     <span className="hidden sm:block">{currentUser.name}</span>
-                    <ChevronDown className="h-3 w-3 ml-1" />
+                    <ChevronDown className="ml-1 size-3" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-64">
-                  <div className="px-2 py-2">
+                  <div className="p-2">
                     <div className="font-semibold text-white">
                       {currentUser.name}
                     </div>
@@ -246,16 +246,16 @@ export function MasterNavigation({
                   </div>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
-                    <Settings className="h-4 w-4 mr-2" />
+                    <Settings className="mr-2 size-4" />
                     Account Settings
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <BarChart3 className="h-4 w-4 mr-2" />
+                    <BarChart3 className="mr-2 size-4" />
                     Usage & Billing
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
-                    <Sparkles className="h-4 w-4 mr-2" />
+                    <Sparkles className="mr-2 size-4" />
                     Upgrade Plan
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -263,8 +263,8 @@ export function MasterNavigation({
             )}
 
             {/* System Status */}
-            <Badge className="bg-green-500 text-white text-xs hidden lg:flex">
-              <Sparkles className="h-3 w-3 mr-1" />
+            <Badge className="hidden bg-green-500 text-xs text-white lg:flex">
+              <Sparkles className="mr-1 size-3" />
               All Systems Active
             </Badge>
           </div>

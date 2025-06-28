@@ -41,7 +41,7 @@ export const Brand: FC<BrandProps> = ({
 
         {showSlogan && (
           <p
-            className={`${compact ? "text-sm" : "text-lg"} font-medium text-yellow-400/80 mt-1`}
+            className={`${compact ? "text-sm" : "text-lg"} mt-1 font-medium text-yellow-400/80`}
           >
             Cookin' Knowledge.
           </p>
@@ -49,14 +49,14 @@ export const Brand: FC<BrandProps> = ({
 
         {!compact && (
           <div className="mt-3 text-center">
-            <p className="text-gray-400 text-sm font-medium">
+            <p className="text-sm font-medium text-gray-400">
               AI-Powered Business Intelligence
             </p>
-            <div className="flex items-center justify-center mt-2 space-x-2">
-              <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
+            <div className="mt-2 flex items-center justify-center space-x-2">
+              <span className="rounded-full bg-yellow-500/20 px-2 py-1 text-xs text-yellow-400">
                 Multi-Tenant SaaS
               </span>
-              <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">
+              <span className="rounded-full bg-blue-500/20 px-2 py-1 text-xs text-blue-400">
                 Enterprise Ready
               </span>
             </div>

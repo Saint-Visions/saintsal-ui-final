@@ -31,7 +31,7 @@ const ASSISTANT_MODES: AssistantMode[] = [
     id: "saint",
     name: "Saint",
     description: "Strategic business intelligence and executive-level insights",
-    icon: <Crown className="h-6 w-6" />,
+    icon: <Crown className="size-6" />,
     color: "text-yellow-400",
     gradient: "from-yellow-500 to-yellow-600",
     capabilities: [
@@ -49,7 +49,7 @@ const ASSISTANT_MODES: AssistantMode[] = [
     name: "Sal",
     description:
       "Your everyday operational assistant - the ultimate 'GOTTA GUY™'",
-    icon: <Zap className="h-6 w-6" />,
+    icon: <Zap className="size-6" />,
     color: "text-blue-400",
     gradient: "from-blue-500 to-blue-600",
     capabilities: [
@@ -66,7 +66,7 @@ const ASSISTANT_MODES: AssistantMode[] = [
     id: "dual",
     name: "Dual Mode",
     description: "Best of both - strategic insights with operational execution",
-    icon: <Brain className="h-6 w-6" />,
+    icon: <Brain className="size-6" />,
     color: "text-purple-400",
     gradient: "from-purple-500 to-purple-600",
     capabilities: [
@@ -125,7 +125,7 @@ export function DualAssistantSelector({
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h3 className="text-2xl font-bold text-white mb-2">
+        <h3 className="mb-2 text-2xl font-bold text-white">
           Choose Your AI Assistant
         </h3>
         <p className="text-gray-400">
@@ -133,14 +133,14 @@ export function DualAssistantSelector({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {ASSISTANT_MODES.map(mode => (
           <Card
             key={mode.id}
             className={`cursor-pointer transition-all duration-300 hover:scale-105 ${
               currentMode === mode.id
-                ? `ring-2 ring-offset-2 ring-offset-gray-900 bg-gradient-to-br from-gray-900/80 to-gray-800/60 border-2`
-                : "bg-gray-900/50 border hover:border-gray-600"
+                ? `border-2 bg-gradient-to-br from-gray-900/80 to-gray-800/60 ring-2 ring-offset-2 ring-offset-gray-900`
+                : "border bg-gray-900/50 hover:border-gray-600"
             } ${
               currentMode === mode.id
                 ? mode.color.replace("text-", "ring-").replace("400", "500")
@@ -148,9 +148,9 @@ export function DualAssistantSelector({
             }`}
             onClick={() => handleModeSelect(mode.id)}
           >
-            <CardHeader className="text-center pb-3">
+            <CardHeader className="pb-3 text-center">
               <div
-                className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${mode.gradient} text-white mx-auto mb-4`}
+                className={`inline-flex size-12 items-center justify-center rounded-full bg-gradient-to-r ${mode.gradient} mx-auto mb-4 text-white`}
               >
                 {mode.icon}
               </div>
@@ -159,23 +159,23 @@ export function DualAssistantSelector({
               >
                 {mode.name}
                 {currentMode === mode.id && (
-                  <Badge className="ml-2 bg-green-500 text-white text-xs">
+                  <Badge className="ml-2 bg-green-500 text-xs text-white">
                     ACTIVE
                   </Badge>
                 )}
               </CardTitle>
-              <p className="text-gray-400 text-sm">{mode.specialty}</p>
+              <p className="text-sm text-gray-400">{mode.specialty}</p>
             </CardHeader>
 
             <CardContent className="space-y-4">
-              <p className="text-gray-300 text-sm text-center">
+              <p className="text-center text-sm text-gray-300">
                 {mode.description}
               </p>
 
               <Separator className="bg-gray-700" />
 
               <div>
-                <h4 className="text-white font-semibold text-sm mb-2">
+                <h4 className="mb-2 text-sm font-semibold text-white">
                   Capabilities:
                 </h4>
                 <ul className="space-y-1">
@@ -184,12 +184,12 @@ export function DualAssistantSelector({
                       key={index}
                       className="flex items-center text-xs text-gray-300"
                     >
-                      <Sparkles className="h-3 w-3 mr-2 text-yellow-400 flex-shrink-0" />
+                      <Sparkles className="mr-2 size-3 shrink-0 text-yellow-400" />
                       {capability}
                     </li>
                   ))}
                   {mode.capabilities.length > 4 && (
-                    <li className="text-xs text-gray-400 italic">
+                    <li className="text-xs italic text-gray-400">
                       +{mode.capabilities.length - 4} more capabilities...
                     </li>
                   )}
@@ -197,9 +197,9 @@ export function DualAssistantSelector({
               </div>
 
               {currentMode === mode.id && (
-                <div className="bg-green-900/20 border border-green-500/20 rounded-lg p-3">
-                  <div className="flex items-center text-green-400 text-sm font-semibold">
-                    <ChevronRight className="h-4 w-4 mr-1" />
+                <div className="rounded-lg border border-green-500/20 bg-green-900/20 p-3">
+                  <div className="flex items-center text-sm font-semibold text-green-400">
+                    <ChevronRight className="mr-1 size-4" />
                     Ready to assist you
                   </div>
                 </div>
@@ -210,12 +210,12 @@ export function DualAssistantSelector({
       </div>
 
       {/* Quick Mode Switch */}
-      <Card className="bg-gray-800/30 border-gray-700">
+      <Card className="border-gray-700 bg-gray-800/30">
         <CardContent className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <h4 className="text-white font-semibold">Current Mode:</h4>
-              <p className="text-gray-400 text-sm">
+              <h4 className="font-semibold text-white">Current Mode:</h4>
+              <p className="text-sm text-gray-400">
                 {ASSISTANT_MODES.find(m => m.id === currentMode)?.specialty}
               </p>
             </div>
