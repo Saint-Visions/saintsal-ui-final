@@ -162,24 +162,37 @@ export function ReferralNetwork() {
     try {
       const response = await fetch("/api/referrals/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include",
         body: JSON.stringify(newPartner)
       })
 
+      if (!response.ok) {
+        if (response.status === 401) {
+          toast.error("Authentication required. Please log in again.")
+          router.push("/en/login")
+          return
+        }
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
       const data = await response.json()
       if (data.success) {
-        toast.success(data.message)
+        toast.success(data.message || "Partner created successfully!")
         setIsCreateDialogOpen(false)
         setNewPartner({
           partner_name: "",
           partner_email: "",
           commission_rate: 10
         })
-        fetchPartners()
+        await fetchPartners()
       } else {
-        toast.error(data.error)
+        toast.error(data.error || "Failed to create partner")
       }
     } catch (error) {
+      console.error("Create partner error:", error)
       toast.error("Failed to create partner")
     } finally {
       setLoading(false)
