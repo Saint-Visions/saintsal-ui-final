@@ -70,7 +70,10 @@ export default function HomePage() {
             ← Back to Homepage
           </Button>
         </div>
-        <SmartLeadRouter />
+        <div className="text-center text-white">
+          <h2 className="text-2xl font-bold mb-4">Smart Lead Router</h2>
+          <p>Coming soon - intelligent lead qualification and routing!</p>
+        </div>
       </div>
     )
   }
