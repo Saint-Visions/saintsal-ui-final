@@ -1,17 +1,10 @@
 "use client"
 
-import {
-  IconArrowRight,
-  IconRocket,
-  IconCrown,
-  IconBrain,
-  IconZap
-} from "@tabler/icons-react"
+import { IconArrowRight } from "@tabler/icons-react"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
 
 export default function HomePage() {
   const { theme } = useTheme()
