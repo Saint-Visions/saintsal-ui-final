@@ -1,0 +1,70 @@
+{
+  "manifest_version": 3,
+  "name": "PartnerTech.ai - Lead Intelligence & Automation",
+  "version": "1.0.0",
+  "description": "Real-time lead discovery, intent tracking, and automated outreach powered by Patent #10,290,222",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "background",
+    "contextMenus",
+    "notifications",
+    "webNavigation",
+    "tabs",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*",
+    "https://api.partnertech.ai/*",
+    "https://hooks.zapier.com/*",
+    "https://api.stripe.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PartnerTech.ai Assistant",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sidebar.html",
+        "companion.html",
+        "icons/*.png",
+        "assets/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://partnertech.ai/*",
+      "https://*.partnertech.ai/*",
+      "https://app.partnertech.ai/*"
+    ]
+  }
+}
