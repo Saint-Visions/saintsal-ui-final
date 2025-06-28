@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { SmartLeadRouter } from "@/components/intake/smart-lead-router"
+// import { SmartLeadRouter } from "@/components/intake/smart-lead-router"
 import { Button } from "@/components/ui/button"
 
 export default function HomePage() {
