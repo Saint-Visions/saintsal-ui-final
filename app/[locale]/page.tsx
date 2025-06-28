@@ -67,7 +67,15 @@ export default function HomePage() {
   }
 
   return (
-    <div className="flex size-full flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
+    <div
+      className="flex size-full flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 relative"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://cdn.builder.io/api/v1/image/assets%2Fd83998c6a81f466db4fb83ab90c7ba25%2Fe25bface0e514ede908be8dc550038cd?format=webp&width=800')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
       {/* Patent Badge */}
       <div className="mb-4 flex items-center">
         <div className="bg-gradient-to-r from-amber-500 to-yellow-500 px-4 py-2 text-black font-bold rounded-full">
