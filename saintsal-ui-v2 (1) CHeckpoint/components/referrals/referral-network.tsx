@@ -20,9 +20,11 @@ import {
   Gift,
   Plus,
   ExternalLink,
-  DollarSign
+  DollarSign,
+  AlertCircle
 } from "lucide-react"
 import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 interface ReferralPartner {
   id: string
