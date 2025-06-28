@@ -1,22 +1,11 @@
 "use client"
 
-import {
-  IconArrowRight,
-  IconBrain,
-  IconRocket,
-  IconCrown,
-  IconZap
-} from "@tabler/icons-react"
-import { useTheme } from "next-themes"
+import { IconArrowRight } from "@tabler/icons-react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import Link from "next/link"
 import Image from "next/image"
-// import { SmartLeadRouter } from "@/components/intake/smart-lead-router"
-import { Button } from "@/components/ui/button"
 
 export default function HomePage() {
-  const { theme } = useTheme()
   const router = useRouter()
   const [showLeadRouter, setShowLeadRouter] = useState(false)
 
@@ -62,13 +51,12 @@ export default function HomePage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 py-12 px-6">
         <div className="mb-8 text-center">
-          <Button
-            variant="ghost"
+          <button
             onClick={() => setShowLeadRouter(false)}
             className="text-gray-400 hover:text-white"
           >
             ← Back to Homepage
-          </Button>
+          </button>
         </div>
         <div className="text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Smart Lead Router</h2>
@@ -191,122 +179,11 @@ export default function HomePage() {
           className="group relative flex cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-purple-500 to-pink-600 px-8 py-3 font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:from-purple-400 hover:to-pink-500"
         >
           <span className="text-base">🎯 Smart Lead Intake</span>
-          <IconBrain className="ml-2 size-4" />
+          <span className="ml-2 text-base">🧠</span>
         </button>
         <p className="mt-2 text-center text-sm text-gray-400">
           AI-powered routing • Get qualified in 60 seconds
         </p>
-      </div>
-
-      {/* Platform Advantages */}
-      <div className="mx-auto mt-12 max-w-6xl px-6">
-        <h3 className="mb-8 text-center text-3xl font-bold text-white">
-          🚀 Beyond Lead Collection - We{" "}
-          <span className="text-green-400">Execute Actions</span>
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Intent Discovery */}
-          <div className="rounded-xl border border-blue-500/20 bg-gradient-to-br from-blue-900/30 to-blue-800/20 p-6 text-center transition-all hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20">
-              <IconBrain className="size-6 text-blue-400" />
-            </div>
-            <h4 className="mb-2 text-lg font-semibold text-blue-400">
-              Intent Signals
-            </h4>
-            <p className="text-sm text-gray-300 mb-3">
-              Track hiring, funding, expansion, tech changes in real-time
-            </p>
-            <span className="bg-blue-500/20 text-blue-400 text-xs px-2 py-1 rounded-full">
-              vs Seamless: Static data
-            </span>
-          </div>
-
-          {/* AI Companion */}
-          <div className="rounded-xl border border-purple-500/20 bg-gradient-to-br from-purple-900/30 to-purple-800/20 p-6 text-center transition-all hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20">
-              <IconZap className="size-6 text-purple-400" />
-            </div>
-            <h4 className="mb-2 text-lg font-semibold text-purple-400">
-              Sticky AI Companion
-            </h4>
-            <p className="text-sm text-gray-300 mb-3">
-              Always-on assistant with context memory across apps
-            </p>
-            <span className="bg-purple-500/20 text-purple-400 text-xs px-2 py-1 rounded-full">
-              Patent Protected
-            </span>
-          </div>
-
-          {/* Automation Engine */}
-          <div className="rounded-xl border border-green-500/20 bg-gradient-to-br from-green-900/30 to-green-800/20 p-6 text-center transition-all hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-500/20">
-              <IconRocket className="size-6 text-green-400" />
-            </div>
-            <h4 className="mb-2 text-lg font-semibold text-green-400">
-              Action Triggers
-            </h4>
-            <p className="text-sm text-gray-300 mb-3">
-              Auto-email, SMS, calls, LinkedIn outreach with AI routing
-            </p>
-            <span className="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full">
-              vs Seamless: Manual only
-            </span>
-          </div>
-
-          {/* Multi-Tenant SaaS */}
-          <div className="rounded-xl border border-yellow-500/20 bg-gradient-to-br from-yellow-900/30 to-yellow-800/20 p-6 text-center transition-all hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500/20">
-              <IconCrown className="size-6 text-yellow-400" />
-            </div>
-            <h4 className="mb-2 text-lg font-semibold text-yellow-400">
-              Enterprise SaaS
-            </h4>
-            <p className="text-sm text-gray-300 mb-3">
-              Multi-tenant, custom domains, Stripe billing, team roles
-            </p>
-            <span className="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-1 rounded-full">
-              Production Ready
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Chrome Extension Benefits */}
-      <div className="mx-auto mt-12 max-w-4xl px-6">
-        <h3 className="mb-6 text-center text-2xl font-bold text-white">
-          🧩 Chrome Extension: Your Secret Weapon
-        </h3>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <div className="rounded-lg border border-green-500/20 bg-green-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">⚡</div>
-            <div className="text-sm font-semibold text-green-400">
-              Instant Install
-            </div>
-            <div className="text-xs text-gray-400">Ready in 15 seconds</div>
-          </div>
-          <div className="rounded-lg border border-blue-500/20 bg-blue-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">🎯</div>
-            <div className="text-sm font-semibold text-blue-400">
-              Real-Time Signals
-            </div>
-            <div className="text-xs text-gray-400">On any website</div>
-          </div>
-          <div className="rounded-lg border border-purple-500/20 bg-purple-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">🤖</div>
-            <div className="text-sm font-semibold text-purple-400">
-              AI Companion
-            </div>
-            <div className="text-xs text-gray-400">Floating assistant</div>
-          </div>
-          <div className="rounded-lg border border-yellow-500/20 bg-yellow-900/20 p-4 text-center">
-            <div className="mb-2 text-3xl">🚀</div>
-            <div className="text-sm font-semibold text-yellow-400">
-              One-Click Actions
-            </div>
-            <div className="text-xs text-gray-400">Instant automation</div>
-          </div>
-        </div>
       </div>
 
       {/* Social Proof & Trust Signals */}
