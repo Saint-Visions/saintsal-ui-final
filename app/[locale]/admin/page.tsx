@@ -21,31 +21,31 @@ export default function AdminPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
       {/* Admin Header */}
       <div className="border-b border-gray-800 bg-gray-900/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="mx-auto max-w-7xl px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                <Crown className="h-6 w-6 text-black" />
+              <div className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600">
+                <Crown className="size-6 text-black" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                <h1 className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-2xl font-bold text-transparent">
                   SaintSal™ Admin
                 </h1>
-                <p className="text-gray-400 text-sm">
+                <p className="text-sm text-gray-400">
                   Multi-Tenant SaaS Management
                 </p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Badge className="bg-green-500 text-white">
-                <Sparkles className="h-3 w-3 mr-1" />
+                <Sparkles className="mr-1 size-3" />
                 All Systems Operational
               </Badge>
               <Button
                 variant="outline"
                 className="border-yellow-500 text-yellow-400 hover:bg-yellow-500/10"
               >
-                <Settings className="h-4 w-4 mr-2" />
+                <Settings className="mr-2 size-4" />
                 Settings
               </Button>
             </div>
@@ -54,35 +54,35 @@ export default function AdminPage() {
       </div>
 
       {/* Admin Dashboard */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="mx-auto max-w-7xl px-6 py-8">
         <Tabs defaultValue="overview" className="space-y-6">
           <TabsList className="grid w-full grid-cols-4 bg-gray-800/50">
             <TabsTrigger
               value="overview"
               className="data-[state=active]:bg-yellow-500/20"
             >
-              <BarChart3 className="h-4 w-4 mr-2" />
+              <BarChart3 className="mr-2 size-4" />
               Overview
             </TabsTrigger>
             <TabsTrigger
               value="tenants"
               className="data-[state=active]:bg-blue-500/20"
             >
-              <Building2 className="h-4 w-4 mr-2" />
+              <Building2 className="mr-2 size-4" />
               Tenants
             </TabsTrigger>
             <TabsTrigger
               value="analytics"
               className="data-[state=active]:bg-purple-500/20"
             >
-              <BarChart3 className="h-4 w-4 mr-2" />
+              <BarChart3 className="mr-2 size-4" />
               Analytics
             </TabsTrigger>
             <TabsTrigger
               value="usage"
               className="data-[state=active]:bg-green-500/20"
             >
-              <Users className="h-4 w-4 mr-2" />
+              <Users className="mr-2 size-4" />
               Usage
             </TabsTrigger>
           </TabsList>
@@ -93,15 +93,15 @@ export default function AdminPage() {
 
           <TabsContent value="tenants">
             <div className="space-y-6">
-              <Card className="bg-gray-900/50 border-gray-700">
+              <Card className="border-gray-700 bg-gray-900/50">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center">
-                    <Building2 className="h-5 w-5 mr-2 text-blue-400" />
+                  <CardTitle className="flex items-center text-white">
+                    <Building2 className="mr-2 size-5 text-blue-400" />
                     Tenant Management
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300 mb-4">
+                  <p className="mb-4 text-gray-300">
                     Manage all your SaaS tenants, monitor their usage, and
                     configure their settings.
                   </p>

@@ -216,10 +216,10 @@ export function AdvancedLeadDiscovery() {
   return (
     <div className="space-y-6">
       {/* Search Header */}
-      <Card className="bg-gradient-to-br from-blue-900/50 to-blue-800/30 border-blue-500/20">
+      <Card className="border-blue-500/20 bg-gradient-to-br from-blue-900/50 to-blue-800/30">
         <CardHeader>
-          <CardTitle className="text-blue-400 flex items-center">
-            <Search className="h-5 w-5 mr-2" />
+          <CardTitle className="flex items-center text-blue-400">
+            <Search className="mr-2 size-5" />
             Advanced Lead Discovery & Intent Engine
           </CardTitle>
         </CardHeader>
@@ -229,7 +229,7 @@ export function AdvancedLeadDiscovery() {
               placeholder="Search for companies, people, or intent signals..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="flex-1 bg-gray-800 border-gray-600"
+              className="flex-1 border-gray-600 bg-gray-800"
             />
             <Button
               onClick={handleSearch}
@@ -238,12 +238,12 @@ export function AdvancedLeadDiscovery() {
             >
               {isSearching ? (
                 <>
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                  <div className="mr-2 size-4 animate-spin rounded-full border-b-2 border-white"></div>
                   Searching...
                 </>
               ) : (
                 <>
-                  <Target className="h-4 w-4 mr-2" />
+                  <Target className="mr-2 size-4" />
                   Find Leads
                 </>
               )}
@@ -251,7 +251,7 @@ export function AdvancedLeadDiscovery() {
           </div>
 
           {/* Quick Filters */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="mt-4 flex flex-wrap gap-2">
             {[
               "Hiring Intent",
               "Funding Events",
@@ -262,7 +262,7 @@ export function AdvancedLeadDiscovery() {
               <Badge
                 key={filter}
                 variant="outline"
-                className="cursor-pointer hover:bg-blue-500/20 text-blue-400 border-blue-400"
+                className="cursor-pointer border-blue-400 text-blue-400 hover:bg-blue-500/20"
               >
                 {filter}
               </Badge>
@@ -278,21 +278,21 @@ export function AdvancedLeadDiscovery() {
             value="leads"
             className="data-[state=active]:bg-blue-500/20"
           >
-            <Users className="h-4 w-4 mr-2" />
+            <Users className="mr-2 size-4" />
             Hot Leads ({leads.filter(l => l.status === "hot").length})
           </TabsTrigger>
           <TabsTrigger
             value="intent"
             className="data-[state=active]:bg-purple-500/20"
           >
-            <Eye className="h-4 w-4 mr-2" />
+            <Eye className="mr-2 size-4" />
             Intent Signals
           </TabsTrigger>
           <TabsTrigger
             value="automation"
             className="data-[state=active]:bg-green-500/20"
           >
-            <Zap className="h-4 w-4 mr-2" />
+            <Zap className="mr-2 size-4" />
             Automation Queue
           </TabsTrigger>
         </TabsList>
@@ -301,40 +301,40 @@ export function AdvancedLeadDiscovery() {
           {leads.map(lead => (
             <Card
               key={lead.id}
-              className="bg-gray-900/50 border-gray-700 hover:border-gray-600 transition-colors"
+              className="border-gray-700 bg-gray-900/50 transition-colors hover:border-gray-600"
             >
               <CardContent className="p-6">
                 <div className="flex items-start justify-between">
                   <div className="flex space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                      <Building2 className="h-6 w-6 text-white" />
+                    <div className="flex size-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
+                      <Building2 className="size-6 text-white" />
                     </div>
 
                     <div className="flex-1">
-                      <div className="flex items-center space-x-3 mb-2">
+                      <div className="mb-2 flex items-center space-x-3">
                         <h3 className="text-lg font-semibold text-white">
                           {lead.name}
                         </h3>
                         <Badge
-                          className={`${getStatusColor(lead.status)} text-white text-xs`}
+                          className={`${getStatusColor(lead.status)} text-xs text-white`}
                         >
                           {lead.status.toUpperCase()}
                         </Badge>
                         <div className="flex items-center text-yellow-400">
-                          <Sparkles className="h-4 w-4 mr-1" />
+                          <Sparkles className="mr-1 size-4" />
                           <span className="text-sm font-semibold">
                             {lead.engagementScore}% Match
                           </span>
                         </div>
                       </div>
 
-                      <div className="text-gray-300 mb-2">
+                      <div className="mb-2 text-gray-300">
                         <div className="font-medium">
                           {lead.title} at {lead.company}
                         </div>
-                        <div className="text-sm text-gray-400 flex items-center space-x-4">
+                        <div className="flex items-center space-x-4 text-sm text-gray-400">
                           <span className="flex items-center">
-                            <MapPin className="h-3 w-3 mr-1" />
+                            <MapPin className="mr-1 size-3" />
                             {lead.location}
                           </span>
                           <span>{lead.employees} employees</span>
@@ -343,7 +343,7 @@ export function AdvancedLeadDiscovery() {
                       </div>
 
                       {/* Intent Signals */}
-                      <div className="flex flex-wrap gap-2 mb-3">
+                      <div className="mb-3 flex flex-wrap gap-2">
                         {lead.intentSignals.map((signal, idx) => (
                           <Badge
                             key={idx}
@@ -357,15 +357,15 @@ export function AdvancedLeadDiscovery() {
                       {/* Contact Info */}
                       <div className="flex items-center space-x-4 text-sm text-gray-400">
                         <span className="flex items-center">
-                          <Mail className="h-3 w-3 mr-1" />
+                          <Mail className="mr-1 size-3" />
                           {lead.email}
                         </span>
                         <span className="flex items-center">
-                          <Phone className="h-3 w-3 mr-1" />
+                          <Phone className="mr-1 size-3" />
                           {lead.phone}
                         </span>
                         <span className="flex items-center">
-                          <ExternalLink className="h-3 w-3 mr-1" />
+                          <ExternalLink className="mr-1 size-3" />
                           {lead.website}
                         </span>
                       </div>
@@ -374,8 +374,8 @@ export function AdvancedLeadDiscovery() {
 
                   {/* Actions */}
                   <div className="flex flex-col space-y-2">
-                    <div className="text-right text-sm text-gray-400 mb-2">
-                      <Clock className="h-3 w-3 inline mr-1" />
+                    <div className="mb-2 text-right text-sm text-gray-400">
+                      <Clock className="mr-1 inline size-3" />
                       {lead.lastActivity}
                     </div>
 
@@ -387,7 +387,7 @@ export function AdvancedLeadDiscovery() {
                           handleAutomatedAction(lead.id, "send_email")
                         }
                       >
-                        <Mail className="h-3 w-3 mr-1" />
+                        <Mail className="mr-1 size-3" />
                         Auto Email
                       </Button>
                       <Button
@@ -397,7 +397,7 @@ export function AdvancedLeadDiscovery() {
                           handleAutomatedAction(lead.id, "schedule_call")
                         }
                       >
-                        <Calendar className="h-3 w-3 mr-1" />
+                        <Calendar className="mr-1 size-3" />
                         Schedule
                       </Button>
                       <Button
@@ -406,7 +406,7 @@ export function AdvancedLeadDiscovery() {
                         className="border-purple-500 text-purple-400"
                         onClick={() => setSelectedLead(lead)}
                       >
-                        <Eye className="h-3 w-3 mr-1" />
+                        <Eye className="mr-1 size-3" />
                         View Details
                       </Button>
                     </div>
@@ -428,7 +428,7 @@ export function AdvancedLeadDiscovery() {
         </TabsContent>
 
         <TabsContent value="intent" className="space-y-4">
-          <Card className="bg-gray-900/50 border-gray-700">
+          <Card className="border-gray-700 bg-gray-900/50">
             <CardHeader>
               <CardTitle className="text-purple-400">
                 Live Intent Signals
@@ -440,14 +440,14 @@ export function AdvancedLeadDiscovery() {
                   lead.intentSignals.map((signal, idx) => (
                     <div
                       key={`${lead.id}-${idx}`}
-                      className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg"
+                      className="flex items-center justify-between rounded-lg bg-gray-800/50 p-3"
                     >
                       <div className="flex items-center space-x-3">
                         <Badge className={getIntentColor(signal.type)}>
                           {signal.type}
                         </Badge>
                         <div>
-                          <div className="text-white font-medium">
+                          <div className="font-medium text-white">
                             {signal.signal}
                           </div>
                           <div className="text-sm text-gray-400">
@@ -469,7 +469,7 @@ export function AdvancedLeadDiscovery() {
                             size="sm"
                             className="bg-gradient-to-r from-purple-500 to-purple-600"
                           >
-                            <Zap className="h-3 w-3 mr-1" />
+                            <Zap className="mr-1 size-3" />
                             Take Action
                           </Button>
                         )}
@@ -483,10 +483,10 @@ export function AdvancedLeadDiscovery() {
         </TabsContent>
 
         <TabsContent value="automation" className="space-y-4">
-          <Card className="bg-gray-900/50 border-gray-700">
+          <Card className="border-gray-700 bg-gray-900/50">
             <CardHeader>
-              <CardTitle className="text-green-400 flex items-center">
-                <Zap className="h-5 w-5 mr-2" />
+              <CardTitle className="flex items-center text-green-400">
+                <Zap className="mr-2 size-5" />
                 Automated Action Queue
               </CardTitle>
             </CardHeader>
@@ -496,12 +496,12 @@ export function AdvancedLeadDiscovery() {
                   lead.automationTriggers.map((trigger, idx) => (
                     <div
                       key={`${lead.id}-${idx}`}
-                      className="flex items-center justify-between p-3 bg-green-900/20 border border-green-500/20 rounded-lg"
+                      className="flex items-center justify-between rounded-lg border border-green-500/20 bg-green-900/20 p-3"
                     >
                       <div className="flex items-center space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-400" />
+                        <CheckCircle className="size-5 text-green-400" />
                         <div>
-                          <div className="text-white font-medium">
+                          <div className="font-medium text-white">
                             {trigger
                               .replace(/_/g, " ")
                               .replace(/\b\w/g, l => l.toUpperCase())}
@@ -521,7 +521,7 @@ export function AdvancedLeadDiscovery() {
                           }
                         >
                           Execute Now
-                          <ArrowRight className="h-3 w-3 ml-1" />
+                          <ArrowRight className="ml-1 size-3" />
                         </Button>
                       </div>
                     </div>

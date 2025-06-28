@@ -209,15 +209,15 @@ export function StickyAiCompanion({
   const getInsightIcon = (type: string) => {
     switch (type) {
       case "opportunity":
-        return <Target className="h-4 w-4 text-green-400" />
+        return <Target className="size-4 text-green-400" />
       case "warning":
-        return <AlertCircle className="h-4 w-4 text-red-400" />
+        return <AlertCircle className="size-4 text-red-400" />
       case "suggestion":
-        return <Sparkles className="h-4 w-4 text-yellow-400" />
+        return <Sparkles className="size-4 text-yellow-400" />
       case "celebration":
-        return <CheckCircle className="h-4 w-4 text-purple-400" />
+        return <CheckCircle className="size-4 text-purple-400" />
       default:
-        return <Activity className="h-4 w-4 text-blue-400" />
+        return <Activity className="size-4 text-blue-400" />
     }
   }
 
@@ -265,12 +265,12 @@ export function StickyAiCompanion({
       <div className={`fixed ${getPositionClass()} z-50`}>
         <Button
           onClick={() => setIsMinimized(false)}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black shadow-2xl hover:scale-110 transition-transform"
+          className="size-16 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black shadow-2xl transition-transform hover:scale-110"
         >
-          <Bot className="h-8 w-8" />
+          <Bot className="size-8" />
         </Button>
         {data.notifications.filter(n => !n.read).length > 0 && (
-          <Badge className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center">
+          <Badge className="absolute -right-2 -top-2 flex size-6 items-center justify-center rounded-full bg-red-500 text-white">
             {data.notifications.filter(n => !n.read).length}
           </Badge>
         )}
@@ -280,14 +280,14 @@ export function StickyAiCompanion({
 
   return (
     <div
-      className={`fixed ${getPositionClass()} z-50 w-96 max-h-[600px] overflow-hidden`}
+      className={`fixed ${getPositionClass()} z-50 max-h-[600px] w-96 overflow-hidden`}
     >
-      <Card className="bg-gradient-to-br from-gray-900 to-black border-yellow-500/20 shadow-2xl">
+      <Card className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black shadow-2xl">
         <CardHeader className="pb-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                <Bot className="h-5 w-5 text-black" />
+              <div className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600">
+                <Bot className="size-5 text-black" />
               </div>
               <div>
                 <CardTitle className="text-lg text-yellow-400">
@@ -306,14 +306,14 @@ export function StickyAiCompanion({
                   onClick={() => setIsMinimized(true)}
                   className="text-gray-400 hover:text-white"
                 >
-                  <Minimize2 className="h-4 w-4" />
+                  <Minimize2 className="size-4" />
                 </Button>
               )}
             </div>
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-3 gap-2 mt-3">
+          <div className="mt-3 grid grid-cols-3 gap-2">
             <div className="text-center">
               <div className="text-lg font-bold text-green-400">
                 {data.tracking.conversions}
@@ -335,9 +335,9 @@ export function StickyAiCompanion({
           </div>
         </CardHeader>
 
-        <CardContent className="space-y-4 max-h-[400px] overflow-y-auto">
+        <CardContent className="max-h-[400px] space-y-4 overflow-y-auto">
           {/* Tabs */}
-          <div className="flex space-x-1 bg-gray-800 rounded-lg p-1">
+          <div className="flex space-x-1 rounded-lg bg-gray-800 p-1">
             {["insights", "automation", "tracking"].map(tab => (
               <Button
                 key={tab}
@@ -350,9 +350,9 @@ export function StickyAiCompanion({
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                {tab === "insights" && <Brain className="h-3 w-3 mr-1" />}
-                {tab === "automation" && <Zap className="h-3 w-3 mr-1" />}
-                {tab === "tracking" && <Activity className="h-3 w-3 mr-1" />}
+                {tab === "insights" && <Brain className="mr-1 size-3" />}
+                {tab === "automation" && <Zap className="mr-1 size-3" />}
+                {tab === "tracking" && <Activity className="mr-1 size-3" />}
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </Button>
             ))}
@@ -364,28 +364,28 @@ export function StickyAiCompanion({
               {data.insights.map((insight, idx) => (
                 <div
                   key={idx}
-                  className={`p-3 rounded-lg border ${getInsightColor(insight.type)}`}
+                  className={`rounded-lg border p-3 ${getInsightColor(insight.type)}`}
                 >
                   <div className="flex items-start space-x-2">
                     {getInsightIcon(insight.type)}
                     <div className="flex-1">
-                      <div className="text-white font-medium text-sm">
+                      <div className="text-sm font-medium text-white">
                         {insight.title}
                       </div>
-                      <div className="text-gray-300 text-xs mt-1">
+                      <div className="mt-1 text-xs text-gray-300">
                         {insight.description}
                       </div>
-                      <div className="text-gray-500 text-xs mt-1">
+                      <div className="mt-1 text-xs text-gray-500">
                         {insight.timestamp}
                       </div>
                       {insight.action && (
                         <Button
                           size="sm"
-                          className="mt-2 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs"
+                          className="mt-2 bg-gradient-to-r from-green-500 to-green-600 text-xs text-white"
                           onClick={() => handleQuickAction(insight.action!)}
                         >
                           {insight.action}
-                          <ArrowRight className="h-3 w-3 ml-1" />
+                          <ArrowRight className="ml-1 size-3" />
                         </Button>
                       )}
                     </div>
@@ -398,29 +398,29 @@ export function StickyAiCompanion({
           {activeTab === "automation" && (
             <div className="space-y-3">
               {data.automationQueue.map(item => (
-                <div key={item.id} className="p-3 bg-gray-800/50 rounded-lg">
+                <div key={item.id} className="rounded-lg bg-gray-800/50 p-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       {item.type === "email" && (
-                        <Mail className="h-4 w-4 text-blue-400" />
+                        <Mail className="size-4 text-blue-400" />
                       )}
                       {item.type === "text" && (
-                        <MessageSquare className="h-4 w-4 text-green-400" />
+                        <MessageSquare className="size-4 text-green-400" />
                       )}
                       {item.type === "call" && (
-                        <Phone className="h-4 w-4 text-yellow-400" />
+                        <Phone className="size-4 text-yellow-400" />
                       )}
                       {item.type === "meeting" && (
-                        <Calendar className="h-4 w-4 text-purple-400" />
+                        <Calendar className="size-4 text-purple-400" />
                       )}
                       <div>
-                        <div className="text-white text-sm font-medium">
+                        <div className="text-sm font-medium text-white">
                           {item.action}
                         </div>
-                        <div className="text-gray-400 text-xs">
+                        <div className="text-xs text-gray-400">
                           {item.target}
                         </div>
-                        <div className="text-gray-500 text-xs">
+                        <div className="text-xs text-gray-500">
                           {item.scheduledFor}
                         </div>
                       </div>
@@ -443,7 +443,7 @@ export function StickyAiCompanion({
                         <Button
                           size="sm"
                           onClick={() => handleExecuteAutomation(item.id)}
-                          className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs"
+                          className="bg-gradient-to-r from-blue-500 to-blue-600 text-xs text-white"
                         >
                           Execute Now
                         </Button>
@@ -458,13 +458,13 @@ export function StickyAiCompanion({
           {activeTab === "tracking" && (
             <div className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
-                <div className="text-center p-2 bg-gray-800/50 rounded-lg">
+                <div className="rounded-lg bg-gray-800/50 p-2 text-center">
                   <div className="text-lg font-bold text-blue-400">
                     {data.tracking.websiteVisits}
                   </div>
                   <div className="text-xs text-gray-400">Website Visits</div>
                 </div>
-                <div className="text-center p-2 bg-gray-800/50 rounded-lg">
+                <div className="rounded-lg bg-gray-800/50 p-2 text-center">
                   <div className="text-lg font-bold text-green-400">
                     {data.tracking.emailInteractions}
                   </div>
@@ -472,13 +472,13 @@ export function StickyAiCompanion({
                     Email Interactions
                   </div>
                 </div>
-                <div className="text-center p-2 bg-gray-800/50 rounded-lg">
+                <div className="rounded-lg bg-gray-800/50 p-2 text-center">
                   <div className="text-lg font-bold text-yellow-400">
                     {data.tracking.phoneConnections}
                   </div>
                   <div className="text-xs text-gray-400">Phone Connections</div>
                 </div>
-                <div className="text-center p-2 bg-gray-800/50 rounded-lg">
+                <div className="rounded-lg bg-gray-800/50 p-2 text-center">
                   <div className="text-lg font-bold text-purple-400">
                     {data.tracking.meetingsScheduled}
                   </div>
@@ -490,16 +490,16 @@ export function StickyAiCompanion({
 
               {/* Recent Notifications */}
               <div className="space-y-2">
-                <div className="text-white font-medium text-sm">
+                <div className="text-sm font-medium text-white">
                   Recent Activity
                 </div>
                 {data.notifications.slice(0, 3).map(notif => (
                   <div
                     key={notif.id}
-                    className={`p-2 rounded-lg ${notif.read ? "bg-gray-800/50" : "bg-blue-900/20 border border-blue-500/20"}`}
+                    className={`rounded-lg p-2 ${notif.read ? "bg-gray-800/50" : "border border-blue-500/20 bg-blue-900/20"}`}
                   >
-                    <div className="text-white text-xs">{notif.message}</div>
-                    <div className="text-gray-500 text-xs mt-1">
+                    <div className="text-xs text-white">{notif.message}</div>
+                    <div className="mt-1 text-xs text-gray-500">
                       {notif.timestamp}
                     </div>
                   </div>
@@ -515,12 +515,12 @@ export function StickyAiCompanion({
               placeholder="Ask your AI companion anything..."
               value={userInput}
               onChange={e => setUserInput(e.target.value)}
-              className="bg-gray-800 border-gray-600 text-white text-sm"
+              className="border-gray-600 bg-gray-800 text-sm text-white"
             />
             <div className="flex space-x-2">
               <Button
                 size="sm"
-                className="flex-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-xs"
+                className="flex-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-xs text-black"
               >
                 Send Command
               </Button>
