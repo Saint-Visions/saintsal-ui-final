@@ -61,8 +61,33 @@ export function ReferralNetwork() {
   const router = useRouter()
 
   useEffect(() => {
-    fetchPartners()
-    fetchReferrals()
+    const initializeData = async () => {
+      setInitialLoading(true)
+      try {
+        // Check authentication by making a simple request
+        const authCheck = await fetch("/api/referrals/generate", {
+          method: "GET",
+          credentials: "include"
+        })
+
+        if (authCheck.status === 401) {
+          setIsAuthenticated(false)
+          toast.error("Please log in to access referral network")
+          router.push("/en/login")
+          return
+        }
+
+        setIsAuthenticated(true)
+        await Promise.all([fetchPartners(), fetchReferrals()])
+      } catch (error) {
+        console.error("Initialization error:", error)
+        setIsAuthenticated(false)
+      } finally {
+        setInitialLoading(false)
+      }
+    }
+
+    initializeData()
   }, [])
 
   const fetchPartners = async () => {
