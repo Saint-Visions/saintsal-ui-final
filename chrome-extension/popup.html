@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PartnerTech.ai Assistant</title>
+    <title>PartnerTech.ai</title>
     <style>
       * {
         margin: 0;
@@ -13,7 +13,7 @@
 
       body {
         width: 380px;
-        height: 600px;
+        height: 500px;
         background: linear-gradient(
           135deg,
           #1f2937 0%,
@@ -23,32 +23,16 @@
         color: white;
         font-family:
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        overflow: hidden;
       }
 
       .header {
         background: linear-gradient(90deg, #f59e0b 0%, #eab308 100%);
         padding: 16px;
         text-align: center;
-        position: relative;
-      }
-
-      .header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(245, 158, 11, 0.1) 0%,
-          rgba(234, 179, 8, 0.1) 100%
-        );
       }
 
       .logo {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
         color: #000;
         margin-bottom: 4px;
@@ -57,7 +41,7 @@
       .patent-badge {
         background: rgba(0, 0, 0, 0.2);
         color: #000;
-        padding: 4px 8px;
+        padding: 3px 8px;
         border-radius: 12px;
         font-size: 10px;
         font-weight: bold;
@@ -66,124 +50,6 @@
 
       .main-content {
         padding: 16px;
-        height: calc(100% - 80px);
-        overflow-y: auto;
-      }
-
-      .tabs {
-        display: flex;
-        margin-bottom: 16px;
-        background: rgba(55, 65, 81, 0.3);
-        border-radius: 8px;
-        padding: 4px;
-      }
-
-      .tab {
-        flex: 1;
-        padding: 8px 12px;
-        text-align: center;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-size: 12px;
-        background: transparent;
-        border: none;
-        color: #9ca3af;
-      }
-
-      .tab.active {
-        background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
-        color: white;
-      }
-
-      .tab-content {
-        display: none;
-      }
-
-      .tab-content.active {
-        display: block;
-      }
-
-      .intent-signals {
-        margin-bottom: 16px;
-      }
-
-      .signal-item {
-        background: rgba(55, 65, 81, 0.3);
-        border-radius: 8px;
-        padding: 12px;
-        margin-bottom: 8px;
-        border-left: 4px solid;
-      }
-
-      .signal-hiring {
-        border-left-color: #10b981;
-      }
-      .signal-funding {
-        border-left-color: #3b82f6;
-      }
-      .signal-expansion {
-        border-left-color: #f59e0b;
-      }
-      .signal-tech {
-        border-left-color: #8b5cf6;
-      }
-
-      .signal-header {
-        display: flex;
-        justify-content: between;
-        align-items: center;
-        margin-bottom: 4px;
-      }
-
-      .signal-title {
-        font-weight: bold;
-        font-size: 12px;
-      }
-
-      .signal-score {
-        background: rgba(16, 185, 129, 0.2);
-        color: #10b981;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 10px;
-        margin-left: auto;
-      }
-
-      .signal-description {
-        font-size: 11px;
-        color: #9ca3af;
-        margin-bottom: 8px;
-      }
-
-      .action-buttons {
-        display: flex;
-        gap: 8px;
-      }
-
-      .btn {
-        padding: 6px 12px;
-        border-radius: 6px;
-        border: none;
-        cursor: pointer;
-        font-size: 11px;
-        font-weight: 500;
-        transition: all 0.2s;
-      }
-
-      .btn-primary {
-        background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
-        color: white;
-      }
-
-      .btn-secondary {
-        background: rgba(55, 65, 81, 0.5);
-        color: #d1d5db;
-        border: 1px solid rgba(75, 85, 99, 0.5);
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
       }
 
       .company-info {
@@ -203,37 +69,62 @@
         color: #9ca3af;
       }
 
-      .ai-companion {
-        position: fixed;
-        bottom: 16px;
-        right: 16px;
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-        border-radius: 50%;
+      .intent-signals {
+        margin-bottom: 16px;
+      }
+
+      .signals-title {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #f3f4f6;
+        font-size: 13px;
+      }
+
+      .signal-item {
+        background: rgba(55, 65, 81, 0.3);
+        border-radius: 6px;
+        padding: 8px 12px;
+        margin-bottom: 6px;
+        font-size: 12px;
+        border-left: 3px solid #10b981;
+      }
+
+      .actions {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .btn {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
         cursor: pointer;
-        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
-        animation: pulse 2s infinite;
+        font-size: 12px;
+        font-weight: 500;
+        transition: all 0.2s;
       }
 
-      @keyframes pulse {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
+      .btn-primary {
+        background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+        color: white;
       }
 
-      .stats-grid {
+      .btn-secondary {
+        background: rgba(55, 65, 81, 0.5);
+        color: #d1d5db;
+        border: 1px solid rgba(75, 85, 99, 0.5);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .stats {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
-        margin-bottom: 16px;
+        margin-top: 16px;
       }
 
       .stat-card {
@@ -244,81 +135,15 @@
       }
 
       .stat-number {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
         margin-bottom: 4px;
+        color: #10b981;
       }
 
       .stat-label {
         font-size: 10px;
         color: #9ca3af;
-      }
-
-      .automation-queue {
-        background: rgba(16, 185, 129, 0.1);
-        border: 1px solid rgba(16, 185, 129, 0.2);
-        border-radius: 8px;
-        padding: 12px;
-      }
-
-      .queue-title {
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #10b981;
-        font-size: 12px;
-      }
-
-      .queue-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 6px 0;
-        border-bottom: 1px solid rgba(16, 185, 129, 0.1);
-        font-size: 11px;
-      }
-
-      .queue-item:last-child {
-        border-bottom: none;
-      }
-
-      .status-live {
-        background: #10b981;
-        color: white;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 9px;
-      }
-
-      .quick-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        margin-top: 16px;
-      }
-
-      .quick-action {
-        background: rgba(55, 65, 81, 0.3);
-        border: 1px solid rgba(75, 85, 99, 0.3);
-        border-radius: 8px;
-        padding: 12px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.2s;
-      }
-
-      .quick-action:hover {
-        background: rgba(55, 65, 81, 0.5);
-        transform: translateY(-1px);
-      }
-
-      .quick-action-icon {
-        font-size: 16px;
-        margin-bottom: 4px;
-      }
-
-      .quick-action-label {
-        font-size: 10px;
-        color: #d1d5db;
       }
     </style>
   </head>
@@ -329,239 +154,118 @@
     </div>
 
     <div class="main-content">
-      <div class="tabs">
-        <button class="tab active" data-tab="signals">Intent</button>
-        <button class="tab" data-tab="company">Company</button>
-        <button class="tab" data-tab="automation">Actions</button>
-        <button class="tab" data-tab="assistant">AI</button>
-      </div>
-
-      <!-- Intent Signals Tab -->
-      <div class="tab-content active" id="signals">
-        <div class="company-info">
-          <div class="company-name" id="current-company">Detecting...</div>
-          <div class="company-details" id="company-details">
-            Analyzing current page...
-          </div>
+      <div class="company-info">
+        <div class="company-name" id="current-company">
+          Analyzing current page...
         </div>
-
-        <div class="intent-signals">
-          <div class="signal-item signal-hiring">
-            <div class="signal-header">
-              <span class="signal-title">🎯 Hiring Intent</span>
-              <span class="signal-score">87%</span>
-            </div>
-            <div class="signal-description">
-              3 new engineering roles posted, team expansion signals detected
-            </div>
-            <div class="action-buttons">
-              <button
-                class="btn btn-primary"
-                onclick="triggerAction('email-outreach')"
-              >
-                Auto Email
-              </button>
-              <button
-                class="btn btn-secondary"
-                onclick="triggerAction('linkedin-connect')"
-              >
-                LinkedIn
-              </button>
-            </div>
-          </div>
-
-          <div class="signal-item signal-funding">
-            <div class="signal-header">
-              <span class="signal-title">💰 Funding Event</span>
-              <span class="signal-score">92%</span>
-            </div>
-            <div class="signal-description">
-              Series B announced, growth phase indicators strong
-            </div>
-            <div class="action-buttons">
-              <button
-                class="btn btn-primary"
-                onclick="triggerAction('congratulate')"
-              >
-                Congratulate
-              </button>
-              <button
-                class="btn btn-secondary"
-                onclick="triggerAction('schedule-call')"
-              >
-                Schedule Call
-              </button>
-            </div>
-          </div>
-
-          <div class="signal-item signal-tech">
-            <div class="signal-header">
-              <span class="signal-title">⚡ Tech Stack Change</span>
-              <span class="signal-score">74%</span>
-            </div>
-            <div class="signal-description">
-              Migrating to modern infrastructure, pain points identified
-            </div>
-            <div class="action-buttons">
-              <button
-                class="btn btn-primary"
-                onclick="triggerAction('solution-offer')"
-              >
-                Offer Solution
-              </button>
-              <button
-                class="btn btn-secondary"
-                onclick="triggerAction('case-study')"
-              >
-                Send Case Study
-              </button>
-            </div>
-          </div>
+        <div class="company-details" id="company-details">
+          Detecting intent signals and opportunities
         </div>
       </div>
 
-      <!-- Company Tab -->
-      <div class="tab-content" id="company">
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number" style="color: #10b981">156</div>
-            <div class="stat-label">Employees</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" style="color: #3b82f6">$45M</div>
-            <div class="stat-label">Revenue</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" style="color: #f59e0b">Series B</div>
-            <div class="stat-label">Funding Stage</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" style="color: #8b5cf6">SaaS</div>
-            <div class="stat-label">Industry</div>
-          </div>
-        </div>
-
-        <div class="company-info">
-          <div class="company-name">Tech Contacts</div>
-          <div class="signal-item">
-            <div class="signal-header">
-              <span class="signal-title">John Smith - CTO</span>
-              <span class="signal-score">LinkedIn</span>
-            </div>
-            <div class="signal-description">
-              john@company.com • 5 mutual connections
-            </div>
-            <div class="action-buttons">
-              <button
-                class="btn btn-primary"
-                onclick="triggerAction('email-john')"
-              >
-                Email
-              </button>
-              <button
-                class="btn btn-secondary"
-                onclick="triggerAction('linkedin-john')"
-              >
-                Connect
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Automation Tab -->
-      <div class="tab-content" id="automation">
-        <div class="automation-queue">
-          <div class="queue-title">🤖 Active Automations</div>
-          <div class="queue-item">
-            <span>Email sequence to CTO</span>
-            <span class="status-live">LIVE</span>
-          </div>
-          <div class="queue-item">
-            <span>LinkedIn connection pending</span>
-            <span class="status-live">PENDING</span>
-          </div>
-          <div class="queue-item">
-            <span>Follow-up call scheduled</span>
-            <span class="status-live">SCHEDULED</span>
-          </div>
-        </div>
-
-        <div class="quick-actions">
-          <div class="quick-action" onclick="triggerAction('email-campaign')">
-            <div class="quick-action-icon">📧</div>
-            <div class="quick-action-label">Email Campaign</div>
-          </div>
-          <div class="quick-action" onclick="triggerAction('social-outreach')">
-            <div class="quick-action-icon">📱</div>
-            <div class="quick-action-label">Social Outreach</div>
-          </div>
-          <div class="quick-action" onclick="triggerAction('call-sequence')">
-            <div class="quick-action-icon">📞</div>
-            <div class="quick-action-label">Call Sequence</div>
-          </div>
-          <div class="quick-action" onclick="triggerAction('content-share')">
-            <div class="quick-action-icon">📄</div>
-            <div class="quick-action-label">Share Content</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI Assistant Tab -->
-      <div class="tab-content" id="assistant">
-        <div class="company-info">
-          <div class="company-name">🧠 AI Companion Status</div>
-          <div class="company-details">
-            Saint Mode: Strategic Analysis Active
-          </div>
-        </div>
-
+      <div class="intent-signals">
+        <div class="signals-title">🎯 Intent Signals Detected</div>
         <div class="signal-item">
-          <div class="signal-header">
-            <span class="signal-title">💡 AI Recommendation</span>
-            <span class="signal-score">High</span>
-          </div>
-          <div class="signal-description">
-            Based on intent signals, recommend solution demo within 48 hours.
-            Optimal contact window detected.
-          </div>
-          <div class="action-buttons">
-            <button
-              class="btn btn-primary"
-              onclick="triggerAction('ai-demo-book')"
-            >
-              Book Demo
-            </button>
-            <button
-              class="btn btn-secondary"
-              onclick="triggerAction('ai-nurture')"
-            >
-              Nurture
-            </button>
-          </div>
+          <strong>🎯 Hiring Intent:</strong> 87% <br /><small
+            >3 new roles posted, expansion detected</small
+          >
         </div>
+        <div class="signal-item">
+          <strong>💰 Funding Event:</strong> 92% <br /><small
+            >Series B announced, growth phase</small
+          >
+        </div>
+      </div>
 
-        <div class="quick-actions">
-          <div class="quick-action" onclick="switchAssistant('saint')">
-            <div class="quick-action-icon">👑</div>
-            <div class="quick-action-label">Saint Mode</div>
-          </div>
-          <div class="quick-action" onclick="switchAssistant('sal')">
-            <div class="quick-action-icon">⚡</div>
-            <div class="quick-action-label">Sal Mode</div>
-          </div>
-          <div class="quick-action" onclick="switchAssistant('dual')">
-            <div class="quick-action-icon">🧠</div>
-            <div class="quick-action-label">Dual Mode</div>
-          </div>
-          <div class="quick-action" onclick="openDashboard()">
-            <div class="quick-action-icon">📊</div>
-            <div class="quick-action-label">Dashboard</div>
-          </div>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="triggerOutreach()">
+          📧 Trigger Auto Outreach
+        </button>
+        <button class="btn btn-secondary" onclick="extractContacts()">
+          👥 Extract Contact Info
+        </button>
+        <button class="btn btn-secondary" onclick="openDashboard()">
+          📊 Open Dashboard
+        </button>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-number">1,247</div>
+          <div class="stat-label">Signals Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">89</div>
+          <div class="stat-label">Actions Triggered</div>
         </div>
       </div>
     </div>
 
-    <script src="popup.js"></script>
+    <script>
+      // Update current page info
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        const tab = tabs[0]
+        const domain = new URL(tab.url).hostname.replace("www.", "")
+
+        document.getElementById("current-company").textContent =
+          domain.split(".")[0].charAt(0).toUpperCase() +
+          domain.split(".")[0].slice(1)
+        document.getElementById("company-details").textContent =
+          `${domain} • Live analysis active`
+      })
+
+      // Action functions
+      function triggerOutreach() {
+        console.log("🚀 Triggering outreach automation")
+        chrome.tabs.query(
+          { active: true, currentWindow: true },
+          function (tabs) {
+            chrome.tabs.sendMessage(tabs[0].id, {
+              type: "TRIGGER_OUTREACH",
+              action: "email-sequence"
+            })
+          }
+        )
+
+        // Show feedback
+        const btn = event.target
+        const originalText = btn.textContent
+        btn.textContent = "✅ Outreach Triggered!"
+        btn.style.background = "#10b981"
+        setTimeout(() => {
+          btn.textContent = originalText
+          btn.style.background = ""
+        }, 2000)
+      }
+
+      function extractContacts() {
+        console.log("👥 Extracting contacts")
+        chrome.tabs.query(
+          { active: true, currentWindow: true },
+          function (tabs) {
+            chrome.tabs.sendMessage(tabs[0].id, {
+              type: "EXTRACT_CONTACTS"
+            })
+          }
+        )
+
+        // Show feedback
+        const btn = event.target
+        const originalText = btn.textContent
+        btn.textContent = "✅ Contacts Extracted!"
+        btn.style.background = "#10b981"
+        setTimeout(() => {
+          btn.textContent = originalText
+          btn.style.background = ""
+        }, 2000)
+      }
+
+      function openDashboard() {
+        chrome.tabs.create({ url: "https://partnertech.ai/dashboard" })
+        window.close()
+      }
+
+      console.log("✅ PartnerTech.ai Popup Ready")
+    </script>
   </body>
 </html>
