@@ -56,10 +56,9 @@ export default function HomePage() {
     <div className="flex size-full flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
       {/* Patent Badge */}
       <div className="mb-4 flex items-center">
-        <Badge className="bg-gradient-to-r from-amber-500 to-yellow-500 px-4 py-2 text-black font-bold">
-          <IconCrown className="mr-2 size-4" />
-          Patent #10,290,222 Protected
-        </Badge>
+        <div className="bg-gradient-to-r from-amber-500 to-yellow-500 px-4 py-2 text-black font-bold rounded-full">
+          👑 Patent #10,290,222 Protected
+        </div>
       </div>
 
       {/* SaintSal Logo */}
