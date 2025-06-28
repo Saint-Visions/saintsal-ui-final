@@ -95,7 +95,7 @@ export function ReferralNetwork() {
       const response = await fetch("/api/referrals/generate", {
         method: "GET",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         credentials: "include"
       })
@@ -126,7 +126,7 @@ export function ReferralNetwork() {
       const response = await fetch("/api/referrals/track", {
         method: "GET",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         credentials: "include"
       })
@@ -252,9 +252,7 @@ export function ReferralNetwork() {
       <div className="flex min-h-[400px] items-center justify-center">
         <div className="text-center">
           <AlertCircle className="mb-4 size-12 text-red-400" />
-          <p className="text-gray-400">
-            Please log in to access referral network
-          </p>
+          <p className="text-gray-400">Please log in to access referral network</p>
           <Button
             onClick={() => router.push("/en/login")}
             className="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black"
@@ -436,8 +434,7 @@ export function ReferralNetwork() {
                     No referral partners yet
                   </h3>
                   <p className="mb-4 text-sm text-gray-400">
-                    Create your first referral partner to start growing your
-                    network
+                    Create your first referral partner to start growing your network
                   </p>
                   <Button
                     onClick={() => setIsCreateDialogOpen(true)}
@@ -451,86 +448,105 @@ export function ReferralNetwork() {
             </Card>
           ) : (
             partners.map(partner => (
-              <Card
-                key={partner.id}
-                className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black"
-              >
-                <CardHeader>
+            <Card
+              key={partner.id}
+              className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black"
+            >
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-yellow-400">
+                    {partner.partner_name}
+                  </CardTitle>
+                  <Badge
+                    className={`${getStatusColor(partner.status)} text-white`}
+                  >
+                    {partner.status}
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-yellow-400">
-                      {partner.partner_name}
-                    </CardTitle>
-                    <Badge
-                      className={`${getStatusColor(partner.status)} text-white`}
-                    >
-                      {partner.status}
-                    </Badge>
+                    <span className="text-gray-400">Referral Code:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="rounded bg-black px-2 py-1 text-yellow-400">
+                        {partner.referral_code}
+                      </code>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() =>
+                          copyToClipboard(
+                            partner.referral_code,
+                            "Referral code"
+                          )
+                        }
+                      >
+                        <Copy className="size-4" />
+                      </Button>
+                    </div>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Referral Code:</span>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-black px-2 py-1 text-yellow-400">
-                          {partner.referral_code}
-                        </code>
+
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400">Commission Rate:</span>
+                    <span className="font-semibold text-green-400">
+                      {partner.commission_rate}%
+                    </span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <span className="text-gray-400">Referral Links:</span>
+                    <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
+                      {["landing", "signup", "demo"].map(type => (
                         <Button
-                          variant="ghost"
+                          key={type}
+                          variant="outline"
                           size="sm"
                           onClick={() =>
                             copyToClipboard(
-                              partner.referral_code,
-                              "Referral code"
+                              generateReferralLink(partner.referral_code, type),
+                              `${type} link`
                             )
                           }
+                          className="text-xs"
                         >
-                          <Copy className="size-4" />
+                          <ExternalLink className="mr-1 size-3" />
+                          {type}
                         </Button>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Commission Rate:</span>
-                      <span className="font-semibold text-green-400">
-                        {partner.commission_rate}%
-                      </span>
-                    </div>
-
-                    <div className="space-y-2">
-                      <span className="text-gray-400">Referral Links:</span>
-                      <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
-                        {["landing", "signup", "demo"].map(type => (
-                          <Button
-                            key={type}
-                            variant="outline"
-                            size="sm"
-                            onClick={() =>
-                              copyToClipboard(
-                                generateReferralLink(
-                                  partner.referral_code,
-                                  type
-                                ),
-                                `${type} link`
-                              )
-                            }
-                            className="text-xs"
-                          >
-                            <ExternalLink className="mr-1 size-3" />
-                            {type}
-                          </Button>
-                        ))}
-                      </div>
+                      ))}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </CardContent>
+            </Card>
             ))
           )}
         </TabsContent>
 
         <TabsContent value="referrals" className="space-y-4">
-          {referrals.map(referral => (
+          {referrals.length === 0 ? (
+            <Card className="border-gray-500/20 bg-gradient-to-br from-gray-900 to-black">
+              <CardContent className="flex min-h-[200px] items-center justify-center p-8">
+                <div className="text-center">
+                  <TrendingUp className="mb-4 size-12 text-gray-400" />
+                  <h3 className="mb-2 text-lg font-semibold text-gray-300">
+                    No referrals tracked yet
+                  </h3>
+                  <p className="mb-4 text-sm text-gray-400">
+                    Share your referral links to start tracking leads
+                  </p>
+                  <Button
+                    onClick={() => setIsCreateDialogOpen(true)}
+                    className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black"
+                  >
+                    <Plus className="mr-2 size-4" />
+                    Create Referral Partner
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ) : (
+            referrals.map(referral => (
             <Card
               key={referral.id}
               className="border-green-500/20 bg-gradient-to-br from-gray-900 to-black"
