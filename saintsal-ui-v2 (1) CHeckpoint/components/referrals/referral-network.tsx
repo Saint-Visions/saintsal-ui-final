@@ -56,6 +56,9 @@ export function ReferralNetwork() {
     commission_rate: 10
   })
   const [loading, setLoading] = useState(false)
+  const [initialLoading, setInitialLoading] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     fetchPartners()
