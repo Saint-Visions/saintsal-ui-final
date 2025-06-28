@@ -1,6 +1,12 @@
 "use client"
 
-import { IconArrowRight } from "@tabler/icons-react"
+import {
+  IconArrowRight,
+  IconBrain,
+  IconRocket,
+  IconCrown,
+  IconZap
+} from "@tabler/icons-react"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
