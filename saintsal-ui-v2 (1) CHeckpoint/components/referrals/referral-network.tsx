@@ -62,25 +62,63 @@ export function ReferralNetwork() {
 
   const fetchPartners = async () => {
     try {
-      const response = await fetch("/api/referrals/generate")
+      const response = await fetch("/api/referrals/generate", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include"
+      })
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          toast.error("Please log in to view referral partners")
+          return
+        }
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
       const data = await response.json()
       if (data.success) {
         setPartners(data.data || [])
+      } else {
+        console.error("Failed to fetch partners:", data.error)
+        toast.error(data.error || "Failed to fetch partners")
       }
     } catch (error) {
       console.error("Failed to fetch partners:", error)
+      toast.error("Failed to fetch partners")
     }
   }
 
   const fetchReferrals = async () => {
     try {
-      const response = await fetch("/api/referrals/track")
+      const response = await fetch("/api/referrals/track", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include"
+      })
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          toast.error("Please log in to view referrals")
+          return
+        }
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
       const data = await response.json()
       if (data.success) {
         setReferrals(data.data || [])
+      } else {
+        console.error("Failed to fetch referrals:", data.error)
+        toast.error(data.error || "Failed to fetch referrals")
       }
     } catch (error) {
       console.error("Failed to fetch referrals:", error)
+      toast.error("Failed to fetch referrals")
     }
   }
 
