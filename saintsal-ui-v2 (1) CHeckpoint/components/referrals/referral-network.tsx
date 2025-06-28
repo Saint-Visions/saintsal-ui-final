@@ -221,6 +221,38 @@ export function ReferralNetwork() {
   const conversionRate =
     totalReferrals > 0 ? (convertedReferrals / totalReferrals) * 100 : 0
 
+  // Show loading state
+  if (initialLoading) {
+    return (
+      <div className="flex min-h-[400px] items-center justify-center">
+        <div className="text-center">
+          <div className="mb-4 size-8 animate-spin rounded-full border-b-2 border-yellow-400"></div>
+          <p className="text-gray-400">Loading referral network...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Show authentication error
+  if (!isAuthenticated) {
+    return (
+      <div className="flex min-h-[400px] items-center justify-center">
+        <div className="text-center">
+          <AlertCircle className="mb-4 size-12 text-red-400" />
+          <p className="text-gray-400">
+            Please log in to access referral network
+          </p>
+          <Button
+            onClick={() => router.push("/en/login")}
+            className="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black"
+          >
+            Go to Login
+          </Button>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-6">
       {/* Header */}
