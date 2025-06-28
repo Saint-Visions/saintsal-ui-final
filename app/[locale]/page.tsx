@@ -137,7 +137,7 @@ export default function HomePage() {
           className="group relative flex w-[280px] cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 font-bold text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:from-blue-400 hover:to-purple-500 hover:shadow-blue-500/25"
         >
           <span className="text-lg">🚀 SaaS Multi-Tenant Setup</span>
-          <IconRocket
+          <IconArrowRight
             className="ml-2 transition-transform duration-300 group-hover:translate-x-2"
             size={20}
           />
