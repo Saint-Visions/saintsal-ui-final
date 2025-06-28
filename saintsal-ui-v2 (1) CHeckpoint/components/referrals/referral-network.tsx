@@ -95,7 +95,7 @@ export function ReferralNetwork() {
       const response = await fetch("/api/referrals/generate", {
         method: "GET",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         credentials: "include"
       })
@@ -126,7 +126,7 @@ export function ReferralNetwork() {
       const response = await fetch("/api/referrals/track", {
         method: "GET",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         credentials: "include"
       })
@@ -252,9 +252,7 @@ export function ReferralNetwork() {
       <div className="flex min-h-[400px] items-center justify-center">
         <div className="text-center">
           <AlertCircle className="mb-4 size-12 text-red-400" />
-          <p className="text-gray-400">
-            Please log in to access referral network
-          </p>
+          <p className="text-gray-400">Please log in to access referral network</p>
           <Button
             onClick={() => router.push("/en/login")}
             className="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black"
@@ -427,7 +425,29 @@ export function ReferralNetwork() {
         </TabsList>
 
         <TabsContent value="partners" className="space-y-4">
-          {partners.map(partner => (
+          {partners.length === 0 ? (
+            <Card className="border-gray-500/20 bg-gradient-to-br from-gray-900 to-black">
+              <CardContent className="flex min-h-[200px] items-center justify-center p-8">
+                <div className="text-center">
+                  <Users className="mb-4 size-12 text-gray-400" />
+                  <h3 className="mb-2 text-lg font-semibold text-gray-300">
+                    No referral partners yet
+                  </h3>
+                  <p className="mb-4 text-sm text-gray-400">
+                    Create your first referral partner to start growing your network
+                  </p>
+                  <Button
+                    onClick={() => setIsCreateDialogOpen(true)}
+                    className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black"
+                  >
+                    <Plus className="mr-2 size-4" />
+                    Add Your First Partner
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ) : (
+            partners.map(partner => (
             <Card
               key={partner.id}
               className="border-yellow-500/20 bg-gradient-to-br from-gray-900 to-black"
