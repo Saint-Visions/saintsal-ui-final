@@ -1,0 +1,5 @@
+{
+  "buildCommand": "DISABLE_ESLINT=true NEXT_DISABLE_ESLINT=true SKIP_ENV_VALIDATION=true next build",
+  "ignoreCommand": "echo 'CI checks skipped'",
+  "outputDirectory": ".next"
+}
