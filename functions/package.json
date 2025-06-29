@@ -1,0 +1,16 @@
+{
+  "name": "saintsal-enterprise-router",
+  "version": "1.0.0",
+  "description": "SaintVision AI Platform - Enterprise Webhook Router",
+  "main": "index.js",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
